@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`check that initial state of the root reducer matches what child reducers return given an empty action 1`] = `
-Object {
-  "names": Object {
-    "female": Array [],
-    "male": Array [],
-  },
-}
-`;
-
 exports[`checks that initial state of the root reducer matches what child reducers return given an empty action 1`] = `
 Object {
   "names": Object {
