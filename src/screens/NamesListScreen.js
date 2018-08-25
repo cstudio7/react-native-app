@@ -2,11 +2,29 @@ import React from 'react';
 import { Text } from 'react-native';
 import { withApollo } from 'react-apollo';
 import Loadable from 'react-loadable';
+import gql from 'graphql-tag';
 const R = require('ramda');
 
 import WithTopBar from '../components/WithTopBar';
 import { getFavoriteNames } from '../helpers/asyncStorage';
-import { femaleNamesQuery, maleNamesQuery } from '../graphql/names';
+
+export const femaleNamesQuery = gql`
+  {
+    femaleNames {
+      id
+      name
+    }
+  }
+`;
+
+export const maleNamesQuery = gql`
+  {
+    maleNames {
+      id
+      name
+    }
+  }
+`;
 
 const FemaleNamesList = Loadable({
   loader: () => import('../containers/NamesList'),
