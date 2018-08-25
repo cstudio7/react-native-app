@@ -1,4 +1,4 @@
-import saveNames from './saveNames';
+import saveNames from './';
 import Actions from '../../constants/Actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavoite: true });

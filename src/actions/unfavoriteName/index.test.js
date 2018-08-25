@@ -1,4 +1,4 @@
-import unfavoriteName from './unfavoriteName';
+import unfavoriteName from './';
 import Actions from '../../constants/Actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavoite: true });
