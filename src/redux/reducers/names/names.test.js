@@ -1,5 +1,5 @@
 import names, { initialState } from './names';
-import Actions from '../../constants/Actions';
+import Actions from '../../../constants/Actions';
 
 it('should return the initial state', () => {
   expect(names(undefined, {})).toMatchSnapshot();

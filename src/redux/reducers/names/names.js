@@ -1,6 +1,6 @@
 const R = require('ramda');
 
-import Actions from '../../constants/Actions';
+import Actions from '../../../constants/Actions';
 
 export const initialState = {
   female: [],

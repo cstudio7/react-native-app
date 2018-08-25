@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import names from './names/names';
+import names from '../names/names';
 
 const rootReducer = combineReducers({
   names

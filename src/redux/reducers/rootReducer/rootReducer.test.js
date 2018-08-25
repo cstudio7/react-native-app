@@ -1,7 +1,6 @@
 import { createStore } from 'redux';
 
-import names from './names/names';
-import rootReducer from './';
+import rootReducer from './rootReducer';
 
 const store = createStore(rootReducer);
 

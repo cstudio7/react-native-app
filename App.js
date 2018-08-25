@@ -6,7 +6,7 @@ import { ApolloProvider } from 'react-apollo';
 
 import AppNavigator from './src/navigation/AppNavigator';
 import initApollo from './src/lib/initApollo';
-import configureStore from './src/store/configureStore';
+import configureStore from './src/redux/configureStore';
 
 const apolloClient = initApollo(
   {},
