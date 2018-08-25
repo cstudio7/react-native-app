@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates a FAVORITE_NAME action 1`] = `
+Object {
+  "gender": "male",
+  "name": Object {
+    "isFavoite": true,
+    "name": "artur",
+  },
+  "type": "FAVORITE_NAME",
+}
+`;

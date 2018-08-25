@@ -1,0 +1,48 @@
+{
+  "name": "bn-client",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "test": "node ./node_modules/jest/bin/jest.js"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100
+      }
+    }
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-context": "^1.0.8",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "expo": "29.0.0",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "ramda": "^0.25.0",
+    "react": "16.4.2",
+    "react-apollo": "^2.1.9",
+    "react-loadable": "^5.4.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
+    "react-navigation": "^2.9.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest-expo": "29.0.0",
+    "redux-logger": "^3.0.6"
+  }
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates a SAVE_NAMES action 1`] = `
+Object {
+  "gender": "male",
+  "names": Array [
+    Object {
+      "isFavoite": true,
+      "name": "artur",
+    },
+  ],
+  "type": "SAVE_NAMES",
+}
+`;

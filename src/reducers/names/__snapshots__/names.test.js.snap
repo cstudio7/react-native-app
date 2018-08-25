@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should handle FAVORITE_NAME action 1`] = `
+Object {
+  "female": Array [],
+  "male": Array [
+    Object {
+      "isFavorite": true,
+      "name": "artur",
+    },
+  ],
+}
+`;
+
+exports[`should handle SAVE_NAMES action 1`] = `
+Object {
+  "female": Array [],
+  "male": Array [
+    Object {
+      "isFavorite": true,
+      "name": "artur",
+    },
+  ],
+}
+`;
+
+exports[`should handle UNFAVORITE_NAME action 1`] = `
+Object {
+  "female": Array [],
+  "male": Array [
+    Object {
+      "isFavorite": false,
+      "name": "artur",
+    },
+  ],
+}
+`;
+
+exports[`should return the initial state 1`] = `
+Object {
+  "female": Array [],
+  "male": Array [],
+}
+`;
