@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 const R = require('ramda');
 
 import WithTopBar from '../components/WithTopBar';
-import { getFavoriteNames } from '../helpers/asyncStorage';
+import { getFavoriteNames } from '../modules/asyncStorage';
 
 export const femaleNamesQuery = gql`
   {

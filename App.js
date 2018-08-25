@@ -5,7 +5,7 @@ import { AppLoading, Font, Icon } from 'expo';
 import { ApolloProvider } from 'react-apollo';
 
 import AppNavigator from './src/navigation/AppNavigator';
-import initApollo from './src/lib/initApollo';
+import initApollo from './src/modules/initApollo';
 import configureStore from './src/redux/configureStore';
 
 const apolloClient = initApollo(

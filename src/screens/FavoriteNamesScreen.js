@@ -4,7 +4,7 @@ import { withApollo } from 'react-apollo';
 import Loadable from 'react-loadable';
 
 import WithTopBar from '../components/WithTopBar';
-import { getFavoriteNames } from '../helpers/asyncStorage';
+import { getFavoriteNames } from '../modules/asyncStorage';
 
 const FemaleNamesList = Loadable({
   loader: () => import('../containers/NamesList'),

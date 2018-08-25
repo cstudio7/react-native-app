@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, SectionList } from 'react-native';
 
-import createSection from '../helpers/createSection/createSection';
+import createSection from '../modules/createSection/createSection';
 import NamesListItem from '../containers/NamesListItem';
 
 class NamesList extends React.Component {

@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { Icon } from 'expo';
 const R = require('ramda');
 
-import { getFavoriteNames, saveFavoriteNames } from '../helpers/asyncStorage';
+import { getFavoriteNames, saveFavoriteNames } from '../modules/asyncStorage';
 
 class NamesListItem extends React.Component {
   unfavoriteName = async (gender, targetObject) => {
