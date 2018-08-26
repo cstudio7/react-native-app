@@ -22,8 +22,8 @@ class FavoriteNamesScreen extends React.Component {
   }
 
   getNames = async gender => {
-    const favoriteNames = await getFavoriteNames(gender);
-    this.props.saveNames(gender, favoriteNames);
+    const names = await getFavoriteNames(gender);
+    this.props.fetchNamesSuccess({ gender, names });
   };
 
   componentWillReceiveProps(nextProps) {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should handle FAVORITE_NAME action 1`] = `
+exports[`should handle names/FAVORITE_NAME action 1`] = `
 Object {
   "female": Array [],
   "male": Array [
@@ -12,7 +12,7 @@ Object {
 }
 `;
 
-exports[`should handle SAVE_NAMES action 1`] = `
+exports[`should handle names/SAVE_NAMES action 1`] = `
 Object {
   "female": Array [],
   "male": Array [
@@ -24,7 +24,7 @@ Object {
 }
 `;
 
-exports[`should handle UNFAVORITE_NAME action 1`] = `
+exports[`should handle names/UNFAVORITE_NAME action 1`] = `
 Object {
   "female": Array [],
   "male": Array [

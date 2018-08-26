@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
 
-import saveNames from '../actions/saveNames';
+import { fetchNamesSuccess } from '../redux/namesReducer/actions';
 import FavoriteNamesScreen from '../screens/FavoriteNamesScreen';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   names: state.names
 });
 
 export default connect(
   mapStateToProps,
   {
-    saveNames
+    fetchNamesSuccess
   }
 )(FavoriteNamesScreen);

@@ -6,23 +6,23 @@ const R = require('ramda');
 import { getFavoriteNames, saveFavoriteNames } from '../modules/asyncStorage';
 
 class NamesListItem extends React.Component {
-  unfavoriteName = async (gender, targetObject) => {
+  unfavoriteName = async ({gender, name}) => {
     const favoriteNames = await getFavoriteNames(gender);
     const newFavoriteNames = favoriteNames.filter(
-      nameObject => nameObject.id !== targetObject.id
+      nameObject => nameObject.id !== name.id
     );
     await saveFavoriteNames(gender, newFavoriteNames);
-    this.props.unfavoriteName(gender, targetObject);
+    this.props.unfavoriteName({ gender, name });
   };
 
-  favoriteName = async (gender, targetObject) => {
+  favoriteName = async ({gender, name}) => {
     const favoriteNames = await getFavoriteNames(gender);
     let newFavoriteNames = R.uniqBy(nameObject => nameObject.id, [
       ...favoriteNames,
-      { ...targetObject, isFavorite: true }
+      { ...name, isFavorite: true }
     ]);
     await saveFavoriteNames(gender, newFavoriteNames);
-    this.props.favoriteName(gender, targetObject);
+    this.props.favoriteName({ gender, name });
   };
 
   render() {
@@ -33,11 +33,14 @@ class NamesListItem extends React.Component {
         <Text>{name.name}</Text>
         <TouchableOpacity
           onPress={async () => {
-            const { gender } = this.props;
+            const payload = {
+              gender: this.props.gender,
+              name
+            };
             if (name.isFavorite) {
-              await this.unfavoriteName(gender, name);
+              await this.unfavoriteName(payload);
             } else {
-              await this.favoriteName(gender, name);
+              await this.favoriteName(payload);
             }
           }}>
           <Icon.Ionicons

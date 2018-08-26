@@ -55,8 +55,7 @@ class NamesListScreen extends React.Component {
     const names = await this.fetchNames(gender);
     const isFavorite = nameObj =>
       R.assoc('isFavorite', favoriteNamesIds.includes(nameObj.id), nameObj);
-    const result = names.map(isFavorite);
-    this.props.saveNames(gender, result);
+    this.props.fetchNamesSuccess({ gender, names: names.map(isFavorite) });
   };
 
   fetchNames(gender) {
