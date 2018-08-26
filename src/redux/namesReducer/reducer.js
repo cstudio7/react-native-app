@@ -5,13 +5,14 @@ import {
   UNFAVORITE_NAME,
   FETCH_NAMES_SUCCESS
 } from './constants';
+import createReducer from '../../modules/createReducer';
 
 const initialState = {
   female: [],
   male: []
 };
 
-const updateName = (name, gender, state) => {
+const updateItemInArray = (state, name, gender) => {
   const genderData = state[gender];
   const index = R.findIndex(R.propEq('id', name.id))(genderData);
 
@@ -25,34 +26,27 @@ const updateName = (name, gender, state) => {
   };
 };
 
-export default (state = initialState, action) => {
-  const { type } = action;
-
-  if (type === FETCH_NAMES_SUCCESS) {
-    return {
-      ...state,
-      [action.payload.gender]: R.uniq([
-        ...state[action.payload.gender],
-        ...action.payload.names
-      ])
-    };
-  }
-
-  if (type === FAVORITE_NAME) {
-    return updateName(
-      { ...action.payload.name, isFavorite: true },
-      action.payload.gender,
-      state
-    );
-  }
-
-  if (type === UNFAVORITE_NAME) {
-    return updateName(
-      { ...action.payload.name, isFavorite: false },
-      action.payload.gender,
-      state
-    );
-  }
-
-  return state;
+const saveNames = (state, action) => {
+  const { payload } = action;
+  return {
+    ...state,
+    [payload.gender]: R.uniq([...state[payload.gender], ...payload.names])
+  };
 };
+
+const favoriteName = (state, action) => {
+  const { payload, type } = action;
+  const newName = {
+    ...payload.name,
+    isFavorite: type === FAVORITE_NAME
+  };
+  return updateItemInArray(state, newName, payload.gender);
+};
+
+const unfavoriteName = favoriteName;
+
+export default createReducer(initialState, {
+  [FETCH_NAMES_SUCCESS]: saveNames,
+  [FAVORITE_NAME]: favoriteName,
+  [UNFAVORITE_NAME]: unfavoriteName
+});
