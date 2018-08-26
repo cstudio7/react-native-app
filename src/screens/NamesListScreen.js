@@ -1,64 +1,43 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { withApollo } from 'react-apollo';
-import Loadable from 'react-loadable';
 import gql from 'graphql-tag';
 const R = require('ramda');
 
-import WithTopBar from '../components/WithTopBar';
 import { getFavoriteNames } from '../modules/asyncStorage';
-
-export const femaleNamesQuery = gql`
-  {
-    femaleNames {
-      id
-      name
-    }
-  }
-`;
-
-export const maleNamesQuery = gql`
-  {
-    maleNames {
-      id
-      name
-    }
-  }
-`;
-
-const FemaleNamesList = Loadable({
-  loader: () => import('../containers/NamesList'),
-  loading: () => <Text>Loading...</Text>
-});
-
-const MaleNamesList = Loadable({
-  loader: () => import('../containers/NamesList'),
-  loading: () => <Text>Loading...</Text>
-});
+import ListWithTopBar from '../components/ListWithTopBar';
 
 class NamesListScreen extends React.Component {
-  componentDidMount() {
-    this.getNames('female');
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.isFemaleTabActive !== nextProps.isFemaleTabActive) {
-      if (!nextProps.names.male.length && !nextProps.isFemaleTabActive) {
-        this.getNames('male');
-      }
-    }
-  }
-
   getNames = async gender => {
     const favoriteNames = await getFavoriteNames(gender);
     const favoriteNamesIds = favoriteNames.map(name => name.id);
     const names = await this.fetchNames(gender);
-    const isFavorite = nameObj =>
+    const markFavoriteNames = nameObj =>
       R.assoc('isFavorite', favoriteNamesIds.includes(nameObj.id), nameObj);
-    this.props.fetchNamesSuccess({ gender, names: names.map(isFavorite) });
+    this.props.fetchNamesSuccess({
+      gender,
+      names: names.map(markFavoriteNames)
+    });
   };
 
   fetchNames(gender) {
+    const femaleNamesQuery = gql`
+      {
+        femaleNames {
+          id
+          name
+        }
+      }
+    `;
+
+    const maleNamesQuery = gql`
+      {
+        maleNames {
+          id
+          name
+        }
+      }
+    `;
+
     return this.props.client
       .query({
         query: gender === 'female' ? femaleNamesQuery : maleNamesQuery
@@ -67,14 +46,8 @@ class NamesListScreen extends React.Component {
   }
 
   render() {
-    const { isFemaleTabActive } = this.props;
-
-    return isFemaleTabActive ? (
-      <FemaleNamesList gender="female" />
-    ) : (
-      <MaleNamesList gender="male" />
-    );
+    return <ListWithTopBar getNames={this.getNames} names={this.props.names} />;
   }
 }
 
-export default withApollo(WithTopBar(NamesListScreen));
+export default withApollo(NamesListScreen);

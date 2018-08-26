@@ -12,14 +12,14 @@ class NamesList extends React.Component {
   );
 
   render() {
-    const { names, gender } = this.props;
+    const { names } = this.props;
     let sections = [];
     if (this.props.page === 'favorites') {
       sections = createSection(
-        names[gender].filter(nameObject => nameObject.isFavorite)
+        names.filter(nameObject => nameObject.isFavorite)
       );
     } else {
-      sections = createSection(names[gender]);
+      sections = createSection(names);
     }
 
     return (
