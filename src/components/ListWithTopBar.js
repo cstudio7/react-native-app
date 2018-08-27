@@ -5,17 +5,17 @@ import Loadable from 'react-loadable';
 import WithTopBar from './WithTopBar';
 
 const FemaleNamesList = Loadable({
-  loader: () => import('../components/NamesList'),
+  loader: () => import('../components/List'),
   loading: () => <Text>Loading...</Text>
 });
 
 const MaleNamesList = Loadable({
-  loader: () => import('../components/NamesList'),
+  loader: () => import('../components/List'),
   loading: () => <Text>Loading...</Text>
 });
 
 const List = Loadable({
-  loader: () => import('../components/NamesList'),
+  loader: () => import('../components/List'),
   loading: () => <Text>Loading...</Text>
 });
 

@@ -5,7 +5,7 @@ const R = require('ramda');
 
 import { getFavoriteNames, saveFavoriteNames } from '../modules/asyncStorage';
 
-class NamesListItem extends React.Component {
+class ListItem extends React.Component {
   unfavoriteName = async ({ gender, name }) => {
     const favoriteNames = await getFavoriteNames(gender);
     const newFavoriteNames = favoriteNames.filter(
@@ -74,4 +74,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default NamesListItem;
+export default ListItem;

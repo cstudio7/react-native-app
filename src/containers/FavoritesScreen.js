@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { fetchNamesSuccess } from '../redux/namesReducer/actions';
-import FavoriteNamesScreen from '../screens/FavoriteNamesScreen';
+import FavoritesScreen from '../screens/FavoritesScreen';
 
 const mapStateToProps = state => ({
   names: state.names
@@ -12,4 +12,4 @@ export default connect(
   {
     fetchNamesSuccess
   }
-)(FavoriteNamesScreen);
+)(FavoritesScreen);

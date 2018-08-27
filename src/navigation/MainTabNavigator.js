@@ -5,19 +5,19 @@ import {
 } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import FavoriteNamesScreen from '../containers/FavoriteNamesScreen';
-import NamesListScreen from '../containers/NamesListScreen';
+import FavoritesScreen from '../containers/FavoritesScreen';
+import ListScreen from '../containers/ListScreen';
 
-const FavoriteNamesStack = createStackNavigator({
+const FavoritesStack = createStackNavigator({
   Favorites: {
-    screen: FavoriteNamesScreen,
+    screen: FavoritesScreen,
     navigationOptions: () => ({
       header: null
     })
   }
 });
 
-FavoriteNamesStack.navigationOptions = {
+FavoritesStack.navigationOptions = {
   tabBarLabel: 'Избранное',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
@@ -28,8 +28,8 @@ FavoriteNamesStack.navigationOptions = {
 };
 
 const NamesListStack = createStackNavigator({
-  NamesList: {
-    screen: NamesListScreen,
+  List: {
+    screen: ListScreen,
     navigationOptions: () => ({
       header: null
     })
@@ -43,5 +43,5 @@ NamesListStack.navigationOptions = {
 
 export default createBottomTabNavigator({
   NamesListStack,
-  FavoriteNamesStack
+  FavoritesStack
 });

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { favoriteName, unfavoriteName } from '../redux/namesReducer/actions';
-import NamesListItem from '../components/NamesListItem';
+import ListItem from '../components/ListItem';
 
 const mapStateToProps = () => ({});
 
@@ -11,4 +11,4 @@ export default connect(
     favoriteName,
     unfavoriteName
   }
-)(NamesListItem);
+)(ListItem);

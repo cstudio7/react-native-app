@@ -6,7 +6,7 @@ const R = require('ramda');
 import { getFavoriteNames } from '../modules/asyncStorage';
 import ListWithTopBar from '../components/ListWithTopBar';
 
-class NamesListScreen extends React.Component {
+class ListScreen extends React.Component {
   getNames = async gender => {
     const favoriteNames = await getFavoriteNames(gender);
     const favoriteNamesIds = favoriteNames.map(name => name.id);
@@ -50,4 +50,4 @@ class NamesListScreen extends React.Component {
   }
 }
 
-export default withApollo(NamesListScreen);
+export default withApollo(ListScreen);

@@ -4,7 +4,7 @@ import { withApollo } from 'react-apollo';
 import { getFavoriteNames } from '../modules/asyncStorage';
 import ListWithTopBar from '../components/ListWithTopBar';
 
-class FavoriteNamesScreen extends React.Component {
+class FavoritesScreen extends React.Component {
   getNames = async gender => {
     const names = await getFavoriteNames(gender);
     this.props.fetchNamesSuccess({ gender, names });
@@ -21,4 +21,4 @@ class FavoriteNamesScreen extends React.Component {
   }
 }
 
-export default withApollo(FavoriteNamesScreen);
+export default withApollo(FavoritesScreen);

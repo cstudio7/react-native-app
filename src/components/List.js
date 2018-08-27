@@ -2,13 +2,13 @@ import React from 'react';
 import { Text, SectionList } from 'react-native';
 
 import createSection from '../modules/createSection/createSection';
-import NamesListItem from '../containers/NamesListItem';
+import ListItem from '../containers/ListItem';
 
-class NamesList extends React.Component {
+class List extends React.Component {
   renderSectionHeader = ({ section: { title } }) => <Text>{title}</Text>;
 
   renderItem = ({ item }) => (
-    <NamesListItem name={item} gender={this.props.gender} />
+    <ListItem name={item} gender={this.props.gender} />
   );
 
   render() {
@@ -34,4 +34,4 @@ class NamesList extends React.Component {
   }
 }
 
-export default NamesList;
+export default List;
