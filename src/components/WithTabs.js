@@ -2,13 +2,14 @@ import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import Loadable from 'react-loadable';
+import Tabs from './Tabs/Tabs';
 
-const TopTab = Loadable({
-  loader: () => import('../components/TopTab/TopTab'),
+const Tab = Loadable({
+  loader: () => import('../components/Tab/Tab'),
   loading: () => <Text>Loading...</Text>
 });
 
-function WithTopBar(WrappedComponent) {
+function WithTabs(WrappedComponent) {
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -30,20 +31,23 @@ function WithTopBar(WrappedComponent) {
 
       return (
         <SafeAreaView style={styles.container}>
-          <TopTab
-            tabs={[
-              {
+          <Tabs>
+            <Tab
+              tab={{
                 name: 'Женские имена',
                 onPress: this.openFemaleTab,
                 isActive: isFemaleTabActive
-              },
-              {
+              }}
+            />
+            <Tab
+              tab={{
                 name: 'Мужские имена',
                 onPress: this.openMaleTab,
                 isActive: !isFemaleTabActive
-              }
-            ]}
-          />
+              }}
+            />
+          </Tabs>
+
           <WrappedComponent
             isFemaleTabActive={this.state.isFemaleTabActive}
             {...this.props}
@@ -54,7 +58,7 @@ function WithTopBar(WrappedComponent) {
   };
 }
 
-export default WithTopBar;
+export default WithTabs;
 
 const styles = StyleSheet.create({
   container: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from 'react-native';
 import Loadable from 'react-loadable';
 
-import WithTopBar from './WithTopBar';
+import WithTabs from './WithTabs';
 
 const FemaleNamesList = Loadable({
   loader: () => import('../components/List'),
@@ -19,7 +19,7 @@ const List = Loadable({
   loading: () => <Text>Loading...</Text>
 });
 
-class ListWithTopBar extends React.Component {
+class ListWithTabs extends React.Component {
   getSelectedGender() {
     const { isFemaleTabActive } = this.props;
     return isFemaleTabActive ? 'female' : 'male';
@@ -53,4 +53,4 @@ class ListWithTopBar extends React.Component {
   }
 }
 
-export default WithTopBar(ListWithTopBar);
+export default WithTabs(ListWithTabs);

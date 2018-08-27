@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 const R = require('ramda');
 
 import { getFavoriteNames } from '../modules/asyncStorage';
-import ListWithTopBar from '../components/ListWithTopBar';
+import ListWithTabs from '../components/ListWithTabs';
 
 class ListScreen extends React.Component {
   getNames = async gender => {
@@ -46,7 +46,7 @@ class ListScreen extends React.Component {
   }
 
   render() {
-    return <ListWithTopBar getNames={this.getNames} names={this.props.names} />;
+    return <ListWithTabs getNames={this.getNames} names={this.props.names} />;
   }
 }
 

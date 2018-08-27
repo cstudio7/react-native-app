@@ -2,7 +2,7 @@ import React from 'react';
 import { withApollo } from 'react-apollo';
 
 import { getFavoriteNames } from '../modules/asyncStorage';
-import ListWithTopBar from '../components/ListWithTopBar';
+import ListWithTabs from '../components/ListWithTabs';
 
 class FavoritesScreen extends React.Component {
   getNames = async gender => {
@@ -12,7 +12,7 @@ class FavoritesScreen extends React.Component {
 
   render() {
     return (
-      <ListWithTopBar
+      <ListWithTabs
         getNames={this.getNames}
         names={this.props.names}
         page="favorites"
