@@ -6,6 +6,7 @@
   - [iOS](#ios)
   - [Android](#android)
   - [Debugging](#debugging)
+- [Architecture Decision Records](#architecture-decision-records)
 - [Application design](#application-design)
 
 ## Installation and setup
@@ -64,6 +65,17 @@ Then to debug:
 | ----------- | --------------------------------------------------------------------------------- |
 | **iOS**     | Press Cmd+R to reload, Cmd+D or shake for dev.                                    |
 | **Android** | Double tap R on your keyboard to reload, shake or press menu button for dev menu. |
+
+## Architecture Decision Records
+
+We will keep a collection of records for "architecturally significant" decisions: those that affect the structure, non-functional characteristics, dependencies, interfaces, or construction techniques.
+
+When making such changes please include a new ADR in your PR.
+
+- Install `adr-tools`: https://github.com/npryce/adr-tools
+- To create a new record: `adr new Implement as Unix shell scripts`
+
+To find out more about ADRs have a read of this article: http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions
 
 ## Application design
 
