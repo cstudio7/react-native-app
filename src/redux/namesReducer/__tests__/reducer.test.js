@@ -9,21 +9,63 @@ it('should return the initial state', () => {
   expect(names(undefined, {})).toMatchSnapshot();
 });
 
-it('should handle names/SAVE_NAMES action', () => {
-  const initialState = {
-    female: [],
-    male: []
-  };
+describe('names/SAVE_NAMES', () => {
+  it('should handle the action', () => {
+    const initialState = {
+      female: [],
+      male: []
+    };
 
-  expect(
-    names(initialState, {
-      type: FETCH_NAMES_SUCCESS,
-      payload: {
-        gender: 'male',
-        names: [{ name: 'artur', isFavorite: true }]
-      }
-    })
-  ).toMatchSnapshot();
+    expect(
+      names(initialState, {
+        type: FETCH_NAMES_SUCCESS,
+        payload: {
+          gender: 'male',
+          names: [{ name: 'artur', isFavorite: true }]
+        }
+      })
+    ).toEqual({
+      female: [],
+      male: [{ name: 'artur', isFavorite: true }]
+    });
+  });
+
+  it('should update a state retrieved from a storage', () => {
+    const initialState = {
+      female: [],
+      male: [{ name: 'artur', isFavorite: true }, { name: 'alex' }]
+    };
+
+    expect(
+      names(initialState, {
+        type: FETCH_NAMES_SUCCESS,
+        payload: {
+          gender: 'male',
+          names: [{ name: 'artur' }, { name: 'alex' }, { name: 'pierre' }]
+        }
+      })
+    ).toEqual({
+      female: [],
+      male: [{ name: 'artur', isFavorite: true }, { name: 'alex' }, { name: 'pierre' }]
+    });
+  });
+
+  it("should not lose an opposite gender's data", () => {
+    const initialState = {
+      female: [],
+      male: [{ name: 'artur', isFavorite: false }]
+    };
+
+    expect(
+      names(initialState, {
+        type: FETCH_NAMES_SUCCESS,
+        payload: {
+          gender: 'female',
+          names: [{ name: 'sveta', isFavorite: true }]
+        }
+      })
+    ).toMatchSnapshot();
+  });
 });
 
 it('should handle names/FAVORITE_NAME action', () => {
@@ -37,7 +79,7 @@ it('should handle names/FAVORITE_NAME action', () => {
       type: FAVORITE_NAME,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: false }
+        name: { name: 'artur', isFavorite: true }
       }
     })
   ).toMatchSnapshot();

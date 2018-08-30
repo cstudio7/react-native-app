@@ -1,18 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should handle names/FAVORITE_NAME action 1`] = `
+exports[`names/SAVE_NAMES should not lose an opposite gender's data 1`] = `
 Object {
-  "female": Array [],
-  "male": Array [
+  "female": Array [
     Object {
       "isFavorite": true,
+      "name": "sveta",
+    },
+  ],
+  "male": Array [
+    Object {
+      "isFavorite": false,
       "name": "artur",
     },
   ],
 }
 `;
 
-exports[`should handle names/SAVE_NAMES action 1`] = `
+exports[`should handle names/FAVORITE_NAME action 1`] = `
 Object {
   "female": Array [],
   "male": Array [

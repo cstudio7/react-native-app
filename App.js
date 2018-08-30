@@ -7,6 +7,7 @@ import { ApolloProvider } from 'react-apollo';
 import AppNavigator from './src/navigation/AppNavigator';
 import initApollo from './src/modules/initApollo';
 import configureStore from './src/redux/configureStore';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 const apolloClient = initApollo(
   {},
@@ -21,7 +22,7 @@ const apolloClient = initApollo(
   }
 );
 
-const store = configureStore();
+const { store, persistor } = configureStore();
 
 export default class App extends React.Component {
   state = {
@@ -41,8 +42,10 @@ export default class App extends React.Component {
       return (
         <Provider store={store}>
           <ApolloProvider client={apolloClient}>
-            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <AppNavigator />
+            <PersistGate loading={null} persistor={persistor}>
+              {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+              <AppNavigator />
+            </PersistGate>
           </ApolloProvider>
         </Provider>
       );

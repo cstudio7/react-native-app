@@ -26,13 +26,33 @@ const updateItemInArray = (state, name, gender) => {
   };
 };
 
-const saveNames = (state, action) => {
-  const { payload } = action;
+const mergeGenderNamesWithState = (state, { gender, names }) => {
+  const genderNames = [];
+  for (let i = 0; i < names.length; i++) {
+    let name = names[i];
+    if (!state[gender].length) {
+      genderNames.push(name);
+    }
+
+    for (let j = 0; j < state[gender].length; j++) {
+      let stateName = state[gender][j];
+      if (stateName.name === name.name) {
+        genderNames.push({ ...stateName, ...name });
+      } else {
+        genderNames.push(name);
+      }
+      break;
+    }
+  }
+
   return {
     ...state,
-    [payload.gender]: R.uniq([...state[payload.gender], ...payload.names])
+    [gender]: genderNames
   };
 };
+
+const saveNames = (state, action) =>
+  mergeGenderNamesWithState(state, action.payload);
 
 const favoriteName = (state, action) => {
   const { payload, type } = action;

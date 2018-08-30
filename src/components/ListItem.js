@@ -1,30 +1,8 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Icon } from 'expo';
-const R = require('ramda');
-
-import { getFavoriteNames, saveFavoriteNames } from '../modules/asyncStorage';
 
 class ListItem extends React.Component {
-  unfavoriteName = async ({ gender, name }) => {
-    const favoriteNames = await getFavoriteNames(gender);
-    const newFavoriteNames = favoriteNames.filter(
-      nameObject => nameObject.id !== name.id
-    );
-    await saveFavoriteNames(gender, newFavoriteNames);
-    this.props.unfavoriteName({ gender, name });
-  };
-
-  favoriteName = async ({ gender, name }) => {
-    const favoriteNames = await getFavoriteNames(gender);
-    let newFavoriteNames = R.uniqBy(nameObject => nameObject.id, [
-      ...favoriteNames,
-      { ...name, isFavorite: true }
-    ]);
-    await saveFavoriteNames(gender, newFavoriteNames);
-    this.props.favoriteName({ gender, name });
-  };
-
   render() {
     const { name } = this.props;
 
@@ -35,12 +13,15 @@ class ListItem extends React.Component {
           onPress={async () => {
             const payload = {
               gender: this.props.gender,
-              name
+              name: {
+                ...name,
+                isFavorite: !name.isFavorite
+              }
             };
             if (name.isFavorite) {
-              await this.unfavoriteName(payload);
+              this.props.unfavoriteName(payload);
             } else {
-              await this.favoriteName(payload);
+              this.props.favoriteName(payload);
             }
           }}>
           <Icon.Ionicons

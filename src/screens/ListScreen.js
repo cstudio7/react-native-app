@@ -3,20 +3,12 @@ import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 const R = require('ramda');
 
-import { getFavoriteNames } from '../modules/asyncStorage';
 import ListWithTabs from '../components/ListWithTabs';
 
 class ListScreen extends React.Component {
   getNames = async gender => {
-    const favoriteNames = await getFavoriteNames(gender);
-    const favoriteNamesIds = favoriteNames.map(name => name.id);
     const names = await this.fetchNames(gender);
-    const markFavoriteNames = nameObj =>
-      R.assoc('isFavorite', favoriteNamesIds.includes(nameObj.id), nameObj);
-    this.props.fetchNamesSuccess({
-      gender,
-      names: names.map(markFavoriteNames)
-    });
+    this.props.fetchNamesSuccess({ gender, names });
   };
 
   fetchNames(gender) {
