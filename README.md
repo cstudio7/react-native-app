@@ -6,6 +6,7 @@
   - [iOS](#ios)
   - [Android](#android)
   - [Debugging](#debugging)
+- [Application design](#application-design)
 
 ## Installation and setup
 
@@ -63,3 +64,48 @@ Then to debug:
 | ----------- | --------------------------------------------------------------------------------- |
 | **iOS**     | Press Cmd+R to reload, Cmd+D or shake for dev.                                    |
 | **Android** | Double tap R on your keyboard to reload, shake or press menu button for dev menu. |
+
+## Application design
+
+src/
+├── components/
+├── constants/
+├── containers/
+├── modules/
+├── navigation/
+├── redux/
+├── screens/
+App.js
+
+**components**
+
+Mainly pure components (no internal state). Only imports npm, 'modules', or 'components'. No importing from 'redux'. Probably quite a few components with props that are callbacks, e.g., onPressPlay, which the containers will provide.
+
+**constants**
+
+This is where we keep our constants like colors. Reducers related constants we keep in 'redux' folder.
+
+**containers**
+
+They glue together UI (components) and data (redux). They might also define a few layout styles.
+
+**modules**
+
+This is where we keep our modules. Examples: error handling logic, image processing and resizing, timers, http client, dom utilities.
+
+**navigation**
+
+Maps routes to screens.
+
+**redux**
+
+All state is managed here, and all means of accessing and modifying state are controlled here. It only imports from 'modules'.
+"Action creators" are used to trigger changes to the state (which may initiate app re-renders).
+
+**screens**
+
+Top-level components the router delegates rendering to. They combine thins like 'containers' (like nav bar + profile), analytics.
+
+**App.js**
+
+Glues together things like 'React.render', the router, routes.js, redux store
