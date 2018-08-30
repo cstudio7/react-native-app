@@ -24,10 +24,7 @@ describe('names/SAVE_NAMES', () => {
           names: [{ name: 'artur', isFavorite: true }]
         }
       })
-    ).toEqual({
-      female: [],
-      male: [{ name: 'artur', isFavorite: true }]
-    });
+    ).toMatchSnapshot();
   });
 
   it('should update a state retrieved from a storage', () => {
@@ -44,10 +41,7 @@ describe('names/SAVE_NAMES', () => {
           names: [{ name: 'artur' }, { name: 'alex' }, { name: 'pierre' }]
         }
       })
-    ).toEqual({
-      female: [],
-      male: [{ name: 'artur', isFavorite: true }, { name: 'alex' }, { name: 'pierre' }]
-    });
+    ).toMatchSnapshot();
   });
 
   it("should not lose an opposite gender's data", () => {
