@@ -67,6 +67,7 @@ Then to debug:
 
 ## Application design
 
+```
 src/
 ├── components/
 ├── constants/
@@ -76,6 +77,7 @@ src/
 ├── redux/
 ├── screens/
 App.js
+```
 
 **components**
 
