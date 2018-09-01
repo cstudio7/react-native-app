@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, SectionList } from 'react-native';
-
+import { Text, SectionList, StyleSheet } from 'react-native';
 import createSection from '../modules/createSection/createSection';
 import ListItem from '../containers/ListItem';
+import Spacing from '../constants/Spacing';
 
 class List extends React.Component {
   renderSectionHeader = ({ section: { title } }) => <Text>{title}</Text>;
@@ -24,6 +24,7 @@ class List extends React.Component {
 
     return (
       <SectionList
+        style={styles.list}
         renderSectionHeader={this.renderSectionHeader}
         renderItem={this.renderItem}
         sections={sections}
@@ -33,5 +34,12 @@ class List extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  list: {
+    paddingLeft: Spacing.padding2,
+    paddingRight: Spacing.padding2
+  }
+});
 
 export default List;

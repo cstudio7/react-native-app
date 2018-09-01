@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Amplitude, Icon } from 'expo';
+import Spacing from '../constants/Spacing';
 
 class ListItem extends React.Component {
   favoriteName(payload) {
@@ -56,8 +57,8 @@ const styles = StyleSheet.create({
   listItem: {
     borderTopWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.15)',
-    paddingTop: 22,
-    paddingBottom: 22,
+    paddingTop: Spacing.padding3,
+    paddingBottom: Spacing.padding3,
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between'
@@ -66,10 +67,9 @@ const styles = StyleSheet.create({
     fontSize: 19
   },
   icon: {
-    fontSize: 20,
+    fontSize: 22,
     color: '#7A62A4',
-    marginRight: 16,
-    marginTop: 2
+    marginRight: Spacing.base
   }
 });
 
