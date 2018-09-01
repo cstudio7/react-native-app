@@ -27,27 +27,11 @@ const updateItemInArray = (state, name, gender) => {
 };
 
 const mergeGenderNamesWithState = (state, { gender, names }) => {
-  const genderNames = [];
-  for (let i = 0; i < names.length; i++) {
-    let name = names[i];
-    if (!state[gender].length) {
-      genderNames.push(name);
-    }
-
-    for (let j = 0; j < state[gender].length; j++) {
-      let stateName = state[gender][j];
-      if (stateName.name === name.name) {
-        genderNames.push({ ...stateName, ...name });
-      } else {
-        genderNames.push(name);
-      }
-      break;
-    }
-  }
-
   return {
     ...state,
-    [gender]: genderNames
+    [gender]: state[gender].length
+      ? R.uniqBy(item => item.name, R.concat(state[gender], names))
+      : names
   };
 };
 

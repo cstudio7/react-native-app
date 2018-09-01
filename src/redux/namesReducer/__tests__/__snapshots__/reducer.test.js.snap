@@ -12,23 +12,6 @@ Object {
 }
 `;
 
-exports[`names/SAVE_NAMES should not lose an opposite gender's data 1`] = `
-Object {
-  "female": Array [
-    Object {
-      "isFavorite": true,
-      "name": "sveta",
-    },
-  ],
-  "male": Array [
-    Object {
-      "isFavorite": false,
-      "name": "artur",
-    },
-  ],
-}
-`;
-
 exports[`names/SAVE_NAMES should update a state retrieved from a storage 1`] = `
 Object {
   "female": Array [],
@@ -49,7 +32,12 @@ Object {
 
 exports[`should handle names/FAVORITE_NAME action 1`] = `
 Object {
-  "female": Array [],
+  "female": Array [
+    Object {
+      "isFavorite": true,
+      "name": "sveta",
+    },
+  ],
   "male": Array [
     Object {
       "isFavorite": true,

@@ -43,28 +43,11 @@ describe('names/SAVE_NAMES', () => {
       })
     ).toMatchSnapshot();
   });
-
-  it("should not lose an opposite gender's data", () => {
-    const initialState = {
-      female: [],
-      male: [{ name: 'artur', isFavorite: false }]
-    };
-
-    expect(
-      names(initialState, {
-        type: FETCH_NAMES_SUCCESS,
-        payload: {
-          gender: 'female',
-          names: [{ name: 'sveta', isFavorite: true }]
-        }
-      })
-    ).toMatchSnapshot();
-  });
 });
 
 it('should handle names/FAVORITE_NAME action', () => {
   const initialState = {
-    female: [],
+    female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: false }]
   };
 
