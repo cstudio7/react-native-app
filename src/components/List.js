@@ -8,7 +8,7 @@ class List extends React.Component {
   renderSectionHeader = ({ section: { title } }) => <Text>{title}</Text>;
 
   renderItem = ({ item }) => (
-    <ListItem name={item} gender={this.props.gender} />
+    <ListItem name={item} gender={this.props.gender} page={this.props.page} />
   );
 
   render() {

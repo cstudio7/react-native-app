@@ -1,11 +1,15 @@
 import React from 'react';
+import { Amplitude } from 'expo';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
-const R = require('ramda');
 
 import ListWithTabs from '../components/ListWithTabs';
 
 class ListScreen extends React.Component {
+  componentWillMount() {
+    Amplitude.logEvent('LISTSCREEN_VIEW');
+  }
+
   getNames = async gender => {
     const names = await this.fetchNames(gender);
     this.props.fetchNamesSuccess({ gender, names });

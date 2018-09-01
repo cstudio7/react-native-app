@@ -1,8 +1,26 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Icon } from 'expo';
+import { Amplitude, Icon } from 'expo';
 
 class ListItem extends React.Component {
+  favoriteName(payload) {
+    this.props.favoriteName(payload);
+    if (this.props.page === 'favorite') {
+      Amplitude.logEvent('FAVSCREEN_ITEM_FAVORITE');
+    } else {
+      Amplitude.logEvent('LISTSCREEN_ITEM_FAVORITE');
+    }
+  }
+
+  unfavoriteName(payload) {
+    this.props.unfavoriteName(payload);
+    if (this.props.page === 'favorite') {
+      Amplitude.logEvent('FAVSCREEN_ITEM_UNFAVORITE');
+    } else {
+      Amplitude.logEvent('LISTSCREEN_ITEM_UNFAVORITE');
+    }
+  }
+
   render() {
     const { name } = this.props;
 
@@ -19,9 +37,9 @@ class ListItem extends React.Component {
               }
             };
             if (name.isFavorite) {
-              this.props.unfavoriteName(payload);
+              this.unfavoriteName(payload);
             } else {
-              this.props.favoriteName(payload);
+              this.favoriteName(payload);
             }
           }}>
           <Icon.Ionicons

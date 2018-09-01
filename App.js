@@ -3,11 +3,14 @@ import { Provider } from 'react-redux';
 import { AsyncStorage, Platform, StatusBar } from 'react-native';
 import { AppLoading, Font, Icon } from 'expo';
 import { ApolloProvider } from 'react-apollo';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import AppNavigator from './src/navigation/AppNavigator';
 import initApollo from './src/modules/initApollo';
+import initAmplitude from './src/modules/initAmplitude';
 import configureStore from './src/redux/configureStore';
-import { PersistGate } from 'redux-persist/lib/integration/react';
+
+initAmplitude();
 
 const apolloClient = initApollo(
   {},
