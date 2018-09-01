@@ -1,5 +1,4 @@
 import React from 'react';
-import { withApollo } from 'react-apollo';
 import { Amplitude } from 'expo';
 
 import ListWithTabs from '../components/ListWithTabs';
@@ -14,4 +13,4 @@ class FavoritesScreen extends React.Component {
   }
 }
 
-export default withApollo(FavoritesScreen)
+export default FavoritesScreen;
