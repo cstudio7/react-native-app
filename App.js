@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { AsyncStorage, Platform, StatusBar } from 'react-native';
+import { Platform, StatusBar } from 'react-native';
 import { AppLoading, Font, Icon } from 'expo';
 import { ApolloProvider } from 'react-apollo';
 import { PersistGate } from 'redux-persist/lib/integration/react';
@@ -12,19 +12,7 @@ import configureStore from './src/redux/configureStore';
 
 initAmplitude();
 
-const apolloClient = initApollo(
-  {},
-  {
-    getToken: async () => {
-      try {
-        return await AsyncStorage.getItem('@token');
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  }
-);
-
+const apolloClient = initApollo({}, { getToken: () => {} });
 const { store, persistor } = configureStore();
 
 export default class App extends React.Component {
