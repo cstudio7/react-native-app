@@ -5,7 +5,7 @@ import {
   UNFAVORITE_NAME,
   FETCH_NAMES_SUCCESS
 } from './constants';
-import createReducer from '../../modules/createReducer';
+import createReducer from '../../modules/createReducer/createReducer';
 
 const initialState = {
   female: [],
