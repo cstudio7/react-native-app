@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filters favorited names 1`] = `
+Object {
+  "female": Array [],
+  "male": Array [
+    Object {
+      "isFavorite": true,
+      "name": "artur",
+    },
+  ],
+}
+`;

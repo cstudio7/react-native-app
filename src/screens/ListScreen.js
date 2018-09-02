@@ -5,7 +5,25 @@ import gql from 'graphql-tag';
 
 import ListWithTabs from '../components/ListWithTabs';
 
-class ListScreen extends React.Component {
+const femaleNamesQuery = gql`
+  {
+    femaleNames {
+      id
+      name
+    }
+  }
+`;
+
+const maleNamesQuery = gql`
+  {
+    maleNames {
+      id
+      name
+    }
+  }
+`;
+
+class ListScreen extends React.PureComponent {
   componentWillMount() {
     Amplitude.logEvent('LISTSCREEN_VIEW');
   }
@@ -16,24 +34,6 @@ class ListScreen extends React.Component {
   };
 
   fetchNames(gender) {
-    const femaleNamesQuery = gql`
-      {
-        femaleNames {
-          id
-          name
-        }
-      }
-    `;
-
-    const maleNamesQuery = gql`
-      {
-        maleNames {
-          id
-          name
-        }
-      }
-    `;
-
     return this.props.client
       .query({
         query: gender === 'female' ? femaleNamesQuery : maleNamesQuery

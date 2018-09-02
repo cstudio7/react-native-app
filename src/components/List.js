@@ -16,14 +16,7 @@ class List extends React.Component {
 
   render() {
     const { names } = this.props;
-    let sections = [];
-    if (this.props.page === 'favorites') {
-      sections = createSection(
-        names.filter(nameObject => nameObject.isFavorite)
-      );
-    } else {
-      sections = createSection(names);
-    }
+    const sections = createSection(names);
 
     return (
       <SectionList
