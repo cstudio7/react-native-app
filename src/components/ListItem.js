@@ -65,12 +65,12 @@ const styles = StyleSheet.create({
   listText: {
     fontSize: 19,
     marginTop: Spacing.margin3,
-    marginBottom: Spacing.margin3,
+    marginBottom: Spacing.margin3
   },
   icon: {
     fontSize: 22,
     color: '#7A62A4',
-    marginRight: Spacing.base,
+    marginRight: Spacing.base
   },
   touchableArea: {
     paddingLeft: Spacing.padding3,

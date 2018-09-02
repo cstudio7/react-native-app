@@ -1,14 +1,15 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Spacing from '../../constants/Spacing';
 
 export default class Tab extends React.Component {
   render() {
     const { tab } = this.props;
     return (
-      <TouchableOpacity
-        onPress={tab.onPress}
-        style={[styles.tab, tab.isActive ? styles.tabActive : null]}>
-        <Text style={styles.tabText}>{tab.name}</Text>
+      <TouchableOpacity onPress={tab.onPress} style={styles.tab}>
+        <Text style={[styles.tabText, tab.isActive ? styles.tabActive : null]}>
+          {tab.name}
+        </Text>
       </TouchableOpacity>
     );
   }
@@ -16,18 +17,17 @@ export default class Tab extends React.Component {
 
 const styles = StyleSheet.create({
   tab: {
-    flex: 1,
-    height: 40,
-    alignItems: 'center',
-    paddingVertical: 11,
-    borderBottomWidth: 2,
-    borderBottomColor: '#fff'
+    paddingTop: Spacing.padding2,
+    paddingBottom: Spacing.padding3,
+    paddingLeft: Spacing.padding2,
+    paddingRight: Spacing.padding2
   },
   tabActive: {
-    borderBottomColor: '#000'
+    color: '#572CA4',
+    fontWeight: '600'
   },
   tabText: {
-    fontWeight: '600',
-    textAlign: 'center'
+    color: '#938AA4',
+    fontSize: 19
   }
 });

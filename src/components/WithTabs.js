@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import Loadable from 'react-loadable';
 import Tabs from './Tabs/Tabs';
@@ -34,14 +34,14 @@ function WithTabs(WrappedComponent) {
           <Tabs>
             <Tab
               tab={{
-                name: 'Женские имена',
+                name: 'Девочки',
                 onPress: this.openFemaleTab,
                 isActive: isFemaleTabActive
               }}
             />
             <Tab
               tab={{
-                name: 'Мужские имена',
+                name: 'Мальчики',
                 onPress: this.openMaleTab,
                 isActive: !isFemaleTabActive
               }}

@@ -33,7 +33,7 @@ exports[`renders active tab 1`] = `
       }
     }
   >
-    Женские имена
+    Девочки
   </Text>
 </View>
 `;
@@ -71,7 +71,7 @@ exports[`renders correctly 1`] = `
       }
     }
   >
-    Женские имена
+    Девочки
   </Text>
 </View>
 `;

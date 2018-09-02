@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import Tab from './Tab';
 
 const mockedTab = Object.freeze({
-  name: 'Женские имена',
+  name: 'Девочки',
   onPress: () => {},
   isActive: true
 });

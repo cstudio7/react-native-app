@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 18,
     backgroundColor: '#fff',
-    paddingBottom: Spacing.padding
+    paddingBottom: Spacing.padding,
+    marginBottom: 1
   }
 });
 
