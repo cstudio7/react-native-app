@@ -15,11 +15,6 @@ class ListWithTabs extends React.Component {
     isMaleNamesFetched: false
   };
 
-  getSelectedGender() {
-    const { isFemaleTabActive } = this.props;
-    return isFemaleTabActive ? 'female' : 'male';
-  }
-
   componentDidMount() {
     if (this.props.getNames) {
       this.props.getNames('female');
