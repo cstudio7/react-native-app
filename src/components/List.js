@@ -1,9 +1,9 @@
 import React from 'react';
-import { Text, SectionList, StyleSheet } from 'react-native';
+import { SectionList, StyleSheet } from 'react-native';
 import createSection from '../modules/createSection/createSection';
-import ListItem from '../containers/ListItem';
 import Spacing from '../constants/Spacing';
-import ListSectionHeader from './ListSectionHeader';
+import ListSectionHeader from './ListSectionHeader/ListSectionHeader';
+import ListItem from '../containers/ListItem';
 
 class List extends React.Component {
   renderSectionHeader = ({ section: { title } }) => (

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, StyleSheet } from 'react-native';
-import Spacing from '../constants/Spacing';
+import Spacing from '../../constants/Spacing';
 
-const ListHeaderSection = ({ title }) => (
+const ListSectionHeader = ({ title }) => (
   <Text style={styles.header}>{title}</Text>
 );
 
@@ -17,4 +17,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default ListHeaderSection;
+export default ListSectionHeader;
