@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`creates a names/FAVORITE_NAME action 1`] = `
+exports[`creates a names/FAVSCREEN_NAME_FAVORITE action 1`] = `
 Object {
   "payload": Object {
     "gender": "male",
     "name": Object {
-      "isFavoite": true,
+      "isFavorite": true,
       "name": "artur",
     },
   },
-  "type": "names/FAVORITE_NAME",
+  "type": "names/FAVSCREEN_NAME_FAVORITE",
 }
 `;
 
-exports[`creates a names/SAVE_NAMES action 1`] = `
+exports[`creates a names/FETCH_NAMES_SUCCESS action 1`] = `
 Object {
   "payload": Object {
     "gender": "male",
     "names": Array [
       Object {
-        "isFavoite": true,
+        "isFavorite": true,
         "name": "artur",
       },
     ],
@@ -28,15 +28,15 @@ Object {
 }
 `;
 
-exports[`creates a names/UNFAVORITE_NAME action 1`] = `
+exports[`creates a names/LISTSCREEN_NAME_UNFAVORITE action 1`] = `
 Object {
   "payload": Object {
-    "gender": "female",
+    "gender": "male",
     "name": Object {
-      "isFavoite": true,
+      "isFavorite": false,
       "name": "artur",
     },
   },
-  "type": "names/UNFAVORITE_NAME",
+  "type": "names/LISTSCREEN_NAME_UNFAVORITE",
 }
 `;

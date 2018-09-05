@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTScrollView
+  data={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "id": 1,
+            "name": "artur",
+          },
+          Object {
+            "id": 2,
+            "name": "alex",
+          },
+        ],
+        "title": "a",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "id": 3,
+            "name": "pierre",
+          },
+        ],
+        "title": "p",
+      },
+    ]
+  }
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollEventThrottle={50}
+  sections={
+    Array [
+      Object {
+        "data": Array [
+          Object {
+            "id": 1,
+            "name": "artur",
+          },
+          Object {
+            "id": 2,
+            "name": "alex",
+          },
+        ],
+        "title": "a",
+      },
+      Object {
+        "data": Array [
+          Object {
+            "id": 3,
+            "name": "pierre",
+          },
+        ],
+        "title": "p",
+      },
+    ]
+  }
+  stickyHeaderIndices={
+    Array [
+      0,
+      4,
+    ]
+  }
+  stickySectionHeadersEnabled={true}
+  style={
+    Object {
+      "paddingLeft": 16,
+      "paddingRight": 16,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "color": "#979797",
+            "fontSize": 15,
+            "lineHeight": 18,
+            "marginBottom": 1,
+            "paddingBottom": 8,
+          }
+        }
+      >
+        a
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.15)",
+            "borderTopWidth": 1,
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 19,
+              "marginBottom": 24,
+              "marginTop": 24,
+            }
+          }
+        >
+          artur
+        </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "paddingBottom": 24,
+              "paddingLeft": 24,
+              "paddingTop": 24,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.15)",
+            "borderTopWidth": 1,
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 19,
+              "marginBottom": 24,
+              "marginTop": 24,
+            }
+          }
+        >
+          alex
+        </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "paddingBottom": 24,
+              "paddingLeft": 24,
+              "paddingTop": 24,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "backgroundColor": "#fff",
+            "color": "#979797",
+            "fontSize": 15,
+            "lineHeight": 18,
+            "marginBottom": 1,
+            "paddingBottom": 8,
+          }
+        }
+      >
+        p
+      </Text>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <View
+        style={
+          Object {
+            "borderColor": "rgba(0, 0, 0, 0.15)",
+            "borderTopWidth": 1,
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "fontSize": 19,
+              "marginBottom": 24,
+              "marginTop": 24,
+            }
+          }
+        >
+          pierre
+        </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+              "paddingBottom": 24,
+              "paddingLeft": 24,
+              "paddingTop": 24,
+            }
+          }
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+    </View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    />
+  </View>
+</RCTScrollView>
+`;

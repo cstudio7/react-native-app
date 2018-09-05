@@ -1,7 +1,9 @@
 import names from '../reducer';
 import {
-  FAVORITE_NAME,
-  UNFAVORITE_NAME,
+  LISTSCREEN_NAME_FAVORITE,
+  FAVSCREEN_NAME_FAVORITE,
+  LISTSCREEN_NAME_UNFAVORITE,
+  FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
 } from '../constants';
 
@@ -45,7 +47,7 @@ describe('names/SAVE_NAMES', () => {
   });
 });
 
-it('should handle names/FAVORITE_NAME action', () => {
+it('should handle names/LISTSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: false }]
@@ -53,16 +55,39 @@ it('should handle names/FAVORITE_NAME action', () => {
 
   expect(
     names(initialState, {
-      type: FAVORITE_NAME,
+      type: LISTSCREEN_NAME_FAVORITE,
       payload: {
         gender: 'male',
         name: { name: 'artur', isFavorite: true }
       }
     })
-  ).toMatchSnapshot();
+  ).toEqual({
+    female: [{ name: 'sveta', isFavorite: true }],
+    male: [{ name: 'artur', isFavorite: true }]
+  })
 });
 
-it('should handle names/UNFAVORITE_NAME action', () => {
+it('should handle names/FAVSCREEN_NAME_FAVORITE action', () => {
+  const initialState = {
+    female: [{ name: 'sveta', isFavorite: true }],
+    male: [{ name: 'artur', isFavorite: false }]
+  };
+
+  expect(
+    names(initialState, {
+      type: FAVSCREEN_NAME_FAVORITE,
+      payload: {
+        gender: 'male',
+        name: { name: 'artur', isFavorite: true }
+      }
+    })
+  ).toEqual({
+    female: [{ name: 'sveta', isFavorite: true }],
+    male: [{ name: 'artur', isFavorite: true }]
+  })
+});
+
+it('should handle names/LISTSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
     male: [{ name: 'artur', isFavorite: true }]
@@ -70,10 +95,27 @@ it('should handle names/UNFAVORITE_NAME action', () => {
 
   expect(
     names(initialState, {
-      type: UNFAVORITE_NAME,
+      type: LISTSCREEN_NAME_UNFAVORITE,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: true }
+        name: { name: 'artur', isFavorite: false }
+      }
+    })
+  ).toMatchSnapshot();
+});
+
+it('should handle names/FAVSCREEN_NAME_UNFAVORITE action', () => {
+  const initialState = {
+    female: [],
+    male: [{ name: 'artur', isFavorite: true }]
+  };
+
+  expect(
+    names(initialState, {
+      type: FAVSCREEN_NAME_UNFAVORITE,
+      payload: {
+        gender: 'male',
+        name: { name: 'artur', isFavorite: false }
       }
     })
   ).toMatchSnapshot();

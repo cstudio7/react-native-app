@@ -6,7 +6,7 @@ const R = require('ramda');
 import WithTabs from './WithTabs';
 
 const List = Loadable({
-  loader: () => import('../components/List'),
+  loader: () => import('../components/List/List'),
   loading: () => <Text>Loading...</Text>
 });
 
@@ -43,7 +43,6 @@ class ListWithTabs extends React.Component {
   render() {
     const { isFemaleTabActive, names } = this.props;
     const gender = isFemaleTabActive ? 'female' : 'male';
-
     return (
       <List
         key={gender + this.props.page}

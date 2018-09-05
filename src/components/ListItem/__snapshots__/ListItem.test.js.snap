@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a favorite name correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "rgba(0, 0, 0, 0.15)",
+      "borderTopWidth": 1,
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 19,
+        "marginBottom": 24,
+        "marginTop": 24,
+      }
+    }
+  >
+    artur
+  </Text>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "paddingBottom": 24,
+        "paddingLeft": 24,
+        "paddingTop": 24,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    />
+  </View>
+</View>
+`;
+
+exports[`renders a name correctly 1`] = `
+<View
+  style={
+    Object {
+      "borderColor": "rgba(0, 0, 0, 0.15)",
+      "borderTopWidth": 1,
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 19,
+        "marginBottom": 24,
+        "marginTop": 24,
+      }
+    }
+  >
+    artur
+  </Text>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+        "paddingBottom": 24,
+        "paddingLeft": 24,
+        "paddingTop": 24,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+    />
+  </View>
+</View>
+`;

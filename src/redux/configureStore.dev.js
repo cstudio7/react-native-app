@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 import { createLogger } from 'redux-logger';
+import amplitude from '../middleware/amplitude';
 
 import rootReducer from './rootReducer/rootReducer';
 
@@ -15,7 +16,7 @@ const configureStore = () => {
 
   const store = createStore(
     persistedReducer,
-    compose(applyMiddleware(createLogger()))
+    compose(applyMiddleware(amplitude, createLogger()))
   );
 
   if (module.hot) {

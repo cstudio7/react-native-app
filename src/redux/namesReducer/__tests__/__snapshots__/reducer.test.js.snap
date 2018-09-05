@@ -30,24 +30,19 @@ Object {
 }
 `;
 
-exports[`should handle names/FAVORITE_NAME action 1`] = `
+exports[`should handle names/FAVSCREEN_NAME_UNFAVORITE action 1`] = `
 Object {
-  "female": Array [
-    Object {
-      "isFavorite": true,
-      "name": "sveta",
-    },
-  ],
+  "female": Array [],
   "male": Array [
     Object {
-      "isFavorite": true,
+      "isFavorite": false,
       "name": "artur",
     },
   ],
 }
 `;
 
-exports[`should handle names/UNFAVORITE_NAME action 1`] = `
+exports[`should handle names/LISTSCREEN_NAME_UNFAVORITE action 1`] = `
 Object {
   "female": Array [],
   "male": Array [

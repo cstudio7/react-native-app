@@ -1,20 +1,28 @@
-import { fetchNamesSuccess, favoriteName, unfavoriteName } from '../actions';
+import { fetchNamesSuccess, favorite } from '../actions';
 
-const mockedName = Object.freeze({ name: 'artur', isFavoite: true });
+const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
 
-it('creates a names/SAVE_NAMES action', () => {
-  const mockedNames = Object.freeze(new Array(mockedName));
+it('creates a names/FETCH_NAMES_SUCCESS action', () => {
+  const mockedNames = Object.freeze([mockedName]);
   expect(
     fetchNamesSuccess({ gender: 'male', names: mockedNames })
   ).toMatchSnapshot();
 });
 
-it('creates a names/FAVORITE_NAME action', () => {
-  expect(favoriteName({ gender: 'male', name: mockedName })).toMatchSnapshot();
+it('creates a names/FAVSCREEN_NAME_FAVORITE action', () => {
+  const payload = { gender: 'male', name: mockedName };
+  const page = 'favorites';
+  expect(favorite(payload, page)).toMatchSnapshot();
 });
 
-it('creates a names/UNFAVORITE_NAME action', () => {
-  expect(
-    unfavoriteName({ gender: 'female', name: mockedName })
-  ).toMatchSnapshot();
+it('creates a names/LISTSCREEN_NAME_UNFAVORITE action', () => {
+  const payload = {
+    gender: 'male',
+    name: {
+      name: 'artur',
+      isFavorite: false
+    }
+  };
+  const page = undefined;
+  expect(favorite(payload, page)).toMatchSnapshot();
 });

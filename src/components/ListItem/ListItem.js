@@ -1,48 +1,25 @@
 import React from 'react';
 import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Amplitude, Icon } from 'expo';
-import Spacing from '../constants/Spacing';
+import { Icon } from 'expo';
+import Spacing from '../../constants/Spacing';
 
 class ListItem extends React.Component {
-  favoriteName(payload) {
-    this.props.favoriteName(payload);
-    if (this.props.page === 'favorite') {
-      Amplitude.logEvent('FAVSCREEN_ITEM_FAVORITE');
-    } else {
-      Amplitude.logEvent('LISTSCREEN_ITEM_FAVORITE');
-    }
-  }
-
-  unfavoriteName(payload) {
-    this.props.unfavoriteName(payload);
-    if (this.props.page === 'favorite') {
-      Amplitude.logEvent('FAVSCREEN_ITEM_UNFAVORITE');
-    } else {
-      Amplitude.logEvent('LISTSCREEN_ITEM_UNFAVORITE');
-    }
-  }
-
   render() {
-    const { name } = this.props;
-
+    const { name, onPress, page, gender } = this.props;
     return (
       <View style={styles.listItem}>
         <Text style={styles.listText}>{name.name}</Text>
         <TouchableOpacity
           style={styles.touchableArea}
-          onPress={async () => {
+          onPress={() => {
             const payload = {
-              gender: this.props.gender,
+              gender: gender,
               name: {
                 ...name,
                 isFavorite: !name.isFavorite
               }
             };
-            if (name.isFavorite) {
-              this.unfavoriteName(payload);
-            } else {
-              this.favoriteName(payload);
-            }
+            onPress(payload, page);
           }}>
           <Icon.Ionicons
             name={`md-heart${name.isFavorite ? '' : '-outline'}`}

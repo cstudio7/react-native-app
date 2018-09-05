@@ -4,5 +4,11 @@ const GLOBAL_STATE_KEY = 'names';
 const getAction = name => `${GLOBAL_STATE_KEY}/${name}`;
 
 export const FETCH_NAMES_SUCCESS = getAction('FETCH_NAMES_SUCCESS');
-export const FAVORITE_NAME = getAction('FAVORITE_NAME');
-export const UNFAVORITE_NAME = getAction('UNFAVORITE_NAME');
+
+export const FAVSCREEN_NAME_FAVORITE = getAction('FAVSCREEN_NAME_FAVORITE');
+export const FAVSCREEN_NAME_UNFAVORITE = getAction('FAVSCREEN_NAME_UNFAVORITE');
+
+export const LISTSCREEN_NAME_FAVORITE = getAction('LISTSCREEN_NAME_FAVORITE');
+export const LISTSCREEN_NAME_UNFAVORITE = getAction(
+  'LISTSCREEN_NAME_UNFAVORITE'
+);
