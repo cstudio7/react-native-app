@@ -5,9 +5,9 @@ import {
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
-} from '../redux/namesReducer/actions';
+} from '../../redux/namesReducer/constants';
 
-const eventsToLog = [
+export const necessaryEvents = [
   LISTSCREEN_NAME_FAVORITE,
   FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
@@ -17,8 +17,8 @@ const eventsToLog = [
 
 export default _ => next => action => {
   const { type } = action;
-  if (eventsToLog.includes(type)) {
-    Amplitude.logEvent(action.type);
+  if (necessaryEvents.includes(type)) {
+    Amplitude.logEvent(type);
   }
   return next(action);
 };
