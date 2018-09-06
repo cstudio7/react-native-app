@@ -2,11 +2,11 @@ import { Amplitude } from 'expo';
 import amplitude, { necessaryEvents } from './amplitude';
 
 const expectedNecessaryEvents = [
-  'names/LISTSCREEN_NAME_FAVORITE',
-  'names/FAVSCREEN_NAME_FAVORITE',
-  'names/LISTSCREEN_NAME_UNFAVORITE',
-  'names/FAVSCREEN_NAME_UNFAVORITE',
-  'names/FETCH_NAMES_SUCCESS'
+  'LISTSCREEN_NAME_FAVORITE',
+  'FAVSCREEN_NAME_FAVORITE',
+  'LISTSCREEN_NAME_UNFAVORITE',
+  'FAVSCREEN_NAME_UNFAVORITE',
+  'FETCH_NAMES_SUCCESS'
 ];
 
 const create = () => {

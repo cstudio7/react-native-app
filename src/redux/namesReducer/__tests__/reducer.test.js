@@ -11,7 +11,7 @@ it('should return the initial state', () => {
   expect(names(undefined, {})).toMatchSnapshot();
 });
 
-describe('names/SAVE_NAMES', () => {
+describe('FETCH_NAMES_SUCCESS', () => {
   it('should handle the action', () => {
     const initialState = {
       female: [],
@@ -47,7 +47,7 @@ describe('names/SAVE_NAMES', () => {
   });
 });
 
-it('should handle names/LISTSCREEN_NAME_FAVORITE action', () => {
+it('should handle LISTSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: false }]
@@ -67,7 +67,7 @@ it('should handle names/LISTSCREEN_NAME_FAVORITE action', () => {
   })
 });
 
-it('should handle names/FAVSCREEN_NAME_FAVORITE action', () => {
+it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: false }]
@@ -87,7 +87,7 @@ it('should handle names/FAVSCREEN_NAME_FAVORITE action', () => {
   })
 });
 
-it('should handle names/LISTSCREEN_NAME_UNFAVORITE action', () => {
+it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
     male: [{ name: 'artur', isFavorite: true }]
@@ -104,7 +104,7 @@ it('should handle names/LISTSCREEN_NAME_UNFAVORITE action', () => {
   ).toMatchSnapshot();
 });
 
-it('should handle names/FAVSCREEN_NAME_UNFAVORITE action', () => {
+it('should handle FAVSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
     male: [{ name: 'artur', isFavorite: true }]
