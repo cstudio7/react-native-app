@@ -8,8 +8,9 @@ import AppNavigator from './src/navigation/AppNavigator';
 import initApollo from './src/modules/initApollo';
 import initAmplitude from './src/modules/initAmplitude/initAmplitude';
 import configureStore from './src/redux/configureStore';
+import config from './config';
 
-initAmplitude();
+initAmplitude(config.amplitudeApiKey);
 const apolloClient = initApollo({}, { getToken: () => {} });
 const { store, persistor } = configureStore();
 
