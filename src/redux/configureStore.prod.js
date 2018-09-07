@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 import amplitude from '../middleware/amplitude/amplitude';
+import crashReporter from '../middleware/crashReporter/crashReporter';
 import rootReducer from './rootReducer/rootReducer';
 
 const configureStore = () => {
@@ -13,7 +14,7 @@ const configureStore = () => {
   const persistedReducer = persistReducer(persistConfig, rootReducer);
   const store = createStore(
     persistedReducer,
-    compose(applyMiddleware(amplitude))
+    compose(applyMiddleware(amplitude, crashReporter))
   );
   const persistor = persistStore(store);
 

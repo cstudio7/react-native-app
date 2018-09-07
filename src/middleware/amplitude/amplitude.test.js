@@ -39,9 +39,10 @@ it('has th list of necessary events', () => {
 });
 
 describe.each(necessaryEvents)('Amplitude.logEvent', actionType => {
+  const spy = jest.spyOn(Amplitude, 'logEvent');
+  const { invoke } = create();
+
   it(`sends ${actionType} event`, () => {
-    const spy = jest.spyOn(Amplitude, 'logEvent');
-    const { invoke } = create();
     const action = { type: actionType };
     invoke(action);
     expect(spy).toHaveBeenCalledWith(actionType);

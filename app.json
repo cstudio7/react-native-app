@@ -25,6 +25,18 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "artiebits",
+            "project": "bn",
+            "authToken": "40e9773a1cf04c3f82af9703d0fcf8266c337279a37042859d73e9e53079dca0"
+          }
+        }
+      ]
     }
   }
 }

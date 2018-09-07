@@ -7,10 +7,12 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import AppNavigator from './src/navigation/AppNavigator';
 import initApollo from './src/modules/initApollo';
 import initAmplitude from './src/modules/initAmplitude/initAmplitude';
+import initSentry from './src/modules/initSentry';
 import configureStore from './src/redux/configureStore';
 import config from './config';
 
 initAmplitude(config.amplitudeApiKey);
+initSentry(config.sentryDSN);
 const apolloClient = initApollo({}, { getToken: () => {} });
 const { store, persistor } = configureStore();
 
