@@ -2,18 +2,13 @@ import React from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Spacing from '../../constants/Spacing';
 
-export default class Tab extends React.Component {
-  render() {
-    const { tab } = this.props;
-    return (
-      <TouchableOpacity onPress={tab.onPress} style={styles.tab}>
-        <Text style={[styles.tabText, tab.isActive ? styles.tabActive : null]}>
-          {tab.name}
-        </Text>
-      </TouchableOpacity>
-    );
-  }
-}
+const Tab = ({ tab }) => (
+  <TouchableOpacity onPress={tab.onPress} style={styles.tab}>
+    <Text style={[styles.tabText, tab.isActive ? styles.tabActive : null]}>
+      {tab.name}
+    </Text>
+  </TouchableOpacity>
+);
 
 const styles = StyleSheet.create({
   tab: {
@@ -31,3 +26,5 @@ const styles = StyleSheet.create({
     fontSize: 19
   }
 });
+
+export default Tab;
