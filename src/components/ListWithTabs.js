@@ -13,13 +13,6 @@ class ListWithTabs extends React.PureComponent {
     isMaleNamesFetched: false
   };
 
-  componentDidMount() {
-    if (this.props.getNames) {
-      this.props.getNames('female');
-      this.props.getNames('male');
-    }
-  }
-
   render() {
     const { isFemaleTabActive, names } = this.props;
     const gender = isFemaleTabActive ? 'female' : 'male';

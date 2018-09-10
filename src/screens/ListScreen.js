@@ -28,6 +28,11 @@ class ListScreen extends React.PureComponent {
     Amplitude.logEvent('LISTSCREEN_VIEW');
   }
 
+  componentDidMount() {
+    this.getNames('female');
+    this.getNames('male');
+  }
+
   getNames = async gender => {
     const names = await this.fetchNames(gender);
     this.props.fetchNamesSuccess({ gender, names });
@@ -42,7 +47,7 @@ class ListScreen extends React.PureComponent {
   }
 
   render() {
-    return <ListWithTabs getNames={this.getNames} names={this.props.names} />;
+    return <ListWithTabs names={this.props.names} />;
   }
 }
 
