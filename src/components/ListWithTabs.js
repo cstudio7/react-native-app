@@ -1,8 +1,6 @@
 import React from 'react';
 import { Text } from 'react-native';
 import Loadable from 'react-loadable';
-const R = require('ramda');
-
 import WithTabs from './WithTabs';
 
 const List = Loadable({
@@ -10,7 +8,7 @@ const List = Loadable({
   loading: () => <Text>Loading...</Text>
 });
 
-class ListWithTabs extends React.Component {
+class ListWithTabs extends React.PureComponent {
   state = {
     isMaleNamesFetched: false
   };
@@ -18,26 +16,8 @@ class ListWithTabs extends React.Component {
   componentDidMount() {
     if (this.props.getNames) {
       this.props.getNames('female');
+      this.props.getNames('male');
     }
-  }
-
-  shouldComponentUpdate(nextProps) {
-    if (!R.equals(this.props.names, nextProps.names)) {
-      return true;
-    }
-
-    if (this.props.isFemaleTabActive !== nextProps.isFemaleTabActive) {
-      if (
-        !nextProps.isFemaleTabActive &&
-        !nextProps.names.male.length &&
-        this.props.getNames
-      ) {
-        this.props.getNames('male');
-      }
-      return true;
-    }
-
-    return false;
   }
 
   render() {

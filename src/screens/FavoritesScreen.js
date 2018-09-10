@@ -3,7 +3,7 @@ import { Amplitude } from 'expo';
 
 import ListWithTabs from '../components/ListWithTabs';
 
-class FavoritesScreen extends React.Component {
+class FavoritesScreen extends React.PureComponent {
   componentWillMount() {
     Amplitude.logEvent('FAVSCREEN_VIEW');
   }

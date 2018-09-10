@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { Icon } from 'expo';
 import Spacing from '../../constants/Spacing';
 
-class ListItem extends React.Component {
+class ListItem extends React.PureComponent {
   render() {
     const { name, onPress, screen, gender } = this.props;
     return (

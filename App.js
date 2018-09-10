@@ -16,7 +16,7 @@ initSentry(config.sentryDSN);
 const apolloClient = initApollo({}, { getToken: () => {} });
 const { store, persistor } = configureStore();
 
-export default class App extends React.Component {
+export default class App extends React.PureComponent {
   state = {
     isLoadingComplete: false
   };

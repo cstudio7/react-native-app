@@ -5,7 +5,7 @@ import createSection from '../../modules/createSection/createSection';
 import Spacing from '../../constants/Spacing';
 import ListItem from '../../containers/ListItem';
 
-class List extends React.Component {
+class List extends React.PureComponent {
   renderSectionHeader = ({ section: { title } }) => (
     <ListSectionHeader title={title} />
   );
