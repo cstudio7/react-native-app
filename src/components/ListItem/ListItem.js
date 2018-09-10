@@ -5,7 +5,7 @@ import Spacing from '../../constants/Spacing';
 
 class ListItem extends React.Component {
   render() {
-    const { name, onPress, page, gender } = this.props;
+    const { name, onPress, screen, gender } = this.props;
     return (
       <View style={styles.listItem}>
         <Text style={styles.listText}>{name.name}</Text>
@@ -19,7 +19,7 @@ class ListItem extends React.Component {
                 isFavorite: !name.isFavorite
               }
             };
-            onPress(payload, page);
+            onPress(payload, screen);
           }}>
           <Icon.Ionicons
             name={`md-heart${name.isFavorite ? '' : '-outline'}`}

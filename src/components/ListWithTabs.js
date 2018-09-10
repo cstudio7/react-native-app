@@ -45,10 +45,10 @@ class ListWithTabs extends React.Component {
     const gender = isFemaleTabActive ? 'female' : 'male';
     return (
       <List
-        key={gender + this.props.page}
+        key={gender + this.props.screen}
         names={names[gender]}
         gender={gender}
-        page={this.props.page}
+        page={this.props.screen}
       />
     );
   }

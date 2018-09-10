@@ -11,9 +11,9 @@ export const fetchNamesSuccess = payload => ({
   payload
 });
 
-export const favorite = (payload, page) => {
+export const favorite = (payload, screen) => {
   let actionType = '';
-  if (page === 'favorites') {
+  if (screen === 'Favorites') {
     actionType = {
       true: FAVSCREEN_NAME_FAVORITE,
       false: FAVSCREEN_NAME_UNFAVORITE

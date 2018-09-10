@@ -3,13 +3,18 @@ import { Amplitude } from 'expo';
 
 import ListWithTabs from '../components/ListWithTabs';
 
-class FavoritesScreen extends React.PureComponent {
+class FavoritesScreen extends React.Component {
   componentWillMount() {
     Amplitude.logEvent('FAVSCREEN_VIEW');
   }
 
   render() {
-    return <ListWithTabs names={this.props.favorites} page="favorites" />;
+    return (
+      <ListWithTabs
+        names={this.props.favorites}
+        screen={this.props.navigation.state.routeName}
+      />
+    );
   }
 }
 

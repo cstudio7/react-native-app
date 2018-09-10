@@ -11,7 +11,7 @@ class List extends React.Component {
   );
 
   renderItem = ({ item }) => (
-    <ListItem name={item} gender={this.props.gender} page={this.props.page} />
+    <ListItem name={item} gender={this.props.gender} screen={this.props.screen} />
   );
 
   render() {

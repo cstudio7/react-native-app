@@ -21,7 +21,7 @@ it('renders a favorite name correctly', () => {
 
 it('triggers onPress when the user taps', () => {
   const onPressEvent = jest.fn();
-  const page = 'favorites';
+  const screen = 'Favorites';
   const gender = 'male';
   const expectedPayload = {
     gender,
@@ -36,11 +36,11 @@ it('triggers onPress when the user taps', () => {
       name={name}
       gender={gender}
       onPress={onPressEvent}
-      page={page}
+      screen={screen}
     />
   ).root;
 
   instance.findByType(TouchableOpacity).props.onPress();
 
-  expect(onPressEvent).toHaveBeenCalledWith(expectedPayload, page);
+  expect(onPressEvent).toHaveBeenCalledWith(expectedPayload, screen);
 });
