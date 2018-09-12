@@ -26,28 +26,28 @@
   },
   "dependencies": {
     "@expo/samples": "2.1.1",
-    "apollo-client-preset": "^1.0.8",
-    "apollo-link-context": "^1.0.8",
-    "babel-plugin-transform-remove-console": "^6.9.4",
+    "apollo-client-preset": "1.0.8",
+    "apollo-link-context": "1.0.8",
+    "babel-plugin-transform-remove-console": "6.9.4",
     "expo": "29.0.0",
-    "graphql": "^0.13.2",
-    "graphql-tag": "^2.9.2",
-    "ramda": "^0.25.0",
+    "graphql": "0.13.2",
+    "graphql-tag": "2.9.2",
+    "ramda": "0.25.0",
     "react": "16.4.2",
-    "react-apollo": "^2.1.9",
-    "react-loadable": "^5.4.0",
+    "react-apollo": "2.1.11",
+    "react-loadable": "5.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
-    "react-native-tab-view": "^1.0.2",
-    "react-navigation": "^2.9.3",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-persist": "^5.10.0",
-    "reselect": "^3.0.1",
-    "sentry-expo": "^1.9.0"
+    "react-native-tab-view": "1.0.2",
+    "react-navigation": "2.13.0",
+    "react-redux": "5.0.7",
+    "redux": "4.0.0",
+    "redux-persist": "5.10.0",
+    "reselect": "3.0.1",
+    "sentry-expo": "1.9.0"
   },
   "devDependencies": {
     "jest-expo": "29.0.0",
-    "redux-logger": "^3.0.6",
-    "redux-mock-store": "^1.5.3"
+    "redux-logger": "3.0.6",
+    "redux-mock-store": "1.5.3"
   }
 }
