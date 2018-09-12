@@ -1,9 +1,9 @@
 import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import { Amplitude } from 'expo';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
-
-import ListWithTabs from '../components/ListWithTabs';
+import WithTabs from '../components/WithTabs';
 
 const femaleNamesQuery = gql`
   {
@@ -47,8 +47,20 @@ class ListScreen extends React.PureComponent {
   }
 
   render() {
-    return <ListWithTabs names={this.props.names} />;
+    return (
+      <View style={styles.container}>
+        <WithTabs screen={this.props.navigation.state.routeName} />
+      </View>
+    );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 30
+  }
+});
 
 export default withApollo(ListScreen);

@@ -6,6 +6,7 @@ import Spacing from '../../constants/Spacing';
 class ListItem extends React.PureComponent {
   render() {
     const { name, onPress, screen, gender } = this.props;
+
     return (
       <View style={styles.listItem}>
         <Text style={styles.listText}>{name.name}</Text>
@@ -13,7 +14,7 @@ class ListItem extends React.PureComponent {
           style={styles.touchableArea}
           onPress={() => {
             const payload = {
-              gender: gender,
+              gender,
               name: {
                 ...name,
                 isFavorite: !name.isFavorite

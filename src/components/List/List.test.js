@@ -9,16 +9,26 @@ const mockStore = configureStore(middlewares);
 const store = mockStore({});
 
 it('renders correctly', () => {
-  const maleNames = [
-    { id: 1, name: 'artur' },
-    { id: 2, name: 'alex' },
-    { id: 3, name: 'pierre' }
+  const sections = [
+    {
+      title: 'a',
+      data: [{ id: 1, name: 'artur' }, { id: 2, name: 'alex' }]
+    },
+    {
+      title: 'p',
+      data: [{ id: 3, name: 'pierre' }]
+    }
   ];
+
+  const props = {
+    sections,
+    route: { key: 'male' }
+  };
 
   const tree = renderer
     .create(
       <Provider store={store}>
-        <List names={maleNames} gender={'male'} />
+        <List {...props} />
       </Provider>
     )
     .toJSON();

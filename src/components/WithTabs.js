@@ -1,69 +1,100 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-navigation';
+import * as React from 'react';
+import {
+  View,
+  Text,
+  Animated,
+  TouchableOpacity,
+  StyleSheet
+} from 'react-native';
+import { TabView, SceneMap } from 'react-native-tab-view';
 import Loadable from 'react-loadable';
-import Tabs from './Tabs/Tabs';
+import Spacing from '../constants/Spacing';
 
-const Tab = Loadable({
-  loader: () => import('../components/Tab/Tab'),
+const List = Loadable({
+  loader: () => import('../containers/List'),
   loading: () => <Text>Loading...</Text>
 });
 
-function WithTabs(WrappedComponent) {
-  return class extends React.PureComponent {
-    constructor(props) {
-      super(props);
-      this.state = {
-        isFemaleTabActive: true
-      };
-    }
+export default class WithTabs extends React.Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: 'female', title: 'Женские имена' },
+      { key: 'male', title: 'Мужские имена' }
+    ]
+  };
 
-    openFemaleTab = () => {
-      this.setState({ isFemaleTabActive: true });
-    };
+  _handleIndexChange = index => this.setState({ index });
 
-    openMaleTab = () => {
-      this.setState({ isFemaleTabActive: false });
-    };
+  _renderTabBar = props => {
+    return (
+      <View style={styles.tabBar}>
+        {props.navigationState.routes.map((route, index) => {
+          return (
+            <TouchableOpacity
+              key={index}
+              style={styles.tabItem}
+              onPress={() => this.setState({ index })}>
+              <Animated.Text
+                style={[
+                  styles.tabText,
+                  this.state.index === index ? styles.tabActive : null
+                ]}>
+                {route.title}
+              </Animated.Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+    );
+  };
 
-    render() {
-      const { isFemaleTabActive } = this.state;
+  // _renderScene = SceneMap({
+  //   female: List,
+  //   male: List
+  // });
 
-      return (
-        <SafeAreaView style={styles.container}>
-          <Tabs>
-            <Tab
-              tab={{
-                name: 'Девочки',
-                onPress: this.openFemaleTab,
-                isActive: isFemaleTabActive
-              }}
-            />
-            <Tab
-              tab={{
-                name: 'Мальчики',
-                onPress: this.openMaleTab,
-                isActive: !isFemaleTabActive
-              }}
-            />
-          </Tabs>
-
-          <WrappedComponent
-            isFemaleTabActive={this.state.isFemaleTabActive}
-            {...this.props}
-          />
-        </SafeAreaView>
-      );
+  _renderScene = ({ route }) => {
+    switch (route.key) {
+      case 'female':
+        return <List route={route} screen={this.props.screen} />;
+      case 'male':
+        return <List route={route} screen={this.props.screen} />;
+      default:
+        return null;
     }
   };
+
+  render() {
+    return (
+      <TabView
+        navigationState={this.state}
+        renderScene={this._renderScene}
+        renderTabBar={this._renderTabBar}
+        onIndexChange={this._handleIndexChange}
+      />
+    );
+  }
 }
 
-export default WithTabs;
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    flexDirection: 'column'
+  tabBar: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    backgroundColor: '#fff'
+  },
+  tabItem: {
+    paddingTop: Spacing.padding2,
+    paddingBottom: Spacing.padding3,
+    paddingLeft: Spacing.padding2,
+    paddingRight: Spacing.padding2
+  },
+  tabActive: {
+    color: '#572CA4',
+    fontWeight: '600'
+  },
+  tabText: {
+    color: '#938AA4',
+    fontSize: 19
   }
 });

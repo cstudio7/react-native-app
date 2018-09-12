@@ -37,10 +37,12 @@
     "react-apollo": "^2.1.9",
     "react-loadable": "^5.4.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
+    "react-native-tab-view": "^1.0.2",
     "react-navigation": "^2.9.3",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-persist": "^5.10.0",
+    "reselect": "^3.0.1",
     "sentry-expo": "^1.9.0"
   },
   "devDependencies": {

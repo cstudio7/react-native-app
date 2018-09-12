@@ -1,7 +1,7 @@
 import React from 'react';
 import { Amplitude } from 'expo';
-
-import ListWithTabs from '../components/ListWithTabs';
+import { View, StyleSheet } from 'react-native';
+import WithTabs from '../components/WithTabs';
 
 class FavoritesScreen extends React.PureComponent {
   componentWillMount() {
@@ -10,12 +10,19 @@ class FavoritesScreen extends React.PureComponent {
 
   render() {
     return (
-      <ListWithTabs
-        names={this.props.favorites}
-        screen={this.props.navigation.state.routeName}
-      />
+      <View style={styles.container}>
+        <WithTabs screen={this.props.navigation.state.routeName} />
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 30
+  }
+});
 
 export default FavoritesScreen;

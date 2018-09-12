@@ -1,13 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`filters favorited names 1`] = `
-Object {
-  "female": Array [],
-  "male": Array [
-    Object {
-      "isFavorite": true,
-      "name": "artur",
-    },
-  ],
-}
+exports[`returns favorite female sections 1`] = `
+Array [
+  Object {
+    "data": Array [
+      Object {
+        "isFavorite": true,
+        "name": "sveta",
+      },
+    ],
+    "title": "s",
+  },
+]
+`;
+
+exports[`returns favorite male sections 1`] = `
+Array [
+  Object {
+    "data": Array [
+      Object {
+        "isFavorite": true,
+        "name": "artur",
+      },
+    ],
+    "title": "a",
+  },
+]
+`;
+
+exports[`returns female sections 1`] = `
+Array [
+  Object {
+    "data": Array [
+      Object {
+        "isFavorite": true,
+        "name": "sveta",
+      },
+    ],
+    "title": "s",
+  },
+]
+`;
+
+exports[`returns male sections 1`] = `
+Array [
+  Object {
+    "data": Array [
+      Object {
+        "isFavorite": true,
+        "name": "artur",
+      },
+    ],
+    "title": "a",
+  },
+  Object {
+    "data": Array [
+      Object {
+        "name": "pierre",
+      },
+    ],
+    "title": "p",
+  },
+]
 `;

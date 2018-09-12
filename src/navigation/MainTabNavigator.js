@@ -1,12 +1,25 @@
 import React from 'react';
+import { Text } from 'react-native';
 import {
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation';
+import Loadable from 'react-loadable';
 
-import TabBarIcon from '../components/TabBarIcon';
-import FavoritesScreen from '../containers/FavoritesScreen';
-import ListScreen from '../containers/ListScreen';
+const TabBarIcon = Loadable({
+  loader: () => import('../components/TabBarIcon'),
+  loading: () => <Text>Loading...</Text>
+});
+
+const FavoritesScreen = Loadable({
+  loader: () => import('../containers/FavoritesScreen'),
+  loading: () => <Text>Loading...</Text>
+});
+
+const ListScreen = Loadable({
+  loader: () => import('../containers/ListScreen'),
+  loading: () => <Text>Loading...</Text>
+});
 
 const FavoritesStack = createStackNavigator({
   Favorites: {

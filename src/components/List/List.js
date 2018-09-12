@@ -1,7 +1,6 @@
 import React from 'react';
 import { SectionList, StyleSheet } from 'react-native';
 import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
-import createSection from '../../modules/createSection/createSection';
 import Spacing from '../../constants/Spacing';
 import ListItem from '../../containers/ListItem';
 
@@ -11,13 +10,15 @@ class List extends React.PureComponent {
   );
 
   renderItem = ({ item }) => (
-    <ListItem name={item} gender={this.props.gender} screen={this.props.screen} />
+    <ListItem
+      name={item}
+      gender={this.props.route.key}
+      screen={this.props.screen}
+    />
   );
 
   render() {
-    const { names } = this.props;
-    const sections = createSection(names);
-
+    const { sections } = this.props;
     return (
       <SectionList
         style={styles.list}
@@ -33,6 +34,7 @@ class List extends React.PureComponent {
 
 const styles = StyleSheet.create({
   list: {
+    backgroundColor: '#fff',
     paddingLeft: Spacing.padding2,
     paddingRight: Spacing.padding2
   }

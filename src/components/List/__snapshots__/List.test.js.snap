@@ -80,6 +80,7 @@ exports[`renders correctly 1`] = `
   stickySectionHeadersEnabled={true}
   style={
     Object {
+      "backgroundColor": "#fff",
       "paddingLeft": 16,
       "paddingRight": 16,
     }
