@@ -49,5 +49,8 @@
     "jest-expo": "29.0.0",
     "redux-logger": "3.0.6",
     "redux-mock-store": "1.5.3"
+  },
+  "resolutions": {
+    "whatwg-fetch": "2.0.4"
   }
 }
