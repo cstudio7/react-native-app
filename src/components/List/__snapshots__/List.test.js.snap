@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders list correctly 1`] = `
 <RCTScrollView
+  ListEmptyComponent={[Function]}
   data={
     Array [
       Object {
@@ -306,6 +307,57 @@ exports[`renders correctly 1`] = `
       onLayout={[Function]}
       style={null}
     />
+  </View>
+</RCTScrollView>
+`;
+
+exports[`shows blank state if list is empty 1`] = `
+<RCTScrollView
+  ListEmptyComponent={[Function]}
+  data={Array []}
+  disableVirtualization={false}
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  renderSectionHeader={[Function]}
+  scrollEventThrottle={50}
+  sections={Array []}
+  stickyHeaderIndices={Array []}
+  stickySectionHeadersEnabled={true}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+    }
+  }
+  updateCellsBatchingPeriod={50}
+  windowSize={21}
+>
+  <View>
+    <View
+      onLayout={[Function]}
+      style={null}
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      >
+        Empty list
+      </Text>
+    </View>
   </View>
 </RCTScrollView>
 `;

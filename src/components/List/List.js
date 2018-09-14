@@ -3,6 +3,7 @@ import { SectionList, StyleSheet } from 'react-native';
 import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
 import Spacing from '../../constants/Spacing';
 import ListItem from '../../containers/ListItem';
+import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 
 class List extends React.PureComponent {
   renderSectionHeader = ({ section: { title } }) => (
@@ -17,6 +18,8 @@ class List extends React.PureComponent {
     />
   );
 
+  renderListEmptyComponent = () => <ListEmptyComponent />;
+
   render() {
     const { sections } = this.props;
     return (
@@ -27,6 +30,7 @@ class List extends React.PureComponent {
         sections={sections}
         stickySectionHeadersEnabled={true}
         keyExtractor={item => item.id}
+        ListEmptyComponent={this.renderListEmptyComponent}
       />
     );
   }
