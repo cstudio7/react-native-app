@@ -1,9 +1,9 @@
 import names from '../reducer';
 import {
   LISTSCREEN_NAME_FAVORITE,
-  FAVSCREEN_NAME_FAVORITE,
+  FAVORITESSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
-  FAVSCREEN_NAME_UNFAVORITE,
+  FAVORITESSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
 } from '../constants';
 
@@ -64,10 +64,10 @@ it('should handle LISTSCREEN_NAME_FAVORITE action', () => {
   ).toEqual({
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: true }]
-  })
+  });
 });
 
-it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
+it('should handle FAVORITESSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: false }]
@@ -75,7 +75,7 @@ it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
 
   expect(
     names(initialState, {
-      type: FAVSCREEN_NAME_FAVORITE,
+      type: FAVORITESSCREEN_NAME_FAVORITE,
       payload: {
         gender: 'male',
         name: { name: 'artur', isFavorite: true }
@@ -84,7 +84,7 @@ it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
   ).toEqual({
     female: [{ name: 'sveta', isFavorite: true }],
     male: [{ name: 'artur', isFavorite: true }]
-  })
+  });
 });
 
 it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
@@ -104,7 +104,7 @@ it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
   ).toMatchSnapshot();
 });
 
-it('should handle FAVSCREEN_NAME_UNFAVORITE action', () => {
+it('should handle FAVORITESSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
     male: [{ name: 'artur', isFavorite: true }]
@@ -112,7 +112,7 @@ it('should handle FAVSCREEN_NAME_UNFAVORITE action', () => {
 
   expect(
     names(initialState, {
-      type: FAVSCREEN_NAME_UNFAVORITE,
+      type: FAVORITESSCREEN_NAME_UNFAVORITE,
       payload: {
         gender: 'male',
         name: { name: 'artur', isFavorite: false }

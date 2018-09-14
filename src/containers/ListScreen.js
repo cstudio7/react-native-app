@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { fetchNamesSuccess } from '../redux/namesReducer/actions';
+import {
+  fetchNamesSuccess,
+  listScreenView
+} from '../redux/namesReducer/actions';
 import ListScreen from '../screens/ListScreen';
 
 const mapStateToProps = () => ({});
@@ -7,6 +10,7 @@ const mapStateToProps = () => ({});
 export default connect(
   mapStateToProps,
   {
-    fetchNamesSuccess
+    fetchNamesSuccess,
+    listScreenView
   }
 )(ListScreen);

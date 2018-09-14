@@ -1,11 +1,10 @@
 import React from 'react';
-import { Amplitude } from 'expo';
 import { View, StyleSheet } from 'react-native';
 import WithTabs from '../components/WithTabs';
 
 class FavoritesScreen extends React.PureComponent {
   componentWillMount() {
-    Amplitude.logEvent('FAVSCREEN_VIEW');
+    this.props.favoritesScreenView();
   }
 
   render() {

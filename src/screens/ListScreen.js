@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Amplitude } from 'expo';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import WithTabs from '../components/WithTabs';
@@ -25,7 +24,7 @@ const maleNamesQuery = gql`
 
 class ListScreen extends React.PureComponent {
   componentWillMount() {
-    Amplitude.logEvent('LISTSCREEN_VIEW');
+    this.props.listScreenView();
   }
 
   componentDidMount() {

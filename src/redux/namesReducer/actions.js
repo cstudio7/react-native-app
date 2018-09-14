@@ -1,9 +1,11 @@
 import {
+  FETCH_NAMES_SUCCESS,
   LISTSCREEN_NAME_FAVORITE,
-  FAVSCREEN_NAME_FAVORITE,
+  FAVORITESSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
-  FAVSCREEN_NAME_UNFAVORITE,
-  FETCH_NAMES_SUCCESS
+  FAVORITESSCREEN_NAME_UNFAVORITE,
+  LISTSCREEN_VIEW,
+  FAVORITESSCREEN_VIEW
 } from './constants';
 
 export const fetchNamesSuccess = payload => ({
@@ -15,8 +17,8 @@ export const favorite = (payload, screen) => {
   let actionType = '';
   if (screen === 'Favorites') {
     actionType = {
-      true: FAVSCREEN_NAME_FAVORITE,
-      false: FAVSCREEN_NAME_UNFAVORITE
+      true: FAVORITESSCREEN_NAME_FAVORITE,
+      false: FAVORITESSCREEN_NAME_UNFAVORITE
     }[payload.name.isFavorite];
   } else {
     actionType = {
@@ -30,3 +32,11 @@ export const favorite = (payload, screen) => {
     payload
   };
 };
+
+export const favoritesScreenView = () => ({
+  type: FAVORITESSCREEN_VIEW
+});
+
+export const listScreenView = () => ({
+  type: LISTSCREEN_VIEW
+});

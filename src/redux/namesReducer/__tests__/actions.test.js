@@ -1,4 +1,9 @@
-import { fetchNamesSuccess, favorite } from '../actions';
+import {
+  fetchNamesSuccess,
+  favorite,
+  favoritesScreenView,
+  listScreenView
+} from '../actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
 
@@ -9,7 +14,7 @@ it('creates a FETCH_NAMES_SUCCESS action', () => {
   ).toMatchSnapshot();
 });
 
-it('creates a FAVSCREEN_NAME_FAVORITE action', () => {
+it('creates a FAVORITESSCREEN_NAME_FAVORITE action', () => {
   const payload = { gender: 'male', name: mockedName };
   const screen = 'Favorites';
   expect(favorite(payload, screen)).toMatchSnapshot();
@@ -25,4 +30,12 @@ it('creates a LISTSCREEN_NAME_UNFAVORITE action', () => {
   };
   const screen = undefined;
   expect(favorite(payload, screen)).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_VIEW action', () => {
+  expect(favoritesScreenView()).toMatchSnapshot();
+});
+
+it('creates a FAVORITESSCREEN_VIEW action', () => {
+  expect(listScreenView()).toMatchSnapshot();
 });
