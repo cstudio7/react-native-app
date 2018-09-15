@@ -18,7 +18,9 @@ class List extends React.PureComponent {
     />
   );
 
-  renderListEmptyComponent = () => <ListEmptyComponent />;
+  renderListEmptyComponent = () => (
+    <ListEmptyComponent screen={this.props.screen} />
+  );
 
   render() {
     const { sections } = this.props;

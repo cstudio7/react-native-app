@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders correctly for Favorites screen 1`] = `
 <View
   style={
     Object {
@@ -25,6 +25,35 @@ exports[`renders correctly 1`] = `
     }
   >
     Вы пока ничего не добавили в избранное
+  </Text>
+</View>
+`;
+
+exports[`renders correctly for List screen 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 50,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#938AA4",
+        "fontSize": 16,
+        "fontWeight": "500",
+      }
+    }
+  >
+    Загружается...
   </Text>
 </View>
 `;
