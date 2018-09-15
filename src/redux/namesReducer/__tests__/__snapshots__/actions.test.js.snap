@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`creates a FAVORITESSCREEN_NAME_FAVORITE action 1`] = `
+exports[`creates a FAVSCREEN_NAME_FAVORITE action 1`] = `
 Object {
   "payload": Object {
     "gender": "male",
@@ -9,11 +9,11 @@ Object {
       "name": "artur",
     },
   },
-  "type": "FAVORITESSCREEN_NAME_FAVORITE",
+  "type": "FAVSCREEN_NAME_FAVORITE",
 }
 `;
 
-exports[`creates a FAVORITESSCREEN_VIEW action 1`] = `
+exports[`creates a FAVSCREEN_VIEW action 1`] = `
 Object {
   "type": "LISTSCREEN_VIEW",
 }
@@ -49,6 +49,6 @@ Object {
 
 exports[`creates a LISTSCREEN_VIEW action 1`] = `
 Object {
-  "type": "FAVORITESSCREEN_VIEW",
+  "type": "FAVSCREEN_VIEW",
 }
 `;

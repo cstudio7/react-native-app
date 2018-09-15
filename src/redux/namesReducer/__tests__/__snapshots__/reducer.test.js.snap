@@ -30,7 +30,7 @@ Object {
 }
 `;
 
-exports[`should handle FAVORITESSCREEN_NAME_UNFAVORITE action 1`] = `
+exports[`should handle FAVSCREEN_NAME_UNFAVORITE action 1`] = `
 Object {
   "female": Array [],
   "male": Array [

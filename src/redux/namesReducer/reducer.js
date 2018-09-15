@@ -2,9 +2,9 @@ const R = require('ramda');
 
 import {
   LISTSCREEN_NAME_FAVORITE,
-  FAVORITESSCREEN_NAME_FAVORITE,
+  FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
-  FAVORITESSCREEN_NAME_UNFAVORITE,
+  FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
 } from './constants';
 import createReducer from '../../modules/createReducer/createReducer';
@@ -44,7 +44,7 @@ const favoriteName = (state, action) => {
   const { payload, type } = action;
   const newName = {
     ...payload.name,
-    isFavorite: (type === FAVORITESSCREEN_NAME_FAVORITE) || (type === LISTSCREEN_NAME_FAVORITE)
+    isFavorite: (type === FAVSCREEN_NAME_FAVORITE) || (type === LISTSCREEN_NAME_FAVORITE)
   };
   return updateItemInArray(state, newName, payload.gender);
 };
@@ -54,7 +54,7 @@ const unfavoriteName = favoriteName;
 export default createReducer(initialState, {
   [FETCH_NAMES_SUCCESS]: saveNames,
   [LISTSCREEN_NAME_FAVORITE]: favoriteName,
-  [FAVORITESSCREEN_NAME_FAVORITE]: favoriteName,
+  [FAVSCREEN_NAME_FAVORITE]: favoriteName,
   [LISTSCREEN_NAME_UNFAVORITE]: unfavoriteName,
-  [FAVORITESSCREEN_NAME_UNFAVORITE]: unfavoriteName
+  [FAVSCREEN_NAME_UNFAVORITE]: unfavoriteName
 });

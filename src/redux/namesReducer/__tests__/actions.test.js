@@ -14,7 +14,7 @@ it('creates a FETCH_NAMES_SUCCESS action', () => {
   ).toMatchSnapshot();
 });
 
-it('creates a FAVORITESSCREEN_NAME_FAVORITE action', () => {
+it('creates a FAVSCREEN_NAME_FAVORITE action', () => {
   const payload = { gender: 'male', name: mockedName };
   const screen = 'Favorites';
   expect(favorite(payload, screen)).toMatchSnapshot();
@@ -36,6 +36,6 @@ it('creates a LISTSCREEN_VIEW action', () => {
   expect(favoritesScreenView()).toMatchSnapshot();
 });
 
-it('creates a FAVORITESSCREEN_VIEW action', () => {
+it('creates a FAVSCREEN_VIEW action', () => {
   expect(listScreenView()).toMatchSnapshot();
 });
