@@ -2,6 +2,8 @@ import { Amplitude } from 'expo';
 import amplitude, { necessaryEvents } from './amplitude';
 
 const expectedNecessaryEvents = [
+  'LISTSCREEN_VIEW',
+  'FAVORITESSCREEN_VIEW',
   'LISTSCREEN_NAME_FAVORITE',
   'FAVORITESSCREEN_NAME_FAVORITE',
   'LISTSCREEN_NAME_UNFAVORITE',
