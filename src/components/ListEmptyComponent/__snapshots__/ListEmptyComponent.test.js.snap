@@ -1,11 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": 50,
+    }
+  }
 >
-  Empty list
-</Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#938AA4",
+        "fontSize": 16,
+        "fontWeight": "500",
+      }
+    }
+  >
+    Вы пока ничего не добавили в избранное
+  </Text>
+</View>
 `;

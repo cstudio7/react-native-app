@@ -350,13 +350,32 @@ exports[`shows blank state if list is empty 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "column",
+            "justifyContent": "center",
+            "paddingTop": 50,
+          }
+        }
       >
-        Empty list
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#938AA4",
+              "fontSize": 16,
+              "fontWeight": "500",
+            }
+          }
+        >
+          Вы пока ничего не добавили в избранное
+        </Text>
+      </View>
     </View>
   </View>
 </RCTScrollView>
