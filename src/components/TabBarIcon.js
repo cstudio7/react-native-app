@@ -6,7 +6,7 @@ const TabBarIcon = ({ name, focused }) => (
   <Icon.Ionicons
     name={name}
     size={26}
-    style={{ marginBottom: -3 }}
+    style={{ marginBottom: -5 }}
     color={focused ? Colors.primary : Colors.gray}
   />
 );

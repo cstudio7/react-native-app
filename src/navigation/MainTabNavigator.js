@@ -50,7 +50,7 @@ const NamesListStack = createStackNavigator({
 });
 
 NamesListStack.navigationOptions = {
-  tabBarLabel: 'Список имен',
+  tabBarLabel: 'Имена',
   tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={`md-list`} />
 };
 
@@ -63,7 +63,8 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '#572CA4',
       labelStyle: {
-        fontSize: 12
+        fontSize: 12,
+        paddingBottom: 3
       },
       style: {
         shadowOpacity: 0.2,
@@ -74,3 +75,4 @@ export default createBottomTabNavigator(
     }
   }
 );
+ 

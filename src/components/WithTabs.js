@@ -19,8 +19,8 @@ export default class WithTabs extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'female', title: 'Женские имена' },
-      { key: 'male', title: 'Мужские имена' }
+      { key: 'female', title: 'Девочки' },
+      { key: 'male', title: 'Мальчики' }
     ]
   };
 
