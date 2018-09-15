@@ -101,7 +101,7 @@ exports[`renders list correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#fff",
-            "color": "#979797",
+            "color": "#7A62A4",
             "fontSize": 15,
             "lineHeight": 18,
             "marginBottom": 1,
@@ -237,7 +237,7 @@ exports[`renders list correctly 1`] = `
         style={
           Object {
             "backgroundColor": "#fff",
-            "color": "#979797",
+            "color": "#7A62A4",
             "fontSize": 15,
             "lineHeight": 18,
             "marginBottom": 1,

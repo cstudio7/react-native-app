@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionList, StyleSheet } from 'react-native';
 import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
-import Spacing from '../../constants/Spacing';
+import { Spacing } from '../../constants';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 

@@ -54,7 +54,23 @@ NamesListStack.navigationOptions = {
   tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={`md-list`} />
 };
 
-export default createBottomTabNavigator({
-  NamesListStack,
-  FavoritesStack
-});
+export default createBottomTabNavigator(
+  {
+    NamesListStack,
+    FavoritesStack
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: '#572CA4',
+      labelStyle: {
+        fontSize: 12
+      },
+      style: {
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+        shadowColor: '#000',
+        shadowOffset: { height: 0, width: 0 }
+      }
+    }
+  }
+);

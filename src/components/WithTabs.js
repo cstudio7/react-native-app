@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView } from 'react-native-tab-view';
 import Loadable from 'react-loadable';
-import Spacing from '../constants/Spacing';
+import { Colors, Spacing } from '../constants';
 
 const List = Loadable({
   loader: () => import('../containers/List'),
@@ -49,11 +49,6 @@ export default class WithTabs extends React.Component {
     );
   };
 
-  // _renderScene = SceneMap({
-  //   female: List,
-  //   male: List
-  // });
-
   _renderScene = ({ route }) => {
     switch (route.key) {
       case 'female':
@@ -90,11 +85,11 @@ const styles = StyleSheet.create({
     paddingRight: Spacing.padding2
   },
   tabActive: {
-    color: '#572CA4',
+    color: Colors.primary,
     fontWeight: '600'
   },
   tabText: {
-    color: '#938AA4',
+    color: Colors.secondary,
     fontSize: 19
   }
 });
