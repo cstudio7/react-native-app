@@ -2,12 +2,13 @@ import { ApolloClient } from 'apollo-client';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
+import config from '../../config';
 
 let apolloClient = null;
 
 function create(initialState, { getToken }) {
   const httpLink = createHttpLink({
-    uri: 'https://baby-names-server-zwiwjfvwmt.now.sh/graphql',
+    uri: config.apiUrl,
     credentials: 'include'
   });
 
