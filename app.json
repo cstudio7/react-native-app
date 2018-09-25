@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Детские имена Pro",
+    "name": "Имена детей Pro",
     "description": "A very interesting project.",
     "slug": "baby-names-pro",
     "privacy": "unlisted",
@@ -22,16 +22,17 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "co.sveta.babynamespro"
+      "package": "dev.baarsjes.babynamespro",
+      "permissions": []
     },
     "hooks": {
       "postPublish": [
         {
           "file": "sentry-expo/upload-sourcemaps",
           "config": {
-            "organization": "artiebits",
-            "project": "bn",
-            "authToken": "40e9773a1cf04c3f82af9703d0fcf8266c337279a37042859d73e9e53079dca0"
+            "organization": "devbaarsjes",
+            "project": "baby-names-pro-k3",
+            "authToken": "4abadeb0d57e411ba3c9f40410082491fe324f2accb948b3b01539fe7985a233"
           }
         }
       ]
