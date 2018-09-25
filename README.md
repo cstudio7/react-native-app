@@ -84,6 +84,7 @@ src/
 ├── components/
 ├── constants/
 ├── containers/
+├── middleware/
 ├── modules/
 ├── navigation/
 ├── redux/
@@ -102,6 +103,10 @@ This is where we keep our constants like colors. Reducers related constants we k
 **containers**
 
 They glue together UI (components) and data (redux). They might also define a few layout styles.
+
+**middleware**
+
+They provide a third-party extension point between dispatching an action, and the moment it reaches the reducer. We use middlewares for crash reporting and Amplitude. Can be used for talking to an asynchronous API, routing, and more.
 
 **modules**
 
