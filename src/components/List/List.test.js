@@ -8,6 +8,8 @@ const middlewares = [];
 const mockStore = configureStore(middlewares);
 const store = mockStore({});
 
+jest.mock('lodash.throttle', () => jest.fn(fn => fn));
+
 it('renders list correctly', () => {
   const sections = [
     {
@@ -21,6 +23,7 @@ it('renders list correctly', () => {
   ];
 
   const props = {
+    screen: 'Favorites',
     sections,
     route: { key: 'male' }
   };

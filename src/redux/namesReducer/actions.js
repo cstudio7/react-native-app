@@ -5,7 +5,9 @@ import {
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   LISTSCREEN_VIEW,
-  FAVSCREEN_VIEW
+  FAVSCREEN_VIEW,
+  LISTSCREEN_SCROLL,
+  FAVSCREEN_SCROLL
 } from './constants';
 
 export const fetchNamesSuccess = payload => ({
@@ -39,4 +41,12 @@ export const favoritesScreenView = () => ({
 
 export const listScreenView = () => ({
   type: LISTSCREEN_VIEW
+});
+
+export const favoritesScreenScroll = () => ({
+  type: FAVSCREEN_SCROLL
+});
+
+export const listScreenScroll = () => ({
+  type: LISTSCREEN_SCROLL
 });

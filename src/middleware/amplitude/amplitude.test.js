@@ -4,6 +4,8 @@ import amplitude, { necessaryEvents } from './amplitude';
 const expectedNecessaryEvents = [
   'LISTSCREEN_VIEW',
   'FAVSCREEN_VIEW',
+  'LISTSCREEN_SCROLL',
+  'FAVSCREEN_SCROLL',
   'LISTSCREEN_NAME_FAVORITE',
   'FAVSCREEN_NAME_FAVORITE',
   'LISTSCREEN_NAME_UNFAVORITE',

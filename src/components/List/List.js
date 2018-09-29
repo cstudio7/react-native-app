@@ -1,11 +1,16 @@
 import React from 'react';
 import { SectionList, StyleSheet } from 'react-native';
+import throttle from 'lodash.throttle';
 import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
-import { Spacing } from '../../constants';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
+import { Spacing } from '../../constants';
 
 class List extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.scrollEventThrottle = throttle(props.scrollEvent, 3000);
+  }
   renderSectionHeader = ({ section: { title } }) => (
     <ListSectionHeader title={title} />
   );
@@ -24,6 +29,7 @@ class List extends React.PureComponent {
 
   render() {
     const { sections } = this.props;
+
     return (
       <SectionList
         style={styles.list}
@@ -33,6 +39,7 @@ class List extends React.PureComponent {
         stickySectionHeadersEnabled={true}
         keyExtractor={item => item.id}
         ListEmptyComponent={this.renderListEmptyComponent}
+        onScrollBeginDrag={this.scrollEventThrottle}
       />
     );
   }
