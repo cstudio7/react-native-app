@@ -20,7 +20,7 @@ class ListItem extends React.PureComponent {
                 isFavorite: !name.isFavorite
               }
             };
-            onPress(payload, screen);
+            onPress(payload);
           }}>
           <Icon.Ionicons
             name={`md-heart${name.isFavorite ? '' : '-outline'}`}

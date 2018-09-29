@@ -19,7 +19,7 @@ it('creates a FETCH_NAMES_SUCCESS action', () => {
 it('creates a FAVSCREEN_NAME_FAVORITE action', () => {
   const payload = { gender: 'male', name: mockedName };
   const screen = 'Favorites';
-  expect(favorite(payload, screen)).toMatchSnapshot();
+  expect(favorite(screen, payload)).toMatchSnapshot();
 });
 
 it('creates a LISTSCREEN_NAME_UNFAVORITE action', () => {
@@ -31,7 +31,7 @@ it('creates a LISTSCREEN_NAME_UNFAVORITE action', () => {
     }
   };
   const screen = undefined;
-  expect(favorite(payload, screen)).toMatchSnapshot();
+  expect(favorite(screen, payload)).toMatchSnapshot();
 });
 
 it('creates a LISTSCREEN_VIEW action', () => {

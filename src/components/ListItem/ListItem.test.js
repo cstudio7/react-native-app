@@ -42,5 +42,5 @@ it('triggers onPress when the user taps', () => {
 
   instance.findByType(TouchableOpacity).props.onPress();
 
-  expect(onPressEvent).toHaveBeenCalledWith(expectedPayload, screen);
+  expect(onPressEvent).toHaveBeenCalledWith(expectedPayload);
 });
