@@ -11,51 +11,74 @@ exports[`renders a favorite name correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "borderColor": "rgba(0, 0, 0, 0.15)",
-      "borderTopWidth": 1,
-      "flex": 1,
-      "flexDirection": "row",
-      "justifyContent": "space-between",
+      "marginLeft": 16,
+      "marginRight": 16,
     }
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "fontSize": 19,
-        "marginBottom": 24,
-        "marginTop": 24,
-      }
-    }
-  >
-    artur
-  </Text>
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
-        "paddingBottom": 24,
-        "paddingLeft": 24,
-        "paddingTop": 24,
+        "borderColor": "rgba(0, 0, 0, 0.15)",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
       }
     }
   >
-    <Text
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 19,
+            "marginTop": 16,
+          }
+        }
+      >
+        artur
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#979797",
+            "fontSize": 14,
+            "marginBottom": 16,
+            "marginTop": 4,
+          }
+        }
+      />
+    </View>
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-    />
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+          "paddingBottom": 24,
+          "paddingLeft": 24,
+          "paddingTop": 28,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      />
+    </View>
   </View>
 </View>
 `;
@@ -71,51 +94,74 @@ exports[`renders a name correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     Object {
-      "borderColor": "rgba(0, 0, 0, 0.15)",
-      "borderTopWidth": 1,
-      "flex": 1,
-      "flexDirection": "row",
-      "justifyContent": "space-between",
+      "marginLeft": 16,
+      "marginRight": 16,
     }
   }
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "fontSize": 19,
-        "marginBottom": 24,
-        "marginTop": 24,
-      }
-    }
-  >
-    artur
-  </Text>
   <View
-    accessible={true}
-    isTVSelectable={true}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "opacity": 1,
-        "paddingBottom": 24,
-        "paddingLeft": 24,
-        "paddingTop": 24,
+        "borderColor": "rgba(0, 0, 0, 0.15)",
+        "borderTopWidth": 1,
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-between",
       }
     }
   >
-    <Text
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontSize": 19,
+            "marginTop": 16,
+          }
+        }
+      >
+        artur
+      </Text>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#979797",
+            "fontSize": 14,
+            "marginBottom": 16,
+            "marginTop": 4,
+          }
+        }
+      />
+    </View>
+    <View
       accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
-    />
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "opacity": 1,
+          "paddingBottom": 24,
+          "paddingLeft": 24,
+          "paddingTop": 28,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+      />
+    </View>
   </View>
 </View>
 `;

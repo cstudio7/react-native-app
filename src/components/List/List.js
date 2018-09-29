@@ -4,7 +4,7 @@ import throttle from 'lodash.throttle';
 import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
-import { Spacing } from '../../constants';
+import { Colors } from '../../constants';
 
 class List extends React.PureComponent {
   constructor(props) {
@@ -47,9 +47,7 @@ class List extends React.PureComponent {
 
 const styles = StyleSheet.create({
   list: {
-    backgroundColor: '#fff',
-    paddingLeft: Spacing.padding2,
-    paddingRight: Spacing.padding2
+    backgroundColor: Colors.white
   }
 });
 

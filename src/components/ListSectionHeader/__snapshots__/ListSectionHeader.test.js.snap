@@ -1,21 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
+<View
   style={
     Object {
       "backgroundColor": "#fff",
-      "color": "#7A62A4",
-      "fontSize": 15,
-      "lineHeight": 18,
-      "marginBottom": 1,
-      "paddingBottom": 8,
+      "paddingLeft": 16,
+      "paddingRight": 16,
     }
   }
 >
-  A
-</Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "color": "#979797",
+        "fontSize": 15,
+        "fontWeight": "500",
+        "marginBottom": 1,
+        "paddingBottom": 8,
+      }
+    }
+  >
+    A
+  </Text>
+</View>
 `;

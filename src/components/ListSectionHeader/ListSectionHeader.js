@@ -1,17 +1,24 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
-import { Colors, Spacing } from '../../constants';
+import { View, Text, StyleSheet } from 'react-native';
+import { Colors, Spacing, Typography } from '../../constants';
 
 const ListSectionHeader = ({ title }) => (
-  <Text style={styles.header}>{title}</Text>
+  <View style={styles.header}>
+    <Text style={styles.headerText}>{title}</Text>
+  </View>
 );
 
 const styles = StyleSheet.create({
   header: {
-    color: Colors.primary,
-    fontSize: 15,
-    lineHeight: 18,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.white,
+    paddingLeft: Spacing.padding2,
+    paddingRight: Spacing.padding2
+  },
+  headerText: {
+    color: Colors.gray,
+    fontSize: Typography.small,
+    fontWeight: '500',
+    backgroundColor: Colors.white,
     paddingBottom: Spacing.padding,
     marginBottom: 1
   }

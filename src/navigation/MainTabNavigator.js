@@ -5,6 +5,7 @@ import {
   createBottomTabNavigator
 } from 'react-navigation';
 import Loadable from 'react-loadable';
+import { Typography } from '../constants';
 
 const TabBarIcon = Loadable({
   loader: () => import('../components/TabBarIcon'),
@@ -63,7 +64,7 @@ export default createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '#572CA4',
       labelStyle: {
-        fontSize: 12,
+        fontSize: Typography.xsmall,
         paddingBottom: 3
       },
       style: {
@@ -75,4 +76,3 @@ export default createBottomTabNavigator(
     }
   }
 );
- 

@@ -82,8 +82,6 @@ exports[`renders list correctly 1`] = `
   style={
     Object {
       "backgroundColor": "#fff",
-      "paddingLeft": 16,
-      "paddingRight": 16,
     }
   }
   updateCellsBatchingPeriod={50}
@@ -94,23 +92,33 @@ exports[`renders list correctly 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
             "backgroundColor": "#fff",
-            "color": "#7A62A4",
-            "fontSize": 15,
-            "lineHeight": 18,
-            "marginBottom": 1,
-            "paddingBottom": 8,
+            "paddingLeft": 16,
+            "paddingRight": 16,
           }
         }
       >
-        a
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "color": "#979797",
+              "fontSize": 15,
+              "fontWeight": "500",
+              "marginBottom": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          a
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -126,51 +134,74 @@ exports[`renders list correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "borderColor": "rgba(0, 0, 0, 0.15)",
-            "borderTopWidth": 1,
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
+            "marginLeft": 16,
+            "marginRight": 16,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 19,
-              "marginBottom": 24,
-              "marginTop": 24,
-            }
-          }
-        >
-          artur
-        </Text>
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
-              "paddingBottom": 24,
-              "paddingLeft": 24,
-              "paddingTop": 24,
+              "borderColor": "rgba(0, 0, 0, 0.15)",
+              "borderTopWidth": 1,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
             }
           }
         >
-          <Text
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 19,
+                  "marginTop": 16,
+                }
+              }
+            >
+              artur
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#979797",
+                  "fontSize": 14,
+                  "marginBottom": 16,
+                  "marginTop": 4,
+                }
+              }
+            />
+          </View>
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          />
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+                "paddingBottom": 24,
+                "paddingLeft": 24,
+                "paddingTop": 28,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -188,51 +219,74 @@ exports[`renders list correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "borderColor": "rgba(0, 0, 0, 0.15)",
-            "borderTopWidth": 1,
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
+            "marginLeft": 16,
+            "marginRight": 16,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 19,
-              "marginBottom": 24,
-              "marginTop": 24,
-            }
-          }
-        >
-          alex
-        </Text>
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
-              "paddingBottom": 24,
-              "paddingLeft": 24,
-              "paddingTop": 24,
+              "borderColor": "rgba(0, 0, 0, 0.15)",
+              "borderTopWidth": 1,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
             }
           }
         >
-          <Text
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 19,
+                  "marginTop": 16,
+                }
+              }
+            >
+              alex
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#979797",
+                  "fontSize": 14,
+                  "marginBottom": 16,
+                  "marginTop": 4,
+                }
+              }
+            />
+          </View>
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          />
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+                "paddingBottom": 24,
+                "paddingLeft": 24,
+                "paddingTop": 28,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -244,23 +298,33 @@ exports[`renders list correctly 1`] = `
       onLayout={[Function]}
       style={null}
     >
-      <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
+      <View
         style={
           Object {
             "backgroundColor": "#fff",
-            "color": "#7A62A4",
-            "fontSize": 15,
-            "lineHeight": 18,
-            "marginBottom": 1,
-            "paddingBottom": 8,
+            "paddingLeft": 16,
+            "paddingRight": 16,
           }
         }
       >
-        p
-      </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "backgroundColor": "#fff",
+              "color": "#979797",
+              "fontSize": 15,
+              "fontWeight": "500",
+              "marginBottom": 1,
+              "paddingBottom": 8,
+            }
+          }
+        >
+          p
+        </Text>
+      </View>
     </View>
     <View
       onLayout={[Function]}
@@ -276,51 +340,74 @@ exports[`renders list correctly 1`] = `
         onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "borderColor": "rgba(0, 0, 0, 0.15)",
-            "borderTopWidth": 1,
-            "flex": 1,
-            "flexDirection": "row",
-            "justifyContent": "space-between",
+            "marginLeft": 16,
+            "marginRight": 16,
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "fontSize": 19,
-              "marginBottom": 24,
-              "marginTop": 24,
-            }
-          }
-        >
-          pierre
-        </Text>
         <View
-          accessible={true}
-          isTVSelectable={true}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "opacity": 1,
-              "paddingBottom": 24,
-              "paddingLeft": 24,
-              "paddingTop": 24,
+              "borderColor": "rgba(0, 0, 0, 0.15)",
+              "borderTopWidth": 1,
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "space-between",
             }
           }
         >
-          <Text
+          <View>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "fontSize": 19,
+                  "marginTop": 16,
+                }
+              }
+            >
+              pierre
+            </Text>
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "color": "#979797",
+                  "fontSize": 14,
+                  "marginBottom": 16,
+                  "marginTop": 4,
+                }
+              }
+            />
+          </View>
+          <View
             accessible={true}
-            allowFontScaling={true}
-            ellipsizeMode="tail"
-          />
+            isTVSelectable={true}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "opacity": 1,
+                "paddingBottom": 24,
+                "paddingLeft": 24,
+                "paddingTop": 28,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+            />
+          </View>
         </View>
       </View>
     </View>
@@ -359,8 +446,6 @@ exports[`shows blank state if list is empty 1`] = `
   style={
     Object {
       "backgroundColor": "#fff",
-      "paddingLeft": 16,
-      "paddingRight": 16,
     }
   }
   updateCellsBatchingPeriod={50}
