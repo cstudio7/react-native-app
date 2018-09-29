@@ -59,7 +59,6 @@ it('creates a FAVSCREEN_NAME_OPEN action', () => {
   expect(openNameScreen('Favorites')).toMatchSnapshot();
 });
 
-//
 it('creates a LISTSCREEN_FEMALETAB_PRESS action', () => {
   expect(changeActiveTab(null, { key: 'female' })).toMatchSnapshot();
 });

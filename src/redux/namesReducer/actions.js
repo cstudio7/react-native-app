@@ -16,6 +16,8 @@ import {
   FAVSCREEN_MALETAB_PRESS
 } from './constants';
 
+const isScreenFavorites = screen => screen === 'Favorites';
+
 export const fetchNamesSuccess = payload => ({
   type: FETCH_NAMES_SUCCESS,
   payload
@@ -31,7 +33,7 @@ export const listScreenView = () => ({
 
 export const favorite = (screen, payload) => {
   let actionType = '';
-  if (screen === 'Favorites') {
+  if (isScreenFavorites(screen)) {
     actionType = {
       true: FAVSCREEN_NAME_FAVORITE,
       false: FAVSCREEN_NAME_UNFAVORITE
@@ -51,7 +53,7 @@ export const favorite = (screen, payload) => {
 
 export const scrollEvent = screen => {
   let type = LISTSCREEN_SCROLL;
-  if (screen === 'Favorites') {
+  if (isScreenFavorites(screen)) {
     type = FAVSCREEN_SCROLL;
   }
   return { type };
@@ -59,7 +61,7 @@ export const scrollEvent = screen => {
 
 export const openNameScreen = screen => {
   let type = LISTSCREEN_NAME_OPEN;
-  if (screen === 'Favorites') {
+  if (isScreenFavorites(screen)) {
     type = FAVSCREEN_NAME_OPEN;
   }
   return { type };
@@ -68,7 +70,7 @@ export const openNameScreen = screen => {
 export const changeActiveTab = (screen, activeTab) => {
   const activeTabName = activeTab.key;
   let actionType = '';
-  if (screen === 'Favorites') {
+  if (isScreenFavorites(screen)) {
     actionType = {
       female: FAVSCREEN_FEMALETAB_PRESS,
       male: FAVSCREEN_MALETAB_PRESS
