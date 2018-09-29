@@ -2,6 +2,13 @@
 
 exports[`renders a favorite name correctly 1`] = `
 <View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "borderColor": "rgba(0, 0, 0, 0.15)",
@@ -55,6 +62,13 @@ exports[`renders a favorite name correctly 1`] = `
 
 exports[`renders a name correctly 1`] = `
 <View
+  accessible={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
   style={
     Object {
       "borderColor": "rgba(0, 0, 0, 0.15)",

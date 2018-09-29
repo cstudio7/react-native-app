@@ -4,7 +4,8 @@ import {
   listScreenView,
   favoritesScreenView,
   listScreenScroll,
-  favoritesScreenScroll
+  favoritesScreenScroll,
+  openNameScreen
 } from '../actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
@@ -48,4 +49,12 @@ it('creates a LISTSCREEN_SCROLL action', () => {
 
 it('creates a FAVSCREEN_SCROLL action', () => {
   expect(favoritesScreenScroll()).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_NAME_OPEN action', () => {
+  expect(openNameScreen()).toMatchSnapshot();
+});
+
+it('creates a FAVSCREEN_NAME_OPEN action', () => {
+  expect(openNameScreen('Favorites')).toMatchSnapshot();
 });

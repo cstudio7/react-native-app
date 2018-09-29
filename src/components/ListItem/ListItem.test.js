@@ -35,7 +35,7 @@ it('triggers onPress when the user taps', () => {
     <ListItem
       name={name}
       gender={gender}
-      onPress={onPressEvent}
+      favorite={onPressEvent}
       screen={screen}
     />
   ).root;

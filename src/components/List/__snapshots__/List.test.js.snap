@@ -117,6 +117,13 @@ exports[`renders list correctly 1`] = `
       style={null}
     >
       <View
+        accessible={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "borderColor": "rgba(0, 0, 0, 0.15)",
@@ -172,6 +179,13 @@ exports[`renders list correctly 1`] = `
       style={null}
     >
       <View
+        accessible={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "borderColor": "rgba(0, 0, 0, 0.15)",
@@ -253,6 +267,13 @@ exports[`renders list correctly 1`] = `
       style={null}
     >
       <View
+        accessible={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
             "borderColor": "rgba(0, 0, 0, 0.15)",

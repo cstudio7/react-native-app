@@ -13,6 +13,12 @@ Object {
 }
 `;
 
+exports[`creates a FAVSCREEN_NAME_OPEN action 1`] = `
+Object {
+  "type": "FAVSCREEN_NAME_OPEN",
+}
+`;
+
 exports[`creates a FAVSCREEN_SCROLL action 1`] = `
 Object {
   "type": "FAVSCREEN_SCROLL",
@@ -37,6 +43,12 @@ Object {
     ],
   },
   "type": "FETCH_NAMES_SUCCESS",
+}
+`;
+
+exports[`creates a LISTSCREEN_NAME_OPEN action 1`] = `
+Object {
+  "type": "LISTSCREEN_NAME_OPEN",
 }
 `;
 

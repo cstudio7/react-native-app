@@ -1,33 +1,41 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  StyleSheet
+} from 'react-native';
 import { Icon } from 'expo';
 import Spacing from '../../constants/Spacing';
 
 class ListItem extends React.PureComponent {
   render() {
-    const { name, onPress, screen, gender } = this.props;
+    const { name, favorite, openNameScreen, gender } = this.props;
 
     return (
-      <View style={styles.listItem}>
-        <Text style={styles.listText}>{name.name}</Text>
-        <TouchableOpacity
-          style={styles.touchableArea}
-          onPress={() => {
-            const payload = {
-              gender,
-              name: {
-                ...name,
-                isFavorite: !name.isFavorite
-              }
-            };
-            onPress(payload);
-          }}>
-          <Icon.Ionicons
-            name={`md-heart${name.isFavorite ? '' : '-outline'}`}
-            style={styles.icon}
-          />
-        </TouchableOpacity>
-      </View>
+      <TouchableWithoutFeedback onPress={openNameScreen}>
+        <View style={styles.listItem}>
+          <Text style={styles.listText}>{name.name}</Text>
+          <TouchableOpacity
+            style={styles.touchableArea}
+            onPress={() => {
+              const payload = {
+                gender,
+                name: {
+                  ...name,
+                  isFavorite: !name.isFavorite
+                }
+              };
+              favorite(payload);
+            }}>
+            <Icon.Ionicons
+              name={`md-heart${name.isFavorite ? '' : '-outline'}`}
+              style={styles.icon}
+            />
+          </TouchableOpacity>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
