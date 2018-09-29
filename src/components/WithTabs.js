@@ -34,7 +34,13 @@ export default class WithTabs extends React.Component {
             <TouchableOpacity
               key={index}
               style={styles.tabItem}
-              onPress={() => this.setState({ index })}>
+              onPress={() =>
+                this.setState({ index }, () => {
+                  this.props.changeActiveTab(
+                    this.state.routes[this.state['index']]
+                  );
+                })
+              }>
               <Animated.Text
                 style={[
                   styles.tabText,
@@ -52,7 +58,6 @@ export default class WithTabs extends React.Component {
   _renderScene = ({ route }) => {
     switch (route.key) {
       case 'female':
-        return <List route={route} screen={this.props.screen} />;
       case 'male':
         return <List route={route} screen={this.props.screen} />;
       default:

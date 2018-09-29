@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`creates a FAVSCREEN_FEMALETAB_PRESS action 1`] = `
+Object {
+  "type": "FAVSCREEN_FEMALETAB_PRESS",
+}
+`;
+
+exports[`creates a FAVSCREEN_MALETAB_PRESS action 1`] = `
+Object {
+  "type": "FAVSCREEN_MALETAB_PRESS",
+}
+`;
+
 exports[`creates a FAVSCREEN_NAME_FAVORITE action 1`] = `
 Object {
   "payload": Object {
@@ -43,6 +55,18 @@ Object {
     ],
   },
   "type": "FETCH_NAMES_SUCCESS",
+}
+`;
+
+exports[`creates a LISTSCREEN_FEMALETAB_PRESS action 1`] = `
+Object {
+  "type": "LISTSCREEN_FEMALETAB_PRESS",
+}
+`;
+
+exports[`creates a LISTSCREEN_MALETAB_PRESS action 1`] = `
+Object {
+  "type": "LISTSCREEN_MALETAB_PRESS",
 }
 `;
 

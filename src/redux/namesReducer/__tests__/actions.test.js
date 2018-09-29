@@ -4,7 +4,8 @@ import {
   listScreenView,
   favoritesScreenView,
   scrollEvent,
-  openNameScreen
+  openNameScreen,
+  changeActiveTab
 } from '../actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
@@ -56,4 +57,21 @@ it('creates a LISTSCREEN_NAME_OPEN action', () => {
 
 it('creates a FAVSCREEN_NAME_OPEN action', () => {
   expect(openNameScreen('Favorites')).toMatchSnapshot();
+});
+
+//
+it('creates a LISTSCREEN_FEMALETAB_PRESS action', () => {
+  expect(changeActiveTab(null, { key: 'female' })).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_MALETAB_PRESS action', () => {
+  expect(changeActiveTab(null, { key: 'male' })).toMatchSnapshot();
+});
+
+it('creates a FAVSCREEN_FEMALETAB_PRESS action', () => {
+  expect(changeActiveTab('Favorites', { key: 'female' })).toMatchSnapshot();
+});
+
+it('creates a FAVSCREEN_MALETAB_PRESS action', () => {
+  expect(changeActiveTab('Favorites', { key: 'male' })).toMatchSnapshot();
 });

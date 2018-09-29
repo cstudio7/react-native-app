@@ -1,8 +1,13 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
-import WithTabs from '../components/WithTabs';
+import Loadable from 'react-loadable';
+
+const WithTabs = Loadable({
+  loader: () => import('../containers/WithTabs'),
+  loading: () => <Text>Loading...</Text>
+});
 
 const femaleNamesQuery = gql`
   {
@@ -25,11 +30,9 @@ const maleNamesQuery = gql`
 `;
 
 class ListScreen extends React.PureComponent {
-  componentWillMount() {
-    this.props.listScreenView();
-  }
-
   componentDidMount() {
+    this.props.listScreenView();
+
     this.getNames('female');
     this.getNames('male');
   }

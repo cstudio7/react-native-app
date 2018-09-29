@@ -1,9 +1,14 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import WithTabs from '../components/WithTabs';
+import { View, Text, StyleSheet } from 'react-native';
+import Loadable from 'react-loadable';
+
+const WithTabs = Loadable({
+  loader: () => import('../containers/WithTabs'),
+  loading: () => <Text>Loading...</Text>
+});
 
 class FavoritesScreen extends React.PureComponent {
-  componentWillMount() {
+  componentDidMount() {
     this.props.favoritesScreenView();
   }
 

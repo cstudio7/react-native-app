@@ -9,7 +9,11 @@ import {
   LISTSCREEN_SCROLL,
   FAVSCREEN_SCROLL,
   LISTSCREEN_NAME_OPEN,
-  FAVSCREEN_NAME_OPEN
+  FAVSCREEN_NAME_OPEN,
+  LISTSCREEN_FEMALETAB_PRESS,
+  LISTSCREEN_MALETAB_PRESS,
+  FAVSCREEN_FEMALETAB_PRESS,
+  FAVSCREEN_MALETAB_PRESS
 } from './constants';
 
 export const fetchNamesSuccess = payload => ({
@@ -59,4 +63,24 @@ export const openNameScreen = screen => {
     type = FAVSCREEN_NAME_OPEN;
   }
   return { type };
+};
+
+export const changeActiveTab = (screen, activeTab) => {
+  const activeTabName = activeTab.key;
+  let actionType = '';
+  if (screen === 'Favorites') {
+    actionType = {
+      female: FAVSCREEN_FEMALETAB_PRESS,
+      male: FAVSCREEN_MALETAB_PRESS
+    }[activeTabName];
+  } else {
+    actionType = {
+      female: LISTSCREEN_FEMALETAB_PRESS,
+      male: LISTSCREEN_MALETAB_PRESS
+    }[activeTabName];
+  }
+
+  return {
+    type: actionType
+  };
 };
