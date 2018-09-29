@@ -1,19 +1,5 @@
 import { Amplitude } from 'expo';
-import amplitude, { necessaryEvents } from './amplitude';
-
-const expectedNecessaryEvents = [
-  'LISTSCREEN_VIEW',
-  'FAVSCREEN_VIEW',
-  'LISTSCREEN_SCROLL',
-  'FAVSCREEN_SCROLL',
-  'LISTSCREEN_NAME_FAVORITE',
-  'FAVSCREEN_NAME_FAVORITE',
-  'LISTSCREEN_NAME_UNFAVORITE',
-  'FAVSCREEN_NAME_UNFAVORITE',
-  'FETCH_NAMES_SUCCESS',
-  'LISTSCREEN_NAME_OPEN',
-  'FAVSCREEN_NAME_OPEN'
-];
+import amplitude from './amplitude';
 
 const create = () => {
   const store = {
@@ -32,25 +18,10 @@ it('passes through action', () => {
   expect(next).toHaveBeenCalledWith(action);
 });
 
-it('filters unnecessary events', () => {
+it('logs an action type', () => {
   const spy = jest.spyOn(Amplitude, 'logEvent');
   const { invoke } = create();
   const action = { type: 'TEST' };
   invoke(action);
-  expect(spy).not.toHaveBeenCalled();
-});
-
-it('has th list of necessary events', () => {
-  expect(necessaryEvents).toEqual(expectedNecessaryEvents);
-});
-
-describe.each(necessaryEvents)('Amplitude.logEvent', actionType => {
-  const spy = jest.spyOn(Amplitude, 'logEvent');
-  const { invoke } = create();
-
-  it(`sends ${actionType} event`, () => {
-    const action = { type: actionType };
-    invoke(action);
-    expect(spy).toHaveBeenCalledWith(actionType);
-  });
+  expect(spy).toHaveBeenCalledWith('TEST');
 });
