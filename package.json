@@ -27,7 +27,7 @@
   "dependencies": {
     "@expo/samples": "2.1.1",
     "apollo-client-preset": "1.0.8",
-    "apollo-link-context": "1.0.8",
+    "apollo-link-context": "1.0.9",
     "babel-plugin-transform-remove-console": "6.9.4",
     "expo": "29.0.0",
     "graphql": "0.13.2",
