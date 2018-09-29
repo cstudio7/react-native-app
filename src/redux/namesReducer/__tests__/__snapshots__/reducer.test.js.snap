@@ -17,13 +17,19 @@ Object {
   "female": Array [],
   "male": Array [
     Object {
+      "id": 1,
       "isFavorite": true,
+      "meaning": "bla",
       "name": "artur",
     },
     Object {
+      "id": 2,
+      "meaning": "bla bla",
       "name": "alex",
     },
     Object {
+      "id": 3,
+      "meaning": "bla bla bla",
       "name": "pierre",
     },
   ],
@@ -35,6 +41,7 @@ Object {
   "female": Array [],
   "male": Array [
     Object {
+      "id": 1,
       "isFavorite": false,
       "name": "artur",
     },
@@ -47,6 +54,7 @@ Object {
   "female": Array [],
   "male": Array [
     Object {
+      "id": 1,
       "isFavorite": false,
       "name": "artur",
     },

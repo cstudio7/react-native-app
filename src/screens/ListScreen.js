@@ -9,6 +9,7 @@ const femaleNamesQuery = gql`
     femaleNames {
       id
       name
+      meaning
     }
   }
 `;
@@ -18,6 +19,7 @@ const maleNamesQuery = gql`
     maleNames {
       id
       name
+      meaning
     }
   }
 `;
@@ -42,7 +44,8 @@ class ListScreen extends React.PureComponent {
       .query({
         query: gender === 'female' ? femaleNamesQuery : maleNamesQuery
       })
-      .then(({ data }) => data.femaleNames || data.maleNames);
+      .then(({ data }) => data.femaleNames || data.maleNames)
+      .catch(error => console.error(error));
   }
 
   render() {

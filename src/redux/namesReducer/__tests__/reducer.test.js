@@ -32,7 +32,10 @@ describe('FETCH_NAMES_SUCCESS', () => {
   it('should update a state retrieved from a storage', () => {
     const initialState = {
       female: [],
-      male: [{ name: 'artur', isFavorite: true }, { name: 'alex' }]
+      male: [
+        { id: 1, name: 'artur', isFavorite: true },
+        { id: 2, name: 'alex' }
+      ]
     };
 
     expect(
@@ -40,7 +43,11 @@ describe('FETCH_NAMES_SUCCESS', () => {
         type: FETCH_NAMES_SUCCESS,
         payload: {
           gender: 'male',
-          names: [{ name: 'artur' }, { name: 'alex' }, { name: 'pierre' }]
+          names: [
+            { id: 1, name: 'artur', meaning: 'bla' },
+            { id: 2, name: 'alex', meaning: 'bla bla' },
+            { id: 3, name: 'pierre', meaning: 'bla bla bla' }
+          ]
         }
       })
     ).toMatchSnapshot();
@@ -49,8 +56,8 @@ describe('FETCH_NAMES_SUCCESS', () => {
 
 it('should handle LISTSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
-    female: [{ name: 'sveta', isFavorite: true }],
-    male: [{ name: 'artur', isFavorite: false }]
+    female: [{ id: 1, name: 'sveta', isFavorite: true }],
+    male: [{ id: 1, name: 'artur', isFavorite: false }]
   };
 
   expect(
@@ -58,19 +65,19 @@ it('should handle LISTSCREEN_NAME_FAVORITE action', () => {
       type: LISTSCREEN_NAME_FAVORITE,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: true }
+        name: { id: 1, name: 'artur', isFavorite: true }
       }
     })
   ).toEqual({
-    female: [{ name: 'sveta', isFavorite: true }],
-    male: [{ name: 'artur', isFavorite: true }]
+    female: [{ id: 1, name: 'sveta', isFavorite: true }],
+    male: [{ id: 1, name: 'artur', isFavorite: true }]
   });
 });
 
 it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
   const initialState = {
-    female: [{ name: 'sveta', isFavorite: true }],
-    male: [{ name: 'artur', isFavorite: false }]
+    female: [{ id: 1, name: 'sveta', isFavorite: true }],
+    male: [{ id: 1, name: 'artur', isFavorite: false }]
   };
 
   expect(
@@ -78,19 +85,19 @@ it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
       type: FAVSCREEN_NAME_FAVORITE,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: true }
+        name: { id: 1, name: 'artur', isFavorite: true }
       }
     })
   ).toEqual({
-    female: [{ name: 'sveta', isFavorite: true }],
-    male: [{ name: 'artur', isFavorite: true }]
+    female: [{ id: 1, name: 'sveta', isFavorite: true }],
+    male: [{ id: 1, name: 'artur', isFavorite: true }]
   });
 });
 
 it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
-    male: [{ name: 'artur', isFavorite: true }]
+    male: [{ id: 1, name: 'artur', isFavorite: true }]
   };
 
   expect(
@@ -98,7 +105,7 @@ it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
       type: LISTSCREEN_NAME_UNFAVORITE,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: false }
+        name: { id: 1, name: 'artur', isFavorite: false }
       }
     })
   ).toMatchSnapshot();
@@ -107,7 +114,7 @@ it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {
 it('should handle FAVSCREEN_NAME_UNFAVORITE action', () => {
   const initialState = {
     female: [],
-    male: [{ name: 'artur', isFavorite: true }]
+    male: [{ id: 1, name: 'artur', isFavorite: true }]
   };
 
   expect(
@@ -115,7 +122,7 @@ it('should handle FAVSCREEN_NAME_UNFAVORITE action', () => {
       type: FAVSCREEN_NAME_UNFAVORITE,
       payload: {
         gender: 'male',
-        name: { name: 'artur', isFavorite: false }
+        name: { id: 1, name: 'artur', isFavorite: false }
       }
     })
   ).toMatchSnapshot();

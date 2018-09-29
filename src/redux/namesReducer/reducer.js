@@ -29,11 +29,21 @@ const updateItemInArray = (state, name, gender) => {
 };
 
 const mergeGenderNamesWithState = (state, { gender, names }) => {
+  if (!R.path([gender, 'length'], state)) {
+    return {
+      ...state,
+      [gender]: names
+    };
+  }
+
   return {
     ...state,
-    [gender]: state[gender].length
-      ? R.uniqBy(item => item.name, R.concat(state[gender], names))
-      : names
+    [gender]: names.map(name =>
+      R.mergeAll([
+        name,
+        state[gender].find(stateName => stateName.name === name.name)
+      ])
+    )
   };
 };
 
@@ -44,7 +54,8 @@ const favoriteName = (state, action) => {
   const { payload, type } = action;
   const newName = {
     ...payload.name,
-    isFavorite: (type === FAVSCREEN_NAME_FAVORITE) || (type === LISTSCREEN_NAME_FAVORITE)
+    isFavorite:
+      type === FAVSCREEN_NAME_FAVORITE || type === LISTSCREEN_NAME_FAVORITE
   };
   return updateItemInArray(state, newName, payload.gender);
 };
