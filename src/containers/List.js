@@ -1,11 +1,7 @@
 import { bindActionCreators } from 'redux';
-import throttle from 'lodash.throttle';
 import { connect } from 'react-redux';
 import { makeGetSections } from '../redux/namesReducer/selectors';
-import {
-  favoritesScreenScroll,
-  listScreenScroll
-} from '../redux/namesReducer/actions';
+import { scrollEvent } from '../redux/namesReducer/actions';
 import List from '../components/List/List';
 
 const makeMapStateToProps = () => {
@@ -17,13 +13,9 @@ const makeMapStateToProps = () => {
 };
 
 const mapDispatchToProps = (dispatch, props) => {
-  const scrollEvent =
-    props.screen === 'Favorites' ? favoritesScreenScroll : listScreenScroll;
-  const scrollEventThrottle = throttle(scrollEvent, 3000);
-
   return bindActionCreators(
     {
-      scrollEvent
+      scrollEvent: scrollEvent.bind(null, props.screen)
     },
     dispatch
   );

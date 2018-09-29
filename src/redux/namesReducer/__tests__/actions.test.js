@@ -3,8 +3,7 @@ import {
   favorite,
   listScreenView,
   favoritesScreenView,
-  listScreenScroll,
-  favoritesScreenScroll,
+  scrollEvent,
   openNameScreen
 } from '../actions';
 
@@ -44,11 +43,11 @@ it('creates a FAVSCREEN_VIEW action', () => {
 });
 
 it('creates a LISTSCREEN_SCROLL action', () => {
-  expect(listScreenScroll()).toMatchSnapshot();
+  expect(scrollEvent()).toMatchSnapshot();
 });
 
 it('creates a FAVSCREEN_SCROLL action', () => {
-  expect(favoritesScreenScroll()).toMatchSnapshot();
+  expect(scrollEvent('Favorites')).toMatchSnapshot();
 });
 
 it('creates a LISTSCREEN_NAME_OPEN action', () => {

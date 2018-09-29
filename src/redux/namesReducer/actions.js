@@ -17,6 +17,14 @@ export const fetchNamesSuccess = payload => ({
   payload
 });
 
+export const favoritesScreenView = () => ({
+  type: FAVSCREEN_VIEW
+});
+
+export const listScreenView = () => ({
+  type: LISTSCREEN_VIEW
+});
+
 export const favorite = (screen, payload) => {
   let actionType = '';
   if (screen === 'Favorites') {
@@ -37,21 +45,13 @@ export const favorite = (screen, payload) => {
   };
 };
 
-export const favoritesScreenView = () => ({
-  type: FAVSCREEN_VIEW
-});
-
-export const listScreenView = () => ({
-  type: LISTSCREEN_VIEW
-});
-
-export const favoritesScreenScroll = () => ({
-  type: FAVSCREEN_SCROLL
-});
-
-export const listScreenScroll = () => ({
-  type: LISTSCREEN_SCROLL
-});
+export const scrollEvent = screen => {
+  let type = LISTSCREEN_SCROLL;
+  if (screen === 'Favorites') {
+    type = FAVSCREEN_SCROLL;
+  }
+  return { type };
+};
 
 export const openNameScreen = screen => {
   let type = LISTSCREEN_NAME_OPEN;
