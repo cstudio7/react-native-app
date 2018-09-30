@@ -1,5 +1,5 @@
 import {
-  fetchNamesSuccess,
+  loadNames,
   favorite,
   listScreenView,
   favoritesScreenView,
@@ -9,13 +9,6 @@ import {
 } from '../actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
-
-it('creates a FETCH_NAMES_SUCCESS action', () => {
-  const mockedNames = Object.freeze([mockedName]);
-  expect(
-    fetchNamesSuccess({ gender: 'male', names: mockedNames })
-  ).toMatchSnapshot();
-});
 
 it('creates a FAVSCREEN_NAME_FAVORITE action', () => {
   const payload = { gender: 'male', name: mockedName };
@@ -73,4 +66,16 @@ it('creates a FAVSCREEN_FEMALETAB_PRESS action', () => {
 
 it('creates a FAVSCREEN_MALETAB_PRESS action', () => {
   expect(changeActiveTab('Favorites', { key: 'male' })).toMatchSnapshot();
+});
+
+it('creates an async action to fetch female names', () => {
+  const dispatch = jest.fn();
+  loadNames('female')(dispatch);
+  expect(dispatch).toMatchSnapshot();
+});
+
+it('creates an async action to fetch male names', () => {
+  const dispatch = jest.fn();
+  loadNames('male')(dispatch);
+  expect(dispatch).toMatchSnapshot();
 });

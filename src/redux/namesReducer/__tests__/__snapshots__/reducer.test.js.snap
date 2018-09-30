@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FETCH_NAMES_SUCCESS should handle the action 1`] = `
+exports[`FETCH_NAMES_SUCCESS updates female names 1`] = `
+Object {
+  "female": Array [
+    Object {
+      "isFavorite": true,
+      "name": "sveta",
+    },
+  ],
+  "male": Array [],
+}
+`;
+
+exports[`FETCH_NAMES_SUCCESS updates male names 1`] = `
 Object {
   "female": Array [],
   "male": Array [
@@ -12,7 +24,7 @@ Object {
 }
 `;
 
-exports[`FETCH_NAMES_SUCCESS should update a state retrieved from a storage 1`] = `
+exports[`FETCH_NAMES_SUCCESS updates state retrieved from a storage 1`] = `
 Object {
   "female": Array [],
   "male": Array [

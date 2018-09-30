@@ -1,27 +1,26 @@
 import {
+  FETCH_NAMES_REQUEST,
   FETCH_NAMES_SUCCESS,
+  FETCH_NAMES_FAIL,
   LISTSCREEN_NAME_FAVORITE,
   FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
-  LISTSCREEN_VIEW,
-  FAVSCREEN_VIEW,
-  LISTSCREEN_SCROLL,
-  FAVSCREEN_SCROLL,
   LISTSCREEN_NAME_OPEN,
   FAVSCREEN_NAME_OPEN,
   LISTSCREEN_FEMALETAB_PRESS,
   LISTSCREEN_MALETAB_PRESS,
   FAVSCREEN_FEMALETAB_PRESS,
-  FAVSCREEN_MALETAB_PRESS
+  FAVSCREEN_MALETAB_PRESS,
+  LISTSCREEN_VIEW,
+  FAVSCREEN_VIEW,
+  LISTSCREEN_SCROLL,
+  FAVSCREEN_SCROLL
 } from './constants';
+import gql from 'graphql-tag';
+import { CALL_API } from '../../constants/Api';
 
 const isScreenFavorites = screen => screen === 'Favorites';
-
-export const fetchNamesSuccess = payload => ({
-  type: FETCH_NAMES_SUCCESS,
-  payload
-});
 
 export const favoritesScreenView = () => ({
   type: FAVSCREEN_VIEW
@@ -85,4 +84,36 @@ export const changeActiveTab = (screen, activeTab) => {
   return {
     type: actionType
   };
+};
+
+const fetchNames = query => ({
+  [CALL_API]: {
+    types: [FETCH_NAMES_REQUEST, FETCH_NAMES_SUCCESS, FETCH_NAMES_FAIL],
+    query
+  }
+});
+
+const femaleNamesQuery = gql`
+  {
+    femaleNames {
+      id
+      name
+      meaning
+    }
+  }
+`;
+
+const maleNamesQuery = gql`
+  {
+    maleNames {
+      id
+      name
+      meaning
+    }
+  }
+`;
+
+export const loadNames = gender => dispatch => {
+  const query = gender === 'female' ? femaleNamesQuery : maleNamesQuery;
+  return dispatch(fetchNames(query));
 };

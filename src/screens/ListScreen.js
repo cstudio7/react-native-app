@@ -1,9 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { withNavigationFocus } from 'react-navigation';
-
-import { withApollo } from 'react-apollo';
-import gql from 'graphql-tag';
 import Loadable from 'react-loadable';
 
 const WithTabs = Loadable({
@@ -11,44 +8,11 @@ const WithTabs = Loadable({
   loading: () => <Text>Loading...</Text>
 });
 
-const femaleNamesQuery = gql`
-  {
-    femaleNames {
-      id
-      name
-      meaning
-    }
-  }
-`;
-
-const maleNamesQuery = gql`
-  {
-    maleNames {
-      id
-      name
-      meaning
-    }
-  }
-`;
-
 class ListScreen extends React.PureComponent {
   componentDidMount() {
-    this.getNames('female');
-    this.getNames('male');
-  }
-
-  getNames = async gender => {
-    const names = await this.fetchNames(gender);
-    this.props.fetchNamesSuccess({ gender, names });
-  };
-
-  fetchNames(gender) {
-    return this.props.client
-      .query({
-        query: gender === 'female' ? femaleNamesQuery : maleNamesQuery
-      })
-      .then(({ data }) => data.femaleNames || data.maleNames)
-      .catch(error => console.error(error));
+    this.props.listScreenView();
+    this.props.loadNames('female');
+    this.props.loadNames('male');
   }
 
   render() {
@@ -72,4 +36,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withApollo(withNavigationFocus(ListScreen));
+export default withNavigationFocus(ListScreen);

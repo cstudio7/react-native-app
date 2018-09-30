@@ -12,7 +12,7 @@ it('should return the initial state', () => {
 });
 
 describe('FETCH_NAMES_SUCCESS', () => {
-  it('should handle the action', () => {
+  it('updates female names', () => {
     const initialState = {
       female: [],
       male: []
@@ -21,15 +21,30 @@ describe('FETCH_NAMES_SUCCESS', () => {
     expect(
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
-        payload: {
-          gender: 'male',
-          names: [{ name: 'artur', isFavorite: true }]
+        response: {
+          femaleNames: [{ name: 'sveta', isFavorite: true }]
         }
       })
     ).toMatchSnapshot();
   });
 
-  it('should update a state retrieved from a storage', () => {
+  it('updates male names', () => {
+    const initialState = {
+      female: [],
+      male: []
+    };
+
+    expect(
+      names(initialState, {
+        type: FETCH_NAMES_SUCCESS,
+        response: {
+          maleNames: [{ name: 'artur', isFavorite: true }]
+        }
+      })
+    ).toMatchSnapshot();
+  });
+
+  it('updates state retrieved from a storage', () => {
     const initialState = {
       female: [],
       male: [
@@ -41,9 +56,8 @@ describe('FETCH_NAMES_SUCCESS', () => {
     expect(
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
-        payload: {
-          gender: 'male',
-          names: [
+        response: {
+          maleNames: [
             { id: 1, name: 'artur', meaning: 'bla' },
             { id: 2, name: 'alex', meaning: 'bla bla' },
             { id: 3, name: 'pierre', meaning: 'bla bla bla' }

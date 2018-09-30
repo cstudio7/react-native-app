@@ -28,17 +28,18 @@ const updateItemInArray = (state, name, gender) => {
   };
 };
 
-const mergeGenderNamesWithState = (state, { gender, names }) => {
+const mergeGenderNamesWithState = (state, response) => {
+  const gender = response.femaleNames ? 'female' : 'male';
   if (!R.path([gender, 'length'], state)) {
     return {
       ...state,
-      [gender]: names
+      [gender]: response.femaleNames || response.maleNames
     };
   }
 
   return {
     ...state,
-    [gender]: names.map(name =>
+    [gender]: (response.femaleNames || response.maleNames).map(name =>
       R.mergeAll([
         name,
         state[gender].find(stateName => stateName.name === name.name)
@@ -48,7 +49,7 @@ const mergeGenderNamesWithState = (state, { gender, names }) => {
 };
 
 const saveNames = (state, action) =>
-  mergeGenderNamesWithState(state, action.payload);
+  mergeGenderNamesWithState(state, action.response);
 
 const favoriteName = (state, action) => {
   const { payload, type } = action;
