@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { withNavigationFocus } from 'react-navigation';
+
 import { withApollo } from 'react-apollo';
 import gql from 'graphql-tag';
 import Loadable from 'react-loadable';
@@ -31,8 +33,6 @@ const maleNamesQuery = gql`
 
 class ListScreen extends React.PureComponent {
   componentDidMount() {
-    this.props.listScreenView();
-
     this.getNames('female');
     this.getNames('male');
   }
@@ -52,6 +52,10 @@ class ListScreen extends React.PureComponent {
   }
 
   render() {
+    if (this.props.isFocused) {
+      this.props.listScreenView();
+    }
+
     return (
       <View style={styles.container}>
         <WithTabs screen={this.props.navigation.state.routeName} />
@@ -68,4 +72,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default withApollo(ListScreen);
+export default withApollo(withNavigationFocus(ListScreen));

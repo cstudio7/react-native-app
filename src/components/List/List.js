@@ -31,6 +31,7 @@ class List extends React.PureComponent {
   render() {
     const { sections } = this.props;
 
+
     return (
       <SectionList
         style={styles.list}

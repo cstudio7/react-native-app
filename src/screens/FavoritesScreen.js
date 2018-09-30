@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { withNavigationFocus } from 'react-navigation';
 import Loadable from 'react-loadable';
 
 const WithTabs = Loadable({
@@ -8,11 +9,11 @@ const WithTabs = Loadable({
 });
 
 class FavoritesScreen extends React.PureComponent {
-  componentDidMount() {
-    this.props.favoritesScreenView();
-  }
-
   render() {
+    if (this.props.isFocused) {
+      this.props.favoritesScreenView();
+    }
+
     return (
       <View style={styles.container}>
         <WithTabs screen={this.props.navigation.state.routeName} />
@@ -29,4 +30,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default FavoritesScreen;
+export default withNavigationFocus(FavoritesScreen);
