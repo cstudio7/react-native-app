@@ -9,8 +9,9 @@ import { Colors } from '../../constants';
 class List extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.scrollEventThrottle = throttle(props.scrollEvent, 3000);
+    this.scrollEventThrottle = throttle(props.scrollEvent, 5000);
   }
+
   renderSectionHeader = ({ section: { title } }) => (
     <ListSectionHeader title={title} />
   );
