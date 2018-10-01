@@ -1,4 +1,4 @@
-import { filterFavorites, getNames, makeGetSections } from '../selectors';
+import { makeGetSections } from '../selectors';
 
 const names = Object.freeze({
   female: [{ name: 'sveta', isFavorite: true }],

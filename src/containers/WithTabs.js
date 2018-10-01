@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { changeActiveTab } from '../redux/namesReducer/actions';
+import { changeActiveTab } from '../actions/actions';
 import WithTabs from '../components/WithTabs';
 
 const makeMapStateToProps = () => ({});

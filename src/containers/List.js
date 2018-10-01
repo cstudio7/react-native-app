@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { makeGetSections } from '../redux/namesReducer/selectors';
-import { scrollEvent } from '../redux/namesReducer/actions';
+import { makeGetSections } from '../reducers/names/selectors';
+import { scrollEvent } from '../actions/actions';
 import List from '../components/List/List';
 
 const makeMapStateToProps = () => {

@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import ListItem from '../components/ListItem/ListItem';
-import { favorite, openNameScreen } from '../redux/namesReducer/actions';
+import { favorite, openNameScreen } from '../actions/actions';
 
 const mapStateToProps = () => ({});
 

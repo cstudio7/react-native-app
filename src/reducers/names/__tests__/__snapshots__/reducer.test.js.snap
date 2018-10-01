@@ -4,6 +4,7 @@ exports[`FETCH_NAMES_SUCCESS updates female names 1`] = `
 Object {
   "female": Array [
     Object {
+      "id": 1,
       "isFavorite": true,
       "name": "sveta",
     },
@@ -17,6 +18,7 @@ Object {
   "female": Array [],
   "male": Array [
     Object {
+      "id": 1,
       "isFavorite": true,
       "name": "artur",
     },
@@ -48,6 +50,25 @@ Object {
 }
 `;
 
+exports[`should handle FAVSCREEN_NAME_FAVORITE action 1`] = `
+Object {
+  "female": Array [
+    Object {
+      "id": 1,
+      "isFavorite": true,
+      "name": "sveta",
+    },
+  ],
+  "male": Array [
+    Object {
+      "id": 1,
+      "isFavorite": true,
+      "name": "artur",
+    },
+  ],
+}
+`;
+
 exports[`should handle FAVSCREEN_NAME_UNFAVORITE action 1`] = `
 Object {
   "female": Array [],
@@ -55,6 +76,25 @@ Object {
     Object {
       "id": 1,
       "isFavorite": false,
+      "name": "artur",
+    },
+  ],
+}
+`;
+
+exports[`should handle LISTSCREEN_NAME_FAVORITE action 1`] = `
+Object {
+  "female": Array [
+    Object {
+      "id": 1,
+      "isFavorite": true,
+      "name": "sveta",
+    },
+  ],
+  "male": Array [
+    Object {
+      "id": 1,
+      "isFavorite": true,
       "name": "artur",
     },
   ],

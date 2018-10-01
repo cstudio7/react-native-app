@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import AppNavigator from './src/navigation/AppNavigator';
 import initAmplitude from './src/modules/initAmplitude/initAmplitude';
 import initSentry from './src/modules/initSentry';
-import configureStore from './src/redux/configureStore';
+import configureStore from './src/store/configureStore';
 import config from './config';
 
 initAmplitude(config.amplitudeApiKey);

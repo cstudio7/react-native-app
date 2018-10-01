@@ -5,7 +5,7 @@ import {
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
-} from '../constants';
+} from '../../../constants/constants';
 
 it('should return the initial state', () => {
   expect(names(undefined, {})).toMatchSnapshot();
@@ -22,7 +22,7 @@ describe('FETCH_NAMES_SUCCESS', () => {
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
         response: {
-          femaleNames: [{ name: 'sveta', isFavorite: true }]
+          femaleNames: [{ id: 1, name: 'sveta', isFavorite: true }]
         }
       })
     ).toMatchSnapshot();
@@ -38,7 +38,7 @@ describe('FETCH_NAMES_SUCCESS', () => {
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
         response: {
-          maleNames: [{ name: 'artur', isFavorite: true }]
+          maleNames: [{ id: 1, name: 'artur', isFavorite: true }]
         }
       })
     ).toMatchSnapshot();
@@ -82,10 +82,7 @@ it('should handle LISTSCREEN_NAME_FAVORITE action', () => {
         name: { id: 1, name: 'artur', isFavorite: true }
       }
     })
-  ).toEqual({
-    female: [{ id: 1, name: 'sveta', isFavorite: true }],
-    male: [{ id: 1, name: 'artur', isFavorite: true }]
-  });
+  ).toMatchSnapshot();
 });
 
 it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
@@ -102,10 +99,7 @@ it('should handle FAVSCREEN_NAME_FAVORITE action', () => {
         name: { id: 1, name: 'artur', isFavorite: true }
       }
     })
-  ).toEqual({
-    female: [{ id: 1, name: 'sveta', isFavorite: true }],
-    male: [{ id: 1, name: 'artur', isFavorite: true }]
-  });
+  ).toMatchSnapshot();
 });
 
 it('should handle LISTSCREEN_NAME_UNFAVORITE action', () => {

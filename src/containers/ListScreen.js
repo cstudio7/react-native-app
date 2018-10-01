@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { listScreenView, loadNames } from '../redux/namesReducer/actions';
+import { listScreenView, loadNames } from '../actions/actions';
 import ListScreen from '../screens/ListScreen';
 
 const mapStateToProps = () => ({});
