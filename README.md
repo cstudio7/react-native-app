@@ -81,16 +81,22 @@ To find out more about ADRs have a read of this article: http://thinkrelevance.c
 
 ```
 src/
+├── actions/
 ├── components/
 ├── constants/
 ├── containers/
 ├── middleware/
 ├── modules/
 ├── navigation/
-├── redux/
+├── reducers/
 ├── screens/
+├── store/
 App.js
 ```
+
+**actions**
+
+Functions that create actions aka "action creators" which are used to trigger changes to the state.
 
 **components**
 
@@ -116,14 +122,17 @@ This is where we keep our modules. Examples: error handling logic, image process
 
 Maps routes to screens.
 
-**redux**
+**reducers**
 
 All state is managed here, and all means of accessing and modifying state are controlled here. It only imports from 'modules'.
-"Action creators" are used to trigger changes to the state (which may initiate app re-renders).
 
 **screens**
 
 Top-level components the router delegates rendering to. They combine thins like 'containers' (like nav bar + profile), analytics.
+
+**store**
+
+All the logic related to configuring the store - including importing reducers, middleware, and enhancers.
 
 **App.js**
 
