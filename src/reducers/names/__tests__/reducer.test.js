@@ -5,7 +5,7 @@ import {
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
-} from '../../../constants/constants';
+} from '../../../constants/ActionTypes';
 
 it('should return the initial state', () => {
   expect(names(undefined, {})).toMatchSnapshot();

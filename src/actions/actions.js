@@ -16,9 +16,9 @@ import {
   FAVSCREEN_VIEW,
   LISTSCREEN_SCROLL,
   FAVSCREEN_SCROLL
-} from '../constants/constants';
-import gql from 'graphql-tag';
+} from '../constants/ActionTypes';
 import { CALL_API } from '../constants/Api';
+import gql from 'graphql-tag';
 
 const isScreenFavorites = screen => screen === 'Favorites';
 

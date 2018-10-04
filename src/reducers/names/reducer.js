@@ -6,7 +6,7 @@ import {
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
-} from '../../constants/constants';
+} from '../../constants/ActionTypes';
 import createReducer from '../../modules/createReducer/createReducer';
 
 const initialState = {
