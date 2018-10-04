@@ -1,42 +1,4 @@
 {
-  "expo": {
-    "name": "Имена детей Pro",
-    "description": "A very interesting project.",
-    "slug": "baby-names-pro",
-    "privacy": "unlisted",
-    "sdkVersion": "29.0.0",
-    "platforms": ["ios", "android"],
-    "version": "2.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "versionCode": 3,
-      "package": "dev.baarsjes.babynamespro",
-      "permissions": []
-    },
-    "hooks": {
-      "postPublish": [
-        {
-          "file": "sentry-expo/upload-sourcemaps",
-          "config": {
-            "organization": "devbaarsjes",
-            "project": "baby-names-pro-k3",
-            "authToken": "4abadeb0d57e411ba3c9f40410082491fe324f2accb948b3b01539fe7985a233"
-          }
-        }
-      ]
-    }
-  }
+  "name": "babynames",
+  "displayName": "babynames"
 }

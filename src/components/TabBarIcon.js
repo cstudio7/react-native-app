@@ -1,9 +1,9 @@
 import React from 'react';
-import { Icon } from 'expo';
 import { Colors } from '../constants';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const TabBarIcon = ({ name, focused }) => (
-  <Icon.Ionicons
+  <Icon
     name={name}
     size={26}
     style={{ marginBottom: -5 }}

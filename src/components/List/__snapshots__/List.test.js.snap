@@ -102,9 +102,6 @@ exports[`renders list correctly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "backgroundColor": "#fff",
@@ -152,9 +149,6 @@ exports[`renders list correctly 1`] = `
         >
           <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "fontSize": 19,
@@ -165,9 +159,6 @@ exports[`renders list correctly 1`] = `
               artur
             </Text>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#979797",
@@ -197,10 +188,29 @@ exports[`renders list correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "#7A62A4",
+                    "fontSize": 22,
+                    "marginRight": 8,
+                  },
+                  Object {
+                    "fontFamily": "Ionicons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
           </View>
         </View>
       </View>
@@ -237,9 +247,6 @@ exports[`renders list correctly 1`] = `
         >
           <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "fontSize": 19,
@@ -250,9 +257,6 @@ exports[`renders list correctly 1`] = `
               alex
             </Text>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#979797",
@@ -282,10 +286,29 @@ exports[`renders list correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "#7A62A4",
+                    "fontSize": 22,
+                    "marginRight": 8,
+                  },
+                  Object {
+                    "fontFamily": "Ionicons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
           </View>
         </View>
       </View>
@@ -308,9 +331,6 @@ exports[`renders list correctly 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "backgroundColor": "#fff",
@@ -358,9 +378,6 @@ exports[`renders list correctly 1`] = `
         >
           <View>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "fontSize": 19,
@@ -371,9 +388,6 @@ exports[`renders list correctly 1`] = `
               pierre
             </Text>
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
               style={
                 Object {
                   "color": "#979797",
@@ -403,10 +417,29 @@ exports[`renders list correctly 1`] = `
             }
           >
             <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
-            />
+              allowFontScaling={false}
+              style={
+                Array [
+                  Object {
+                    "color": undefined,
+                    "fontSize": 12,
+                  },
+                  Object {
+                    "color": "#7A62A4",
+                    "fontSize": 22,
+                    "marginRight": 8,
+                  },
+                  Object {
+                    "fontFamily": "Ionicons",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              
+            </Text>
           </View>
         </View>
       </View>
@@ -453,35 +486,27 @@ exports[`shows blank state if list is empty 1`] = `
 >
   <View>
     <View
-      onLayout={[Function]}
-      style={null}
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "column",
+          "justifyContent": "center",
+          "paddingTop": 50,
+        }
+      }
     >
-      <View
+      <Text
         style={
           Object {
-            "alignItems": "center",
-            "flex": 1,
-            "flexDirection": "column",
-            "justifyContent": "center",
-            "paddingTop": 50,
+            "color": "#938AA4",
+            "fontSize": 16,
+            "fontWeight": "500",
           }
         }
       >
-        <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
-          style={
-            Object {
-              "color": "#938AA4",
-              "fontSize": 16,
-              "fontWeight": "500",
-            }
-          }
-        >
-          Вы пока ничего не добавили в избранное
-        </Text>
-      </View>
+        Вы пока ничего не добавили в избранное
+      </Text>
     </View>
   </View>
 </RCTScrollView>

@@ -1,55 +1,43 @@
 {
-  "name": "bn-client",
-  "main": "node_modules/expo/AppEntry.js",
+  "name": "babynames",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 100,
-        "functions": 100,
-        "lines": 100
-      }
-    }
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
   },
   "dependencies": {
-    "@expo/samples": "2.1.1",
+    "@babel/runtime": "7.1.2",
     "apollo-fetch": "0.7.0",
-    "babel-plugin-transform-remove-console": "6.9.4",
-    "expo": "29.0.1",
-    "graphql": "0.13.2",
-    "graphql-tag": "2.9.2",
+    "graphql": "14.0.2",
+    "graphql-tag": "2.10.0",
+    "lodash.throttle": "^4.1.1",
     "ramda": "0.25.0",
-    "react": "16.5.2",
-    "react-loadable": "5.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-29.0.0.tar.gz",
+    "react": "16.5.0",
+    "react-native": "0.57.1",
+    "react-native-amplitude-analytics": "^0.2.3",
+    "react-native-sentry": "^0.39.0",
     "react-native-tab-view": "1.2.0",
+    "react-native-vector-icons": "^5.0.0",
     "react-navigation": "2.17.0",
     "react-redux": "5.0.7",
     "redux": "4.0.0",
     "redux-persist": "5.10.0",
     "redux-thunk": "2.3.0",
-    "reselect": "3.0.1",
-    "sentry-expo": "1.9.0"
+    "reselect": "4.0.0"
   },
   "devDependencies": {
-    "jest-expo": "29.0.0",
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.47.0",
+    "react-test-renderer": "16.5.0",
     "redux-logger": "3.0.6",
-    "redux-mock-store": "1.5.3"
+    "redux-mock-store": "^1.5.3"
   },
-  "resolutions": {
-    "whatwg-fetch": "2.0.4"
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.js$": "./node_modules/react-native/jest/preprocessor.js"
+    }
   }
 }

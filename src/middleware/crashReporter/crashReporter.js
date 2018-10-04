@@ -1,4 +1,4 @@
-import Sentry from 'sentry-expo';
+import { Sentry } from 'react-native-sentry';
 
 export default store => next => action => {
   try {

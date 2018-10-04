@@ -29,9 +29,6 @@ exports[`renders a favorite name correctly 1`] = `
   >
     <View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "fontSize": 19,
@@ -42,9 +39,6 @@ exports[`renders a favorite name correctly 1`] = `
         artur
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#979797",
@@ -74,10 +68,29 @@ exports[`renders a favorite name correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      />
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Object {
+              "color": "#7A62A4",
+              "fontSize": 22,
+              "marginRight": 8,
+            },
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </View>
@@ -112,9 +125,6 @@ exports[`renders a name correctly 1`] = `
   >
     <View>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "fontSize": 19,
@@ -125,9 +135,6 @@ exports[`renders a name correctly 1`] = `
         artur
       </Text>
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
         style={
           Object {
             "color": "#979797",
@@ -157,10 +164,29 @@ exports[`renders a name correctly 1`] = `
       }
     >
       <Text
-        accessible={true}
-        allowFontScaling={true}
-        ellipsizeMode="tail"
-      />
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Object {
+              "color": "#7A62A4",
+              "fontSize": 22,
+              "marginRight": 8,
+            },
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
     </View>
   </View>
 </View>

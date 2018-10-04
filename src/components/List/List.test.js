@@ -25,7 +25,8 @@ it('renders list correctly', () => {
   const props = {
     screen: 'Favorites',
     sections,
-    route: { key: 'male' }
+    route: { key: 'male' },
+    scrollEvent: jest.fn()
   };
 
   const tree = renderer
@@ -42,7 +43,8 @@ it('renders list correctly', () => {
 it('shows blank state if list is empty', () => {
   const props = {
     sections: [],
-    route: { key: 'female' }
+    route: { key: 'female' },
+    scrollEvent: jest.fn()
   };
 
   const tree = renderer

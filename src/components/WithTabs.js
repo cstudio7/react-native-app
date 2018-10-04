@@ -1,26 +1,15 @@
-import * as React from 'react';
-import {
-  View,
-  Text,
-  Animated,
-  TouchableOpacity,
-  StyleSheet
-} from 'react-native';
-import { TabView } from 'react-native-tab-view';
-import Loadable from 'react-loadable';
-import { Colors, Spacing } from '../constants';
-
-const List = Loadable({
-  loader: () => import('../containers/List'),
-  loading: () => <Text>Loading...</Text>
-});
+import * as React from "react";
+import { View, Animated, TouchableOpacity, StyleSheet } from "react-native";
+import { TabView } from "react-native-tab-view";
+import { Colors, Spacing } from "../constants";
+import List from "../containers/List";
 
 export default class WithTabs extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'female', title: 'Девочки' },
-      { key: 'male', title: 'Мальчики' }
+      { key: "female", title: "Девочки" },
+      { key: "male", title: "Мальчики" }
     ]
   };
 
@@ -37,15 +26,17 @@ export default class WithTabs extends React.Component {
               onPress={() =>
                 this.setState({ index }, () => {
                   this.props.changeActiveTab(
-                    this.state.routes[this.state['index']]
+                    this.state.routes[this.state["index"]]
                   );
                 })
-              }>
+              }
+            >
               <Animated.Text
                 style={[
                   styles.tabText,
                   this.state.index === index ? styles.tabActive : null
-                ]}>
+                ]}
+              >
                 {route.title}
               </Animated.Text>
             </TouchableOpacity>
@@ -57,8 +48,8 @@ export default class WithTabs extends React.Component {
 
   _renderScene = ({ route }) => {
     switch (route.key) {
-      case 'female':
-      case 'male':
+      case "female":
+      case "male":
         return <List route={route} screen={this.props.screen} />;
       default:
         return null;
@@ -79,9 +70,9 @@ export default class WithTabs extends React.Component {
 
 const styles = StyleSheet.create({
   tabBar: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    backgroundColor: '#fff'
+    justifyContent: "space-between",
+    flexDirection: "row",
+    backgroundColor: "#fff"
   },
   tabItem: {
     paddingTop: Spacing.padding2,
@@ -91,7 +82,7 @@ const styles = StyleSheet.create({
   },
   tabActive: {
     color: Colors.primary,
-    fontWeight: '600'
+    fontWeight: "600"
   },
   tabText: {
     color: Colors.secondary,

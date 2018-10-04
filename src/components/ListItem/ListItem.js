@@ -6,7 +6,7 @@ import {
   TouchableWithoutFeedback,
   StyleSheet
 } from 'react-native';
-import { Icon } from 'expo';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { Spacing, Colors } from '../../constants';
 
 class ListItem extends React.PureComponent {
@@ -33,8 +33,8 @@ class ListItem extends React.PureComponent {
                 };
                 favorite(payload);
               }}>
-              <Icon.Ionicons
-                name={`md-heart${name.isFavorite ? '' : '-outline'}`}
+              <Icon
+                name={`md-heart${name.isFavorite ? '' : '-empty'}`}
                 style={styles.icon}
               />
             </TouchableOpacity>

@@ -1,26 +1,12 @@
 import React from 'react';
-import { Text } from 'react-native';
 import {
   createStackNavigator,
   createBottomTabNavigator
 } from 'react-navigation';
-import Loadable from 'react-loadable';
 import { Typography } from '../constants';
-
-const TabBarIcon = Loadable({
-  loader: () => import('../components/TabBarIcon'),
-  loading: () => <Text>Loading...</Text>
-});
-
-const FavoritesScreen = Loadable({
-  loader: () => import('../containers/FavoritesScreen'),
-  loading: () => <Text>Loading...</Text>
-});
-
-const ListScreen = Loadable({
-  loader: () => import('../containers/ListScreen'),
-  loading: () => <Text>Loading...</Text>
-});
+import TabBarIcon from '../components/TabBarIcon';
+import ListScreen from '../containers/ListScreen';
+import FavoritesScreen from '../containers/FavoritesScreen';
 
 const FavoritesStack = createStackNavigator({
   Favorites: {
@@ -36,7 +22,7 @@ FavoritesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={`md-heart${focused ? '' : '-outline'}`}
+      name={`md-heart${focused ? '' : '-empty'}`}
     />
   )
 };
