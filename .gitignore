@@ -1,6 +1,7 @@
 
 config.js
 android/app/release/
+my-release-key.keystore
 
 # Created by https://www.gitignore.io/api/xcode,macos,reactnative
 
