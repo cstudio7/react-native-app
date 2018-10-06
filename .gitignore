@@ -1,5 +1,6 @@
 
 config.js
+android/app/release/
 
 # Created by https://www.gitignore.io/api/xcode,macos,reactnative
 
