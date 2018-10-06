@@ -1,4 +1,4 @@
-package com.babynames;
+package dev.baarsjes.babynamespropro;
 
 import com.facebook.react.ReactActivity;
 
