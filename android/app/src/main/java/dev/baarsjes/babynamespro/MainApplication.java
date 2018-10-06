@@ -1,4 +1,4 @@
-package com.babynames;
+package dev.baarsjes.babynamespro;
 
 import android.app.Application;
 
