@@ -1,5 +1,5 @@
-import config from '../../../config';
 import { createApolloFetch } from 'apollo-fetch';
+import config from '../../../config';
 import { CALL_API } from '../../constants/Api';
 
 const fetch = createApolloFetch({
