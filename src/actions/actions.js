@@ -86,34 +86,13 @@ export const changeActiveTab = (screen, activeTab) => {
   };
 };
 
-const fetchNames = query => ({
+const fetchNames = gender => ({
   [CALL_API]: {
     types: [FETCH_NAMES_REQUEST, FETCH_NAMES_SUCCESS, FETCH_NAMES_FAIL],
-    query
+    gender
   }
 });
 
-const femaleNamesQuery = gql`
-  {
-    femaleNames {
-      id
-      name
-      meaning
-    }
-  }
-`;
-
-const maleNamesQuery = gql`
-  {
-    maleNames {
-      id
-      name
-      meaning
-    }
-  }
-`;
-
 export const loadNames = gender => dispatch => {
-  const query = gender === 'female' ? femaleNamesQuery : maleNamesQuery;
-  return dispatch(fetchNames(query));
+  return dispatch(fetchNames(gender));
 };

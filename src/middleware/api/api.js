@@ -1,20 +1,24 @@
-import { createApolloFetch } from 'apollo-fetch';
-import config from '../../../config';
 import { CALL_API } from '../../constants/Api';
+import femaleNames from '../../../data/femaleNames';
+import maleNames from '../../../data/maleNames';
 
-const fetch = createApolloFetch({
-  uri: config.apiRoot
-});
+const namesObj = {
+  female: femaleNames,
+  male: maleNames
+};
 
-const callApi = query => {
-  return fetch({
-    query
-  }).then(response => {
-    const { data, errors } = response;
-    if (errors) {
-      return Promise.reject(errors);
-    }
-    return data;
+const callApi = gender => {
+  const sortedNames = Object.keys(namesObj[gender]).sort();
+
+  const names = sortedNames.map(name => {
+    const { meaning, origin } = namesObj[gender][name];
+    return { name, meaning, origin };
+  });
+
+  return new Promise(resolve => {
+    resolve({
+      [gender === 'female' ? 'femaleNames' : 'maleNames']: names
+    });
   });
 };
 
@@ -36,9 +40,9 @@ export default _ => next => action => {
   const [requestType, successType, failureType] = types;
   next(actionWith({ type: requestType }));
 
-  let { query } = callAPI;
+  let { gender } = callAPI;
 
-  return callApi(query).then(
+  return callApi(gender).then(
     response =>
       next(
         actionWith({

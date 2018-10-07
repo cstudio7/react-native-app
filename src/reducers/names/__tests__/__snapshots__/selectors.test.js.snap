@@ -1,65 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`returns favorite female sections 1`] = `
+exports[`returns favorite female data 1`] = `
 Array [
   Object {
-    "data": Array [
-      Object {
-        "isFavorite": true,
-        "name": "sveta",
-      },
-    ],
-    "title": "s",
+    "isFavorite": true,
+    "name": "sveta",
   },
 ]
 `;
 
-exports[`returns favorite male sections 1`] = `
+exports[`returns favorite male data 1`] = `
 Array [
   Object {
-    "data": Array [
-      Object {
-        "isFavorite": true,
-        "name": "artur",
-      },
-    ],
-    "title": "a",
+    "isFavorite": true,
+    "name": "artur",
   },
 ]
 `;
 
-exports[`returns female sections 1`] = `
+exports[`returns female names 1`] = `
 Array [
   Object {
-    "data": Array [
-      Object {
-        "isFavorite": true,
-        "name": "sveta",
-      },
-    ],
-    "title": "s",
+    "isFavorite": true,
+    "name": "sveta",
   },
 ]
 `;
 
-exports[`returns male sections 1`] = `
+exports[`returns male names 1`] = `
 Array [
   Object {
-    "data": Array [
-      Object {
-        "isFavorite": true,
-        "name": "artur",
-      },
-    ],
-    "title": "a",
+    "isFavorite": true,
+    "name": "artur",
   },
   Object {
-    "data": Array [
-      Object {
-        "name": "pierre",
-      },
-    ],
-    "title": "p",
+    "name": "pierre",
   },
 ]
 `;

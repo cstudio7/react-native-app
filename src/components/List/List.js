@@ -1,7 +1,6 @@
 import React from 'react';
-import { SectionList, StyleSheet } from 'react-native';
+import { FlatList, StyleSheet, Platform } from 'react-native';
 import throttle from 'lodash.throttle';
-import ListSectionHeader from '../ListSectionHeader/ListSectionHeader';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import { Colors } from '../../constants';
@@ -11,10 +10,6 @@ class List extends React.PureComponent {
     super(props);
     this.scrollEventThrottle = throttle(props.scrollEvent, 5000);
   }
-
-  renderSectionHeader = ({ section: { title } }) => (
-    <ListSectionHeader title={title} />
-  );
 
   renderItem = ({ item }) => (
     <ListItem
@@ -28,18 +23,19 @@ class List extends React.PureComponent {
     <ListEmptyComponent screen={this.props.screen} />
   );
 
+  keyExtractor = (item, index) => item.name + index;
+
   render() {
-    const { sections } = this.props;
+    const { data } = this.props;
 
     return (
-      <SectionList
+      <FlatList
         style={styles.list}
-        renderSectionHeader={this.renderSectionHeader}
         renderItem={this.renderItem}
-        sections={sections}
-        stickySectionHeadersEnabled={true}
-        keyExtractor={item => item.id}
+        data={data}
+        keyExtractor={this.keyExtractor}
         ListEmptyComponent={this.renderListEmptyComponent}
+        removeClippedSubviews={Platform.OS === 'android'}
         onScrollBeginDrag={this.scrollEventThrottle}
       />
     );

@@ -6,26 +6,16 @@ exports[`renders list correctly 1`] = `
   data={
     Array [
       Object {
-        "data": Array [
-          Object {
-            "id": 1,
-            "name": "artur",
-          },
-          Object {
-            "id": 2,
-            "name": "alex",
-          },
-        ],
-        "title": "a",
+        "id": 1,
+        "name": "artur",
       },
       Object {
-        "data": Array [
-          Object {
-            "id": 3,
-            "name": "pierre",
-          },
-        ],
-        "title": "p",
+        "id": 2,
+        "name": "alex",
+      },
+      Object {
+        "id": 3,
+        "name": "pierre",
       },
     ]
   }
@@ -36,6 +26,7 @@ exports[`renders list correctly 1`] = `
   initialNumToRender={10}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
+  numColumns={1}
   onContentSizeChange={[Function]}
   onEndReachedThreshold={2}
   onLayout={[Function]}
@@ -43,80 +34,20 @@ exports[`renders list correctly 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
   renderItem={[Function]}
-  renderSectionHeader={[Function]}
   scrollEventThrottle={50}
-  sections={
-    Array [
-      Object {
-        "data": Array [
-          Object {
-            "id": 1,
-            "name": "artur",
-          },
-          Object {
-            "id": 2,
-            "name": "alex",
-          },
-        ],
-        "title": "a",
-      },
-      Object {
-        "data": Array [
-          Object {
-            "id": 3,
-            "name": "pierre",
-          },
-        ],
-        "title": "p",
-      },
-    ]
-  }
-  stickyHeaderIndices={
-    Array [
-      0,
-      4,
-    ]
-  }
-  stickySectionHeadersEnabled={true}
+  stickyHeaderIndices={Array []}
   style={
     Object {
       "backgroundColor": "#fff",
     }
   }
   updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
   windowSize={21}
 >
   <View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "paddingLeft": 16,
-            "paddingRight": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#fff",
-              "color": "#979797",
-              "fontSize": 15,
-              "fontWeight": "500",
-              "marginBottom": 1,
-              "paddingBottom": 8,
-            }
-          }
-        >
-          a
-        </Text>
-      </View>
-    </View>
     <View
       onLayout={[Function]}
       style={null}
@@ -316,39 +247,6 @@ exports[`renders list correctly 1`] = `
     <View
       onLayout={[Function]}
       style={null}
-    />
-    <View
-      onLayout={[Function]}
-      style={null}
-    >
-      <View
-        style={
-          Object {
-            "backgroundColor": "#fff",
-            "paddingLeft": 16,
-            "paddingRight": 16,
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "backgroundColor": "#fff",
-              "color": "#979797",
-              "fontSize": 15,
-              "fontWeight": "500",
-              "marginBottom": 1,
-              "paddingBottom": 8,
-            }
-          }
-        >
-          p
-        </Text>
-      </View>
-    </View>
-    <View
-      onLayout={[Function]}
-      style={null}
     >
       <View
         accessible={true}
@@ -444,10 +342,6 @@ exports[`renders list correctly 1`] = `
         </View>
       </View>
     </View>
-    <View
-      onLayout={[Function]}
-      style={null}
-    />
   </View>
 </RCTScrollView>
 `;
@@ -463,6 +357,7 @@ exports[`shows blank state if list is empty 1`] = `
   initialNumToRender={10}
   keyExtractor={[Function]}
   maxToRenderPerBatch={10}
+  numColumns={1}
   onContentSizeChange={[Function]}
   onEndReachedThreshold={2}
   onLayout={[Function]}
@@ -470,18 +365,17 @@ exports[`shows blank state if list is empty 1`] = `
   onScroll={[Function]}
   onScrollBeginDrag={[Function]}
   onScrollEndDrag={[Function]}
+  removeClippedSubviews={false}
   renderItem={[Function]}
-  renderSectionHeader={[Function]}
   scrollEventThrottle={50}
-  sections={Array []}
   stickyHeaderIndices={Array []}
-  stickySectionHeadersEnabled={true}
   style={
     Object {
       "backgroundColor": "#fff",
     }
   }
   updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
   windowSize={21}
 >
   <View>

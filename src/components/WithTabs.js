@@ -4,7 +4,7 @@ import { TabView } from "react-native-tab-view";
 import { Colors, Spacing } from "../constants";
 import List from "../containers/List";
 
-export default class WithTabs extends React.Component {
+export default class WithTabs extends React.PureComponent {
   state = {
     index: 0,
     routes: [

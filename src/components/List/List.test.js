@@ -11,20 +11,15 @@ const store = mockStore({});
 jest.mock('lodash.throttle', () => jest.fn(fn => fn));
 
 it('renders list correctly', () => {
-  const sections = [
-    {
-      title: 'a',
-      data: [{ id: 1, name: 'artur' }, { id: 2, name: 'alex' }]
-    },
-    {
-      title: 'p',
-      data: [{ id: 3, name: 'pierre' }]
-    }
+  const data = [
+    { id: 1, name: 'artur' },
+    { id: 2, name: 'alex' },
+    { id: 3, name: 'pierre' }
   ];
 
   const props = {
     screen: 'Favorites',
-    sections,
+    data,
     route: { key: 'male' },
     scrollEvent: jest.fn()
   };
@@ -42,7 +37,7 @@ it('renders list correctly', () => {
 
 it('shows blank state if list is empty', () => {
   const props = {
-    sections: [],
+    data: [],
     route: { key: 'female' },
     scrollEvent: jest.fn()
   };

@@ -1,4 +1,4 @@
-import { makeGetSections } from '../selectors';
+import { getNames } from '../selectors';
 
 const names = Object.freeze({
   female: [{ name: 'sveta', isFavorite: true }],
@@ -9,36 +9,32 @@ const state = Object.freeze({
   names
 });
 
-it('returns female sections', () => {
+it('returns female names', () => {
   const props = {
     route: { key: 'female' }
   };
-  const getSections = makeGetSections();
-  expect(getSections(state, props)).toMatchSnapshot();
+  expect(getNames(state, props)).toMatchSnapshot();
 });
 
-it('returns male sections', () => {
+it('returns male names', () => {
   const props = {
     route: { key: 'male' }
   };
-  const getSections = makeGetSections();
-  expect(getSections(state, props)).toMatchSnapshot();
+  expect(getNames(state, props)).toMatchSnapshot();
 });
 
-it('returns favorite female sections', () => {
+it('returns favorite female data', () => {
   const props = {
     route: { key: 'female' },
     screen: 'Favorites'
   };
-  const getSections = makeGetSections();
-  expect(getSections(state, props)).toMatchSnapshot();
+  expect(getNames(state, props)).toMatchSnapshot();
 });
 
-it('returns favorite male sections', () => {
+it('returns favorite male data', () => {
   const props = {
     route: { key: 'male' },
     screen: 'Favorites'
   };
-  const getSections = makeGetSections();
-  expect(getSections(state, props)).toMatchSnapshot();
+  expect(getNames(state, props)).toMatchSnapshot();
 });

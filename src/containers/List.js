@@ -1,16 +1,13 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { makeGetSections } from '../reducers/names/selectors';
+import { getNames } from '../reducers/names/selectors';
 import { scrollEvent } from '../actions/actions';
 import List from '../components/List/List';
 
-const makeMapStateToProps = () => {
-  const getSections = makeGetSections();
-  const mapStateToProps = (state, props) => ({
-    sections: getSections(state, props)
-  });
-  return mapStateToProps;
-};
+const makeMapStateToProps = (state, props) => ({
+  data: getNames(state, props)
+});
+
 
 const mapDispatchToProps = (dispatch, props) => {
   return bindActionCreators(
