@@ -86,52 +86,8 @@ Object {
 }
 `;
 
-exports[`creates an async action to fetch female names 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
-        "Call API": Object {
-          "gender": "female",
-          "types": Array [
-            "FETCH_NAMES_REQUEST",
-            "FETCH_NAMES_SUCCESS",
-            "FETCH_NAMES_FAIL",
-          ],
-        },
-      },
-    ],
-  ],
-  "results": Array [
-    Object {
-      "isThrow": false,
-      "value": undefined,
-    },
-  ],
-}
-`;
-
-exports[`creates an async action to fetch male names 1`] = `
-[MockFunction] {
-  "calls": Array [
-    Array [
-      Object {
-        "Call API": Object {
-          "gender": "male",
-          "types": Array [
-            "FETCH_NAMES_REQUEST",
-            "FETCH_NAMES_SUCCESS",
-            "FETCH_NAMES_FAIL",
-          ],
-        },
-      },
-    ],
-  ],
-  "results": Array [
-    Object {
-      "isThrow": false,
-      "value": undefined,
-    },
-  ],
+exports[`creates an action to load names 1`] = `
+Object {
+  "type": "FETCH_NAMES_REQUEST",
 }
 `;

@@ -6,8 +6,7 @@ import WithTabs from '../containers/WithTabs'
 class ListScreen extends React.PureComponent {
   componentDidMount() {
     this.props.listScreenView();
-    this.props.loadNames('female');
-    this.props.loadNames('male');
+    this.props.loadNames();
   }
 
   render() {

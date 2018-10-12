@@ -3,7 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
-import { api } from '../middleware';
+import { loadNames } from '../middleware';
 import rootReducer from '../reducers';
 
 const configureStore = () => {
@@ -16,7 +16,7 @@ const configureStore = () => {
 
   const store = createStore(
     persistedReducer,
-    compose(applyMiddleware(api, thunk, createLogger()))
+    compose(applyMiddleware(loadNames, thunk, createLogger()))
   );
 
   if (module.hot) {

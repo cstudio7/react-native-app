@@ -1,7 +1,5 @@
 import {
   FETCH_NAMES_REQUEST,
-  FETCH_NAMES_SUCCESS,
-  FETCH_NAMES_FAIL,
   LISTSCREEN_NAME_FAVORITE,
   FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
@@ -17,8 +15,6 @@ import {
   LISTSCREEN_SCROLL,
   FAVSCREEN_SCROLL
 } from '../constants/ActionTypes';
-import { CALL_API } from '../constants/Api';
-import gql from 'graphql-tag';
 
 const isScreenFavorites = screen => screen === 'Favorites';
 
@@ -86,13 +82,6 @@ export const changeActiveTab = (screen, activeTab) => {
   };
 };
 
-const fetchNames = gender => ({
-  [CALL_API]: {
-    types: [FETCH_NAMES_REQUEST, FETCH_NAMES_SUCCESS, FETCH_NAMES_FAIL],
-    gender
-  }
-});
-
-export const loadNames = gender => dispatch => {
-  return dispatch(fetchNames(gender));
-};
+export const loadNames = () => ({
+  type: FETCH_NAMES_REQUEST
+})

@@ -15,50 +15,44 @@ const initialState = {
 };
 
 const updateItemInArray = (state, name, gender) => {
-  const genderData = state[gender];
-  const index = R.findIndex(R.propEq('id', name.id))(genderData);
+  const genderNames = state[gender];
+  const index = R.findIndex(R.propEq('name', name.name))(genderNames);
 
   return {
     ...state,
     [gender]: [
-      ...genderData.slice(0, index),
+      ...genderNames.slice(0, index),
       name,
-      ...genderData.slice(index + 1)
+      ...genderNames.slice(index + 1)
     ]
   };
 };
 
-const mergeGenderNamesWithState = (state, response) => {
-  const gender = response.femaleNames ? 'female' : 'male';
+const mergeGenderNamesWithState = (state, genderNames = [], gender) => {
   if (!R.path([gender, 'length'], state)) {
-    return {
-      ...state,
-      [gender]: response.femaleNames || response.maleNames
-    };
+    return genderNames;
   }
 
+  return genderNames.map(name =>
+    R.mergeAll([
+      name,
+      state[gender].find(stateName => stateName.name === name.name)
+    ])
+  );
+};
+
+const saveNames = (state, action) => {
+  const { response } = action;
+  const { female, male } = response;
   return {
-    ...state,
-    [gender]: (response.femaleNames || response.maleNames).map(name =>
-      R.mergeAll([
-        name,
-        state[gender].find(stateName => stateName.name === name.name)
-      ])
-    )
+    female: mergeGenderNamesWithState(state, female, 'female'),
+    male: mergeGenderNamesWithState(state, male, 'male')
   };
 };
 
-const saveNames = (state, action) =>
-  mergeGenderNamesWithState(state, action.response);
-
 const favoriteName = (state, action) => {
-  const { payload, type } = action;
-  const newName = {
-    ...payload.name,
-    isFavorite:
-      type === FAVSCREEN_NAME_FAVORITE || type === LISTSCREEN_NAME_FAVORITE
-  };
-  return updateItemInArray(state, newName, payload.gender);
+  const { payload } = action;
+  return updateItemInArray(state, payload.name, payload.gender);
 };
 
 const unfavoriteName = favoriteName;

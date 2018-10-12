@@ -22,7 +22,7 @@ describe('FETCH_NAMES_SUCCESS', () => {
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
         response: {
-          femaleNames: [{ id: 1, name: 'sveta', isFavorite: true }]
+          female: [{ id: 1, name: 'sveta', isFavorite: true }]
         }
       })
     ).toMatchSnapshot();
@@ -38,7 +38,7 @@ describe('FETCH_NAMES_SUCCESS', () => {
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
         response: {
-          maleNames: [{ id: 1, name: 'artur', isFavorite: true }]
+          male: [{ id: 1, name: 'artur', isFavorite: true }]
         }
       })
     ).toMatchSnapshot();
@@ -57,7 +57,7 @@ describe('FETCH_NAMES_SUCCESS', () => {
       names(initialState, {
         type: FETCH_NAMES_SUCCESS,
         response: {
-          maleNames: [
+          male: [
             { id: 1, name: 'artur', meaning: 'bla' },
             { id: 2, name: 'alex', meaning: 'bla bla' },
             { id: 3, name: 'pierre', meaning: 'bla bla bla' }

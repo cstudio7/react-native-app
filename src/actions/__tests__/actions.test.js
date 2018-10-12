@@ -68,14 +68,6 @@ it('creates a FAVSCREEN_MALETAB_PRESS action', () => {
   expect(changeActiveTab('Favorites', { key: 'male' })).toMatchSnapshot();
 });
 
-it('creates an async action to fetch female names', () => {
-  const dispatch = jest.fn();
-  loadNames('female')(dispatch);
-  expect(dispatch).toMatchSnapshot();
-});
-
-it('creates an async action to fetch male names', () => {
-  const dispatch = jest.fn();
-  loadNames('male')(dispatch);
-  expect(dispatch).toMatchSnapshot();
+it('creates an action to load names', () => {
+  expect(loadNames()).toMatchSnapshot();
 });
