@@ -9,7 +9,7 @@
   "dependencies": {
     "@babel/runtime": "7.1.2",
     "lodash.throttle": "4.1.1",
-    "native-base": "^2.8.1",
+    "native-base": "2.8.1",
     "ramda": "0.25.0",
     "react": "16.5.0",
     "react-native": "0.57.2",
