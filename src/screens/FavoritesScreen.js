@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { withNavigationFocus } from 'react-navigation';
-import WithTabs from '../containers/WithTabs'
+import { Container } from 'native-base';
+import WithTabs from '../components/WithTabs';
 
 class FavoritesScreen extends React.PureComponent {
   render() {
@@ -10,18 +10,11 @@ class FavoritesScreen extends React.PureComponent {
     }
 
     return (
-      <View style={styles.container}>
-        <WithTabs screen={this.props.navigation.state.routeName} />
-      </View>
+      <Container>
+        <WithTabs screen="Favorites" />
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  }
-});
 
 export default withNavigationFocus(FavoritesScreen);

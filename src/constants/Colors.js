@@ -1,13 +1,9 @@
-const primary = '#7A62A4';
-const secondary = '#938AA4';
-const gray = '#979797';
+const primary = '#673AB7';
+const secondary = '#9e9e9e';
 const white = '#fff';
-const lightGray = 'rgba(0, 0, 0, 0.15)';
 
 export default {
-  gray,
   primary,
   secondary,
   white,
-  lightGray
 };

@@ -1,91 +1,19 @@
-import * as React from "react";
-import { View, Animated, TouchableOpacity, StyleSheet } from "react-native";
-import { TabView } from "react-native-tab-view";
-import { Colors, Spacing } from "../constants";
-import List from "../containers/List";
+import * as React from 'react';
+import { StyleSheet } from 'react-native';
+import { Tab, Tabs } from 'native-base';
+import List from '../containers/List';
 
 export default class WithTabs extends React.PureComponent {
-  state = {
-    index: 0,
-    routes: [
-      { key: "female", title: "Девочки" },
-      { key: "male", title: "Мальчики" }
-    ]
-  };
-
-  _handleIndexChange = index => this.setState({ index });
-
-  _renderTabBar = props => {
-    return (
-      <View style={styles.tabBar}>
-        {props.navigationState.routes.map((route, index) => {
-          return (
-            <TouchableOpacity
-              key={index}
-              style={styles.tabItem}
-              onPress={() =>
-                this.setState({ index }, () => {
-                  this.props.changeActiveTab(
-                    this.state.routes[this.state["index"]]
-                  );
-                })
-              }
-            >
-              <Animated.Text
-                style={[
-                  styles.tabText,
-                  this.state.index === index ? styles.tabActive : null
-                ]}
-              >
-                {route.title}
-              </Animated.Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
-    );
-  };
-
-  _renderScene = ({ route }) => {
-    switch (route.key) {
-      case "female":
-      case "male":
-        return <List route={route} screen={this.props.screen} />;
-      default:
-        return null;
-    }
-  };
-
   render() {
     return (
-      <TabView
-        navigationState={this.state}
-        renderScene={this._renderScene}
-        renderTabBar={this._renderTabBar}
-        onIndexChange={this._handleIndexChange}
-      />
+      <Tabs>
+        <Tab heading="Девочки">
+          <List route={{ key: 'female' }} screen={this.props.screen} />
+        </Tab>
+        <Tab heading="Мальчики">
+          <List route={{ key: 'male' }} screen={this.props.screen} />
+        </Tab>
+      </Tabs>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  tabBar: {
-    justifyContent: "space-between",
-    flexDirection: "row",
-    backgroundColor: "#fff"
-  },
-  tabItem: {
-    paddingTop: Spacing.padding2,
-    paddingBottom: Spacing.padding3,
-    paddingLeft: Spacing.padding2,
-    paddingRight: Spacing.padding2
-  },
-  tabActive: {
-    color: Colors.primary,
-    fontWeight: "600"
-  },
-  tabText: {
-    color: Colors.secondary,
-    fontSize: 19
-  }
-});

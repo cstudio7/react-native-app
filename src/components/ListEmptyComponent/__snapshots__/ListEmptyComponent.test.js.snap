@@ -15,7 +15,7 @@ exports[`renders correctly for Favorites screen 1`] = `
   <Text
     style={
       Object {
-        "color": "#938AA4",
+        "color": "#9e9e9e",
         "fontSize": 16,
         "fontWeight": "500",
       }
@@ -41,7 +41,7 @@ exports[`renders correctly for List screen 1`] = `
   <Text
     style={
       Object {
-        "color": "#938AA4",
+        "color": "#9e9e9e",
         "fontSize": 16,
         "fontWeight": "500",
       }

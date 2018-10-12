@@ -3,94 +3,141 @@
 exports[`renders a favorite name correctly 1`] = `
 <View
   accessible={true}
+  isTVSelectable={true}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "marginLeft": 16,
-      "marginRight": 16,
-    }
-  }
+  style={null}
 >
   <View
     style={
       Object {
-        "borderColor": "rgba(0, 0, 0, 0.15)",
-        "borderTopWidth": 1,
-        "flex": 1,
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#c9c9c9",
         "flexDirection": "row",
-        "justifyContent": "space-between",
+        "marginLeft": 16,
+        "paddingBottom": 13,
+        "paddingRight": 16,
+        "paddingTop": 13,
       }
     }
   >
-    <View>
-      <Text
-        style={
-          Object {
-            "fontSize": 19,
-            "marginTop": 16,
-          }
-        }
-      >
-        artur
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#979797",
-            "fontSize": 14,
-            "marginBottom": 16,
-            "marginTop": 4,
-          }
-        }
-      />
-    </View>
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "opacity": 1,
-          "paddingBottom": 24,
-          "paddingLeft": 24,
-          "paddingTop": 28,
+          "alignItems": null,
+          "alignSelf": null,
+          "flex": 1,
         }
       }
     >
       <Text
-        allowFontScaling={false}
         style={
           Array [
             Object {
-              "color": undefined,
-              "fontSize": 12,
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "marginLeft": 10,
+              "marginRight": 10,
             },
             Object {
-              "color": "#7A62A4",
-              "fontSize": 22,
-              "marginRight": 8,
+              "marginLeft": 0,
             },
-            Object {
-              "fontFamily": "Ionicons",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            Object {},
           ]
         }
+        uppercase={false}
       >
-        
+        artur
       </Text>
+      <Text
+        note={true}
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "#808080",
+              "fontFamily": "System",
+              "fontSize": 14,
+              "fontWeight": "200",
+              "marginLeft": 10,
+              "marginRight": 10,
+            },
+            Object {
+              "marginLeft": 0,
+            },
+          ]
+        }
+        uppercase={false}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "alignSelf": "center",
+          "flex": 0.28,
+          "paddingBottom": null,
+          "paddingLeft": null,
+          "paddingRight": null,
+          "paddingTop": null,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 30,
+                },
+                Object {
+                  "alignSelf": null,
+                  "color": "#c9c8cd",
+                  "fontSize": 22,
+                },
+                Object {
+                  "color": "#673AB7",
+                  "fontSize": 22,
+                },
+              ],
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
     </View>
   </View>
 </View>
@@ -99,94 +146,141 @@ exports[`renders a favorite name correctly 1`] = `
 exports[`renders a name correctly 1`] = `
 <View
   accessible={true}
+  isTVSelectable={true}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
-  style={
-    Object {
-      "marginLeft": 16,
-      "marginRight": 16,
-    }
-  }
+  style={null}
 >
   <View
     style={
       Object {
-        "borderColor": "rgba(0, 0, 0, 0.15)",
-        "borderTopWidth": 1,
-        "flex": 1,
+        "alignItems": "center",
+        "backgroundColor": "transparent",
+        "borderBottomWidth": 0.5,
+        "borderColor": "#c9c9c9",
         "flexDirection": "row",
-        "justifyContent": "space-between",
+        "marginLeft": 16,
+        "paddingBottom": 13,
+        "paddingRight": 16,
+        "paddingTop": 13,
       }
     }
   >
-    <View>
-      <Text
-        style={
-          Object {
-            "fontSize": 19,
-            "marginTop": 16,
-          }
-        }
-      >
-        artur
-      </Text>
-      <Text
-        style={
-          Object {
-            "color": "#979797",
-            "fontSize": 14,
-            "marginBottom": 16,
-            "marginTop": 4,
-          }
-        }
-      />
-    </View>
     <View
-      accessible={true}
-      isTVSelectable={true}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "opacity": 1,
-          "paddingBottom": 24,
-          "paddingLeft": 24,
-          "paddingTop": 28,
+          "alignItems": null,
+          "alignSelf": null,
+          "flex": 1,
         }
       }
     >
       <Text
-        allowFontScaling={false}
         style={
           Array [
             Object {
-              "color": undefined,
-              "fontSize": 12,
+              "color": "#000",
+              "fontFamily": "System",
+              "fontSize": 16,
+              "marginLeft": 10,
+              "marginRight": 10,
             },
             Object {
-              "color": "#7A62A4",
-              "fontSize": 22,
-              "marginRight": 8,
+              "marginLeft": 0,
             },
-            Object {
-              "fontFamily": "Ionicons",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-            Object {},
           ]
         }
+        uppercase={false}
       >
-        
+        artur
       </Text>
+      <Text
+        note={true}
+        numberOfLines={1}
+        style={
+          Array [
+            Object {
+              "color": "#808080",
+              "fontFamily": "System",
+              "fontSize": 14,
+              "fontWeight": "200",
+              "marginLeft": 10,
+              "marginRight": 10,
+            },
+            Object {
+              "marginLeft": 0,
+            },
+          ]
+        }
+        uppercase={false}
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "flex-end",
+          "alignSelf": "center",
+          "flex": 0.28,
+          "paddingBottom": null,
+          "paddingLeft": null,
+          "paddingRight": null,
+          "paddingTop": null,
+        }
+      }
+    >
+      <View
+        accessible={true}
+        isTVSelectable={true}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": undefined,
+                "fontSize": 12,
+              },
+              Array [
+                Object {
+                  "color": "#000",
+                  "fontSize": 30,
+                },
+                Object {
+                  "alignSelf": null,
+                  "color": "#c9c8cd",
+                  "fontSize": 22,
+                },
+                Object {
+                  "color": "#673AB7",
+                  "fontSize": 22,
+                },
+              ],
+              Object {
+                "fontFamily": "Ionicons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+            ]
+          }
+        >
+          
+        </Text>
+      </View>
     </View>
   </View>
 </View>

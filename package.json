@@ -8,17 +8,14 @@
   },
   "dependencies": {
     "@babel/runtime": "7.1.2",
-    "apollo-fetch": "0.7.0",
-    "graphql": "14.0.2",
-    "graphql-tag": "2.10.0",
     "lodash.throttle": "4.1.1",
+    "native-base": "^2.8.1",
     "ramda": "0.25.0",
     "react": "16.5.0",
     "react-native": "0.57.2",
     "react-native-amplitude-analytics": "0.2.3",
     "react-native-sentry": "0.39.0",
     "react-native-tab-view": "1.2.0",
-    "react-native-vector-icons": "6.0.2",
     "react-navigation": "2.18.0",
     "react-redux": "5.0.7",
     "redux": "4.0.0",
@@ -37,6 +34,9 @@
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "./node_modules/react-native/jest/preprocessor.js"
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ]
   }
 }

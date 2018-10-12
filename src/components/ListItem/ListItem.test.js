@@ -1,12 +1,12 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import renderer from 'react-test-renderer';
-import ListItem from './ListItem';
+import ListItemComponent from './ListItem';
 
 const name = { id: 1, name: 'artur' };
 
 it('renders a name correctly', () => {
-  const tree = renderer.create(<ListItem name={name} />).toJSON();
+  const tree = renderer.create(<ListItemComponent name={name} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -15,7 +15,7 @@ it('renders a favorite name correctly', () => {
     ...name,
     isFavorite: true
   };
-  const tree = renderer.create(<ListItem name={favoriteName} />).toJSON();
+  const tree = renderer.create(<ListItemComponent name={favoriteName} />).toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -32,7 +32,7 @@ it('triggers onPress when the user taps', () => {
   };
 
   const instance = renderer.create(
-    <ListItem
+    <ListItemComponent
       name={name}
       gender={gender}
       favorite={onPressEvent}

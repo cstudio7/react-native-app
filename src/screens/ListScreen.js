@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { withNavigationFocus } from 'react-navigation';
-import WithTabs from '../containers/WithTabs'
+import { Container } from 'native-base';
+import WithTabs from '../components/WithTabs';
 
 class ListScreen extends React.PureComponent {
   componentDidMount() {
@@ -15,18 +15,11 @@ class ListScreen extends React.PureComponent {
     }
 
     return (
-      <View style={styles.container}>
-        <WithTabs screen={this.props.navigation.state.routeName} />
-      </View>
+      <Container>
+        <WithTabs screen="List" />
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  }
-});
 
 export default withNavigationFocus(ListScreen);

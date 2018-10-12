@@ -22,7 +22,7 @@ FavoritesStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={`md-heart${focused ? '' : '-empty'}`}
+      name={`md-heart${focused ? '' : '-outline'}`}
     />
   )
 };
