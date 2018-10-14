@@ -5,7 +5,6 @@ import WithTabs from '../components/WithTabs';
 
 class ListScreen extends React.PureComponent {
   componentDidMount() {
-    this.props.listScreenView();
     this.props.loadNames();
   }
 
