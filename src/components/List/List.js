@@ -12,6 +12,7 @@ class List extends React.Component {
 
   renderItem = ({ item }) => (
     <ListItemComponent
+      navigation={this.props.navigation}
       name={item}
       gender={this.props.route.key}
       screen={this.props.screen}

@@ -1,14 +1,14 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import ListItem from '../components/ListItem/ListItem';
-import { favorite } from '../actions/actions';
+import ListItemDetailsScreen from '../screens/ListItemDetailsScreen';
+import { openNameScreen } from '../actions/actions';
 
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch, props) => {
   return bindActionCreators(
     {
-      favorite: favorite.bind(null, props.screen)
+      openNameScreen: openNameScreen.bind(null, props.screen)
     },
     dispatch
   );
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch, props) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListItem);
+)(ListItemDetailsScreen);

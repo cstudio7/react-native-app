@@ -15,7 +15,7 @@ class ListScreen extends React.PureComponent {
 
     return (
       <Container>
-        <WithTabs screen="List" />
+        <WithTabs screen="List" navigation={this.props.navigation} />
       </Container>
     );
   }

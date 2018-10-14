@@ -4,10 +4,15 @@ import { Body, ListItem, Text, Right, Icon } from 'native-base';
 import { Colors } from '../../constants';
 
 class ListItemComponent extends React.PureComponent {
+  openListItemDetails() {
+    const { navigate } = this.props.navigation;
+    navigate('ListItemDetails', { name: this.props.name });
+  }
+
   render() {
     const { name, favorite, gender } = this.props;
     return (
-      <ListItem>
+      <ListItem onPress={this.openListItemDetails.bind(this)}>
         <Body>
           <Text style={styles.listText}>{name.name}</Text>
           <Text style={styles.listText} note numberOfLines={1}>
