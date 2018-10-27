@@ -12,7 +12,7 @@ class ListItemComponent extends React.PureComponent {
   render() {
     const { name, favorite, gender } = this.props;
     return (
-      <ListItem onPress={this.openListItemDetails.bind(this)}>
+      <ListItem>
         <Body>
           <Text style={styles.listText}>{name.name}</Text>
           <Text style={styles.listText} note numberOfLines={1}>
