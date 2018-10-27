@@ -1,9 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders list correctly 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
   <RCTScrollView
     ListEmptyComponent={[Function]}
+    bounces={false}
+    contentContainerStyle={false}
     data={
       Array [
         Object {
@@ -35,10 +44,19 @@ exports[`renders list correctly 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    overScrollMode="never"
     removeClippedSubviews={false}
     renderItem={[Function]}
-    scrollEventThrottle={50}
+    scrollEventThrottle={10}
+    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "elevation": -1,
+        "height": "100%",
+        "zIndex": 0,
+      }
+    }
     updateCellsBatchingPeriod={50}
     viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
@@ -485,9 +503,154 @@ exports[`renders list correctly 1`] = `
 `;
 
 exports[`shows blank state if list is empty 1`] = `
-<View>
+<View
+  style={
+    Object {
+      "backgroundColor": "white",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "elevation": 0,
+        "flex": 1,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 8,
+        "position": "absolute",
+        "transform": Array [
+          Object {
+            "translateY": -0,
+          },
+        ],
+        "width": "100%",
+        "zIndex": 1,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "transparent",
+          "borderBottomWidth": 1,
+          "borderColor": "#D9D5DC",
+          "borderLeftWidth": 1,
+          "borderRadius": 30,
+          "borderRightWidth": 1,
+          "borderTopWidth": 1,
+          "borderWidth": 1,
+          "flexDirection": "row",
+          "marginLeft": 2,
+          "opacity": 1,
+        }
+      }
+    >
+      <Text
+        active={true}
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#000",
+                "fontSize": 24,
+                "paddingLeft": 10,
+                "paddingRight": 8,
+              },
+            ],
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        
+      </Text>
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onChangeText={[Function]}
+        placeholder="Поиск"
+        placeholderTextColor="#575757"
+        style={
+          Object {
+            "color": "#000",
+            "flex": 1,
+            "fontSize": 17,
+            "height": 50,
+            "paddingLeft": 8,
+            "paddingRight": 5,
+            "top": 1.5,
+          }
+        }
+        underlineColorAndroid="rgba(0,0,0,0)"
+        value={null}
+      />
+      <Text
+        active={true}
+        allowFontScaling={false}
+        onPress={[Function]}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 12,
+            },
+            Array [
+              Object {
+                "color": "#000",
+                "fontSize": 30,
+              },
+              Object {
+                "color": "#000",
+                "fontSize": 24,
+                "paddingLeft": 10,
+                "paddingRight": 8,
+              },
+            ],
+            Object {
+              "fontFamily": "Ionicons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+          ]
+        }
+      >
+        
+      </Text>
+    </View>
+  </View>
   <RCTScrollView
     ListEmptyComponent={[Function]}
+    bounces={false}
+    contentContainerStyle={
+      Object {
+        "paddingTop": 64,
+      }
+    }
     data={Array []}
     disableVirtualization={false}
     getItem={[Function]}
@@ -504,10 +667,19 @@ exports[`shows blank state if list is empty 1`] = `
     onScroll={[Function]}
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
+    overScrollMode="never"
     removeClippedSubviews={false}
     renderItem={[Function]}
-    scrollEventThrottle={50}
+    scrollEventThrottle={10}
+    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "elevation": -1,
+        "height": "100%",
+        "zIndex": 0,
+      }
+    }
     updateCellsBatchingPeriod={50}
     viewabilityConfigCallbackPairs={Array []}
     windowSize={21}
