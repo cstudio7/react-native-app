@@ -12,7 +12,8 @@ To navigate between tabs, users can swipe left or right or click a tab.
 
 ## Decision
 
-We'll use [react-native-tab-view](https://github.com/react-native-community/react-native-tab-view) since it's a cross-platform component that works perfectly on iOS and Android.
+We will use NativeBase's component "Tabs".
+Previously used [react-native-tab-view](https://github.com/react-native-community/react-native-tab-view) since it's a cross-platform component that works perfectly on iOS and Android.
 
 ## Consequences
 
