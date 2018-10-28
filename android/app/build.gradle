@@ -102,8 +102,8 @@ android {
         applicationId "dev.baarsjes.babynamespro"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "2.0.3-rc.1"
+        versionCode 16
+        versionName "2.1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
