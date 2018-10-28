@@ -10,7 +10,11 @@ exports[`renders list correctly 1`] = `
   }
 >
   <RCTScrollView
-    ListEmptyComponent={[Function]}
+    ListEmptyComponent={
+      <ListEmptyComponent
+        screen="Favorites"
+      />
+    }
     bounces={false}
     contentContainerStyle={false}
     data={
@@ -609,42 +613,10 @@ exports[`shows blank state if list is empty 1`] = `
         underlineColorAndroid="rgba(0,0,0,0)"
         value={null}
       />
-      <Text
-        active={true}
-        allowFontScaling={false}
-        onPress={[Function]}
-        style={
-          Array [
-            Object {
-              "color": undefined,
-              "fontSize": 12,
-            },
-            Array [
-              Object {
-                "color": "#000",
-                "fontSize": 30,
-              },
-              Object {
-                "color": "#000",
-                "fontSize": 24,
-                "paddingLeft": 10,
-                "paddingRight": 8,
-              },
-            ],
-            Object {
-              "fontFamily": "Ionicons",
-              "fontStyle": "normal",
-              "fontWeight": "normal",
-            },
-          ]
-        }
-      >
-        
-      </Text>
     </View>
   </View>
   <RCTScrollView
-    ListEmptyComponent={[Function]}
+    ListEmptyComponent={<ListEmptyComponent />}
     bounces={false}
     contentContainerStyle={
       Object {
