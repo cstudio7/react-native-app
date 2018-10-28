@@ -6,6 +6,7 @@ import { Spacing } from '../../constants';
 
 import { Animated, FlatList, Platform, View, StyleSheet } from 'react-native';
 import { Item, Input, Icon } from 'native-base';
+import NotFound from '../NotFound';
 
 const searchFormHeight = 72;
 
@@ -59,11 +60,9 @@ class List extends React.Component {
     let { data } = this.props;
 
     if (this.state.target) {
-      data = data.filter(item => {
-        return item.name
-          .toLowerCase()
-          .startsWith(this.state.target.toLowerCase());
-      });
+      data = data.filter(item =>
+        item.name.toLowerCase().startsWith(this.state.target.toLowerCase())
+      );
     }
 
     return (
@@ -87,7 +86,9 @@ class List extends React.Component {
                 value={this.state.target}
                 onChangeText={this.onChangeTextHandler}
               />
-              <Icon active name="md-close" onPress={this.clearSearchForm} />
+              {this.state.target ? (
+                <Icon active name="md-close" onPress={this.clearSearchForm} />
+              ) : null}
             </Item>
           </Animated.View>
         )}
@@ -109,7 +110,13 @@ class List extends React.Component {
           renderItem={this.renderItem}
           data={data}
           keyExtractor={this.keyExtractor}
-          ListEmptyComponent={this.renderListEmptyComponent}
+          ListEmptyComponent={
+            this.state.target && !data.length ? (
+              <NotFound />
+            ) : (
+              <ListEmptyComponent screen={this.props.screen} />
+            )
+          }
           removeClippedSubviews={Platform.OS === 'android'}
         />
       </View>
