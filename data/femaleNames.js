@@ -846,7 +846,7 @@ export default {
   },
   Эстер: { meaning: 'звезда', origin: 'персидское', info: '' },
   Юлия: { meaning: 'кудрявая', origin: 'греческое', info: '' },
-  Юна: { meaning: 'латинское', origin: 'единственная в мире', info: '' },
+  Юна: { meaning: 'единственная в мире', origin: 'латинское', info: '' },
   Ядвига: { meaning: 'верящая в Бога', origin: 'польское', info: '' },
   Яна: { meaning: 'цветущая', origin: 'греческое', info: '' },
   Ярослава: { meaning: 'большая слава', origin: 'славянское', info: '' },
