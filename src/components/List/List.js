@@ -1,13 +1,13 @@
 import React from 'react';
 import { Animated, FlatList, Platform, View, StyleSheet } from 'react-native';
-import { Item, Input, Icon } from 'native-base';
-import ListItemComponent from '../../containers/ListItem';
+import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
+import SearchForm from '../SearchForm/SearchForm';
 import { Spacing } from '../../constants';
 
 const searchFormHeight = 72;
 
-class List extends React.Component {
+class List extends React.PureComponent {
   scroll = new Animated.Value(0);
   headerY;
 
@@ -24,13 +24,13 @@ class List extends React.Component {
       target: null
     };
 
-    this.clearSearchForm = this.clearSearchForm.bind(this);
-    this.onChangeTextHandler = this.onChangeTextHandler.bind(this);
+    this.clearSearchFormHanlder = this.clearSearchFormHanlder.bind(this);
+    this.changeTextHandler = this.changeTextHandler.bind(this);
     this.getListEmptyComponent = this.getListEmptyComponent.bind(this);
   }
 
   renderItem = ({ item }) => (
-    <ListItemComponent
+    <ListItem
       navigation={this.props.navigation}
       name={item}
       gender={this.props.route.key}
@@ -44,11 +44,11 @@ class List extends React.Component {
 
   keyExtractor = (item, index) => item.name + index;
 
-  onChangeTextHandler(text) {
+  changeTextHandler(text) {
     this.setState({ target: text });
   }
 
-  clearSearchForm() {
+  clearSearchFormHanlder() {
     this.setState({
       target: null
     });
@@ -78,29 +78,12 @@ class List extends React.Component {
     return (
       <View style={styles.container}>
         {this.props.screen !== 'Favorites' && (
-          <Animated.View
-            style={[
-              styles.searchForm,
-              {
-                transform: [
-                  {
-                    translateY: this.headerY
-                  }
-                ]
-              }
-            ]}>
-            <Item rounded>
-              <Icon active name="md-search" />
-              <Input
-                placeholder="Поиск"
-                value={this.state.target}
-                onChangeText={this.onChangeTextHandler}
-              />
-              {this.state.target ? (
-                <Icon active name="md-close" onPress={this.clearSearchForm} />
-              ) : null}
-            </Item>
-          </Animated.View>
+          <SearchForm
+            headerY={this.headerY}
+            target={this.state.target}
+            changeTextHandler={this.changeTextHandler}
+            clearSearchFormHanlder={this.clearSearchFormHanlder}
+          />
         )}
 
         <Animated.FlatList
@@ -141,19 +124,6 @@ const styles = StyleSheet.create({
   },
   animatedFlatListContentContainer: {
     paddingTop: searchFormHeight - Spacing.base
-  },
-  searchForm: {
-    paddingTop: Spacing.base,
-    paddingLeft: Spacing.base,
-    paddingRight: Spacing.base,
-    backgroundColor: 'white',
-    paddingBottom: Spacing.base,
-    backgroundColor: 'white',
-    width: '100%',
-    position: 'absolute',
-    elevation: 0,
-    flex: 1,
-    zIndex: 1
   }
 });
 
