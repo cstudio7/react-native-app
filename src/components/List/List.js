@@ -1,5 +1,4 @@
 import React from 'react';
-import throttle from 'lodash.throttle';
 import ListItemComponent from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import { Spacing } from '../../constants';
@@ -16,7 +15,7 @@ class List extends React.Component {
 
   constructor(props) {
     super(props);
-    this.scrollEventThrottle = throttle(props.scrollEvent, 5000);
+    this.scrollEventHandler = props.scrollEvent;
 
     this.headerY = Animated.multiply(
       Animated.diffClamp(this.scroll, 0, searchFormHeight),
@@ -94,7 +93,7 @@ class List extends React.Component {
         )}
 
         <Animated.FlatList
-          scrollEventThrottle={10}
+          scrollEventThrottle={16}
           bounces={false}
           showsVerticalScrollIndicator={false}
           style={styles.animatedFlatList}
@@ -118,6 +117,7 @@ class List extends React.Component {
             )
           }
           removeClippedSubviews={Platform.OS === 'android'}
+          onScrollBeginDrag={this.scrollEventHandler}
         />
       </View>
     );

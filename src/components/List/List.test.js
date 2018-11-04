@@ -8,8 +8,6 @@ const middlewares = [];
 const mockStore = configureStore(middlewares);
 const store = mockStore({});
 
-jest.mock('lodash.throttle', () => jest.fn(fn => fn));
-
 it('renders list correctly', () => {
   const data = [
     { id: 1, name: 'artur' },
