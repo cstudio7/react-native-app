@@ -2,14 +2,9 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { Colors } from '../../constants';
 
-const EmptyList = () => <Text style={styles.text}>Загружается...</Text>;
-const EmptyFavorites = () => (
-  <Text style={styles.text}>Вы пока ничего не добавили в избранное</Text>
-);
-
-const ListEmptyComponent = ({ screen }) => (
+const ListEmptyComponent = ({ text }) => (
   <View style={styles.view}>
-    {screen === 'List' ? <EmptyList /> : <EmptyFavorites />}
+    <Text style={styles.text}>{text}</Text>
   </View>
 );
 

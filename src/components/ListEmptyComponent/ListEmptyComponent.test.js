@@ -2,14 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import ListEmptyComponent from './ListEmptyComponent';
 
-it('renders correctly for List screen', () => {
-  const tree = renderer.create(<ListEmptyComponent screen="List" />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-it('renders correctly for Favorites screen', () => {
+it('shows passed text', () => {
   const tree = renderer
-    .create(<ListEmptyComponent screen="Favorites" />)
+    .create(<ListEmptyComponent text="Загружается..." />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });

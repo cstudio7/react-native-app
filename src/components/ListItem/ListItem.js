@@ -4,11 +4,6 @@ import { Body, ListItem, Text, Right, Icon } from 'native-base';
 import { Colors } from '../../constants';
 
 class ListItemComponent extends React.PureComponent {
-  openListItemDetails() {
-    const { navigate } = this.props.navigation;
-    navigate('ListItemDetails', { name: this.props.name });
-  }
-
   render() {
     const { name, favorite, gender } = this.props;
     return (

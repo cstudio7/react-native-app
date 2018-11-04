@@ -1,11 +1,9 @@
 import React from 'react';
+import { Animated, FlatList, Platform, View, StyleSheet } from 'react-native';
+import { Item, Input, Icon } from 'native-base';
 import ListItemComponent from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import { Spacing } from '../../constants';
-
-import { Animated, FlatList, Platform, View, StyleSheet } from 'react-native';
-import { Item, Input, Icon } from 'native-base';
-import NotFound from '../NotFound';
 
 const searchFormHeight = 72;
 
@@ -28,6 +26,7 @@ class List extends React.Component {
 
     this.clearSearchForm = this.clearSearchForm.bind(this);
     this.onChangeTextHandler = this.onChangeTextHandler.bind(this);
+    this.getListEmptyComponent = this.getListEmptyComponent.bind(this);
   }
 
   renderItem = ({ item }) => (
@@ -53,6 +52,18 @@ class List extends React.Component {
     this.setState({
       target: null
     });
+  }
+
+  getListEmptyComponent() {
+    let text = 'Загружается...';
+
+    if (this.props.screen === 'Favorites') {
+      text = 'Вы пока ничего не добавили в избранное';
+    } else if (this.state.target && !data.length) {
+      text = 'Имя не найдено';
+    }
+
+    return <ListEmptyComponent text={text} />;
   }
 
   render() {
@@ -109,13 +120,7 @@ class List extends React.Component {
           renderItem={this.renderItem}
           data={data}
           keyExtractor={this.keyExtractor}
-          ListEmptyComponent={
-            this.state.target && !data.length ? (
-              <NotFound />
-            ) : (
-              <ListEmptyComponent screen={this.props.screen} />
-            )
-          }
+          ListEmptyComponent={this.getListEmptyComponent}
           removeClippedSubviews={Platform.OS === 'android'}
           onScrollBeginDrag={this.scrollEventHandler}
         />
