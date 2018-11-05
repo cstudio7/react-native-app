@@ -1,5 +1,12 @@
 import React from 'react';
-import { Animated, FlatList, Platform, View, StyleSheet } from 'react-native';
+import {
+  Animated,
+  FlatList,
+  Platform,
+  View,
+  StyleSheet,
+  Keyboard
+} from 'react-native';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import SearchForm from '../SearchForm/SearchForm';
@@ -13,7 +20,6 @@ class List extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    this.scrollEventHandler = props.scrollEvent;
 
     this.headerY = Animated.multiply(
       Animated.diffClamp(this.scroll, 0, searchFormHeight),
@@ -24,6 +30,7 @@ class List extends React.PureComponent {
       target: null
     };
 
+    this.scrollEventHandler = this.scrollEventHandler.bind(this);
     this.clearSearchFormHanlder = this.clearSearchFormHanlder.bind(this);
     this.changeTextHandler = this.changeTextHandler.bind(this);
     this.getListEmptyComponent = this.getListEmptyComponent.bind(this);
@@ -52,6 +59,11 @@ class List extends React.PureComponent {
     this.setState({
       target: null
     });
+  }
+
+  scrollEventHandler() {
+    Keyboard.dismiss();
+    this.props.scrollEvent();
   }
 
   getListEmptyComponent() {
