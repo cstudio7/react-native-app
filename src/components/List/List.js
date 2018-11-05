@@ -31,7 +31,7 @@ class List extends React.PureComponent {
     };
 
     this.scrollEventHandler = this.scrollEventHandler.bind(this);
-    this.clearSearchFormHanlder = this.clearSearchFormHanlder.bind(this);
+    this.clearSearchFormHandler = this.clearSearchFormHandler.bind(this);
     this.changeTextHandler = this.changeTextHandler.bind(this);
     this.getListEmptyComponent = this.getListEmptyComponent.bind(this);
   }
@@ -55,7 +55,7 @@ class List extends React.PureComponent {
     this.setState({ target: text });
   }
 
-  clearSearchFormHanlder() {
+  clearSearchFormHandler() {
     this.setState({
       target: null
     });
@@ -94,7 +94,7 @@ class List extends React.PureComponent {
             headerY={this.headerY}
             target={this.state.target}
             changeTextHandler={this.changeTextHandler}
-            clearSearchFormHanlder={this.clearSearchFormHanlder}
+            clearSearchFormHandler={this.clearSearchFormHandler}
           />
         )}
 
