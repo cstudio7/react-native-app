@@ -1,7 +1,7 @@
 import {
-  RATE_APP,
-  UPDATE_USER_VISITS,
-  RESET_USER_VISITS
+  LISTSCREEN_RATEALERT_RATE,
+  LISTSCREEN_RATEALERT_UPDATEVISITS,
+  LISTSCREEN_RATEALERT_RESETVISITS
 } from '../../constants/ActionTypes';
 import createReducer from '../../modules/createReducer/createReducer';
 
@@ -33,7 +33,7 @@ const resetUserVisits = state => {
 };
 
 export default createReducer(initialState, {
-  [RATE_APP]: rate,
-  [UPDATE_USER_VISITS]: updateUserVisits,
-  [RESET_USER_VISITS]: resetUserVisits
+  [LISTSCREEN_RATEALERT_RATE]: rate,
+  [LISTSCREEN_RATEALERT_UPDATEVISITS]: updateUserVisits,
+  [LISTSCREEN_RATEALERT_RESETVISITS]: resetUserVisits
 });

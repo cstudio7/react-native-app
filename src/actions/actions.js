@@ -10,9 +10,9 @@ import {
   FAVSCREEN_VIEW,
   LISTSCREEN_SCROLL,
   FAVSCREEN_SCROLL,
-  RATE_APP,
-  UPDATE_USER_VISITS,
-  RESET_USER_VISITS
+  LISTSCREEN_RATEALERT_RATE,
+  LISTSCREEN_RATEALERT_UPDATEVISITS,
+  LISTSCREEN_RATEALERT_RESETVISITS,
 } from '../constants/ActionTypes';
 
 const isScreenFavorites = screen => screen === 'Favorites';
@@ -66,13 +66,13 @@ export const loadNames = () => ({
 });
 
 export const rateApp = () => ({
-  type: RATE_APP
+  type: LISTSCREEN_RATEALERT_RATE
 });
 
 export const updateUserVisits = () => ({
-  type: UPDATE_USER_VISITS
+  type: LISTSCREEN_RATEALERT_UPDATEVISITS
 });
 
 export const resetUserVisits = () => ({
-  type: RESET_USER_VISITS
+  type: LISTSCREEN_RATEALERT_RESETVISITS
 });

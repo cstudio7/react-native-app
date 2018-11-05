@@ -8,7 +8,6 @@ const makeMapStateToProps = (state, props) => ({
   data: getNames(state, props)
 });
 
-
 const mapDispatchToProps = (dispatch, props) => {
   return bindActionCreators(
     {

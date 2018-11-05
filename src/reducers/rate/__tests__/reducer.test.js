@@ -1,8 +1,8 @@
 import rate from '../reducer';
 import {
-  RATE_APP,
-  UPDATE_USER_VISITS,
-  RESET_USER_VISITS
+  LISTSCREEN_RATEALERT_RATE,
+  LISTSCREEN_RATEALERT_UPDATEVISITS,
+  LISTSCREEN_RATEALERT_RESETVISITS
 } from '../../../constants/ActionTypes';
 
 it('returns the initial state', () => {
@@ -17,7 +17,7 @@ it('update user visits counter', () => {
 
   expect(
     rate(initialState, {
-      type: UPDATE_USER_VISITS
+      type: LISTSCREEN_RATEALERT_UPDATEVISITS
     })
   ).toEqual({
     rated: true,
@@ -33,7 +33,7 @@ it('resets user visits', () => {
 
   expect(
     rate(initialState, {
-      type: RESET_USER_VISITS
+      type: LISTSCREEN_RATEALERT_RESETVISITS
     })
   ).toEqual({
     rated: false,
@@ -41,7 +41,7 @@ it('resets user visits', () => {
   })
 });
 
-it('handles RATE_APP action and marks app as rated', () => {
+it('marks app as rated', () => {
   const initialState = {
     rated: false,
     visitsCount: 0
@@ -49,7 +49,7 @@ it('handles RATE_APP action and marks app as rated', () => {
 
   expect(
     rate(initialState, {
-      type: RATE_APP
+      type: LISTSCREEN_RATEALERT_RATE
     })
   ).toMatchSnapshot();
 });
