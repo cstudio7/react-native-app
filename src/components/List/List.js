@@ -59,7 +59,7 @@ class List extends React.PureComponent {
 
     if (this.props.screen === 'Favorites') {
       text = 'Вы пока ничего не добавили в избранное';
-    } else if (this.state.target && !data.length) {
+    } else if (this.state.target) {
       text = 'Имя не найдено';
     }
 
