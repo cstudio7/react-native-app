@@ -8,11 +8,13 @@
   },
   "dependencies": {
     "@babel/runtime": "7.1.2",
+    "lodash.debounce": "^4.0.8",
     "native-base": "2.8.1",
     "ramda": "0.25.0",
     "react": "16.5.0",
     "react-native": "0.57.2",
     "react-native-amplitude-analytics": "0.2.6",
+    "react-native-rate": "^1.1.6",
     "react-native-sentry": "0.39.1",
     "react-navigation": "2.18.2",
     "react-redux": "5.1.0",

@@ -6,5 +6,9 @@ Object {
     "female": Array [],
     "male": Array [],
   },
+  "rate": Object {
+    "rated": false,
+    "visitsCount": 0,
+  },
 }
 `;

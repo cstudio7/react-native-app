@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handles RATE_APP action and marks app as rated 1`] = `
+Object {
+  "rated": true,
+  "visitsCount": 0,
+}
+`;
+
+exports[`returns the initial state 1`] = `
+Object {
+  "rated": false,
+  "visitsCount": 0,
+}
+`;
