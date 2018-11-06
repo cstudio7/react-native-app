@@ -10,9 +10,10 @@ import {
   FAVSCREEN_VIEW,
   LISTSCREEN_SCROLL,
   FAVSCREEN_SCROLL,
+  LISTSCREEN_RATEALERT_SHOW,
   LISTSCREEN_RATEALERT_RATE,
   LISTSCREEN_RATEALERT_UPDATEVISITS,
-  LISTSCREEN_RATEALERT_RESETVISITS,
+  LISTSCREEN_RATEALERT_RESETVISITS
 } from '../constants/ActionTypes';
 
 const isScreenFavorites = screen => screen === 'Favorites';
@@ -63,6 +64,10 @@ export const openNameScreen = screen => {
 
 export const loadNames = () => ({
   type: FETCH_NAMES_REQUEST
+});
+
+export const showRateAppAlert = () => ({
+  type: LISTSCREEN_RATEALERT_SHOW
 });
 
 export const rateApp = () => ({

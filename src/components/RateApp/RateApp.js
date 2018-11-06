@@ -3,7 +3,9 @@ import { View, Alert } from 'react-native';
 import Rate from 'react-native-rate';
 import debounce from 'lodash.debounce';
 
-const showRateAppAlert = ({ rateApp, resetUserVisits }) => {
+const showRateAppAlert = ({ rateApp, resetUserVisits, showRateAppAlertAction }) => {
+  showRateAppAlertAction();
+
   return Alert.alert(
     'Оцените приложение',
     'Ваше мнение — лучшая благодарность для нас.',
@@ -44,7 +46,8 @@ class RateApp extends React.PureComponent {
           this.props.userVisitsCount >= 3 &&
           this.showRateAppAlert({
             rateApp: this.props.rateApp,
-            resetUserVisits: this.props.resetUserVisits
+            resetUserVisits: this.props.resetUserVisits,
+            showRateAppAlertAction: this.props.showRateAppAlert
           })}
       </View>
     );

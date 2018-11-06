@@ -1,8 +1,13 @@
 import { connect } from 'react-redux';
-import { rateApp, updateUserVisits, resetUserVisits } from '../actions/actions';
+import {
+  showRateAppAlert,
+  rateApp,
+  updateUserVisits,
+  resetUserVisits
+} from '../actions/actions';
 import RateApp from '../components/RateApp/RateApp';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   rated: state.rate.rated,
   userVisitsCount: state.rate.visitsCount
 });
@@ -10,6 +15,7 @@ const mapStateToProps = (state) => ({
 export default connect(
   mapStateToProps,
   {
+    showRateAppAlert,
     rateApp,
     updateUserVisits,
     resetUserVisits
