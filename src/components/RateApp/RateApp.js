@@ -6,7 +6,7 @@ import debounce from 'lodash.debounce';
 const showRateAppAlert = ({ rateApp, resetUserVisits }) => {
   return Alert.alert(
     'Оцените приложение',
-    'Если у вас есть пожелание или жалоба - напишите нам, мы ежедневно работаем над улучшением приложения.',
+    'Ваше мнение — лучшая благодарность для нас.',
     [
       {
         text: 'Не сейчас',
