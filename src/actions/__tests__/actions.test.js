@@ -5,6 +5,10 @@ import {
   favoritesScreenView,
   scrollEvent,
   openNameScreen,
+  showRateAppAlert,
+  rateApp,
+  updateUserVisits,
+  resetUserVisits
 } from '../actions';
 
 const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
@@ -53,4 +57,20 @@ it('creates a FAVSCREEN_NAME_OPEN action', () => {
 
 it('creates an action to load names', () => {
   expect(loadNames()).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_RATEALERT_SHOW action', () => {
+  expect(showRateAppAlert()).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_RATEALERT_RATE action', () => {
+  expect(rateApp()).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_RATEALERT_UPDATEVISITS action', () => {
+  expect(updateUserVisits()).toMatchSnapshot();
+});
+
+it('creates a LISTSCREEN_RATEALERT_RESETVISITS action', () => {
+  expect(resetUserVisits()).toMatchSnapshot();
 });

@@ -50,6 +50,30 @@ Object {
 }
 `;
 
+exports[`creates a LISTSCREEN_RATEALERT_RATE action 1`] = `
+Object {
+  "type": "LISTSCREEN_RATEALERT_RATE",
+}
+`;
+
+exports[`creates a LISTSCREEN_RATEALERT_RESETVISITS action 1`] = `
+Object {
+  "type": "LISTSCREEN_RATEALERT_RESETVISITS",
+}
+`;
+
+exports[`creates a LISTSCREEN_RATEALERT_SHOW action 1`] = `
+Object {
+  "type": "LISTSCREEN_RATEALERT_SHOW",
+}
+`;
+
+exports[`creates a LISTSCREEN_RATEALERT_UPDATEVISITS action 1`] = `
+Object {
+  "type": "LISTSCREEN_RATEALERT_UPDATEVISITS",
+}
+`;
+
 exports[`creates a LISTSCREEN_SCROLL action 1`] = `
 Object {
   "type": "LISTSCREEN_SCROLL",
