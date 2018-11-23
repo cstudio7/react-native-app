@@ -16,7 +16,7 @@
     "react-native-amplitude-analytics": "0.2.6",
     "react-native-rate": "1.1.6",
     "react-native-sentry": "0.39.1",
-    "react-navigation": "2.18.2",
+    "react-navigation": "3.0.0",
     "react-redux": "5.1.0",
     "redux": "4.0.1",
     "redux-persist": "5.10.0",
