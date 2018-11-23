@@ -10,7 +10,7 @@
     "@babel/runtime": "7.1.5",
     "lodash.debounce": "4.0.8",
     "native-base": "2.8.1",
-    "ramda": "0.25.0",
+    "ramda": "0.26.0",
     "react": "16.5.0",
     "react-native": "0.57.2",
     "react-native-amplitude-analytics": "0.2.6",
