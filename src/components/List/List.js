@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Animated,
   FlatList,
-  Platform,
   View,
   StyleSheet,
   Keyboard
@@ -78,14 +77,17 @@ class List extends React.PureComponent {
     return <ListEmptyComponent text={text} />;
   }
 
-  render() {
-    let { data } = this.props;
-
+  filterData(data) {
     if (this.state.target) {
-      data = data.filter(item =>
+      return data.filter(item =>
         item.name.toLowerCase().startsWith(this.state.target.toLowerCase())
       );
     }
+    return data;
+  }
+
+  render() {
+    const data = this.filterData(this.props.data);
 
     return (
       <View style={styles.container}>
@@ -100,8 +102,6 @@ class List extends React.PureComponent {
 
         <Animated.FlatList
           scrollEventThrottle={16}
-          bounces={false}
-          showsVerticalScrollIndicator={false}
           style={styles.animatedFlatList}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { y: this.scroll } } }],
@@ -116,7 +116,6 @@ class List extends React.PureComponent {
           data={data}
           keyExtractor={this.keyExtractor}
           ListEmptyComponent={this.getListEmptyComponent}
-          removeClippedSubviews={Platform.OS === 'android'}
           onScrollBeginDrag={this.scrollEventHandler}
         />
       </View>

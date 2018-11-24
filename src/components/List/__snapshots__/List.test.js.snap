@@ -11,7 +11,6 @@ exports[`renders empty favorites list correctly 1`] = `
 >
   <RCTScrollView
     ListEmptyComponent={[Function]}
-    bounces={false}
     contentContainerStyle={false}
     data={Array []}
     disableVirtualization={false}
@@ -30,10 +29,8 @@ exports[`renders empty favorites list correctly 1`] = `
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
     overScrollMode="never"
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={16}
-    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
     style={
       Object {
@@ -186,7 +183,6 @@ exports[`renders empty list correctly 1`] = `
   </View>
   <RCTScrollView
     ListEmptyComponent={[Function]}
-    bounces={false}
     contentContainerStyle={
       Object {
         "paddingTop": 64,
@@ -209,10 +205,8 @@ exports[`renders empty list correctly 1`] = `
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
     overScrollMode="never"
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={16}
-    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
     style={
       Object {
@@ -265,7 +259,6 @@ exports[`renders favorites list correctly 1`] = `
 >
   <RCTScrollView
     ListEmptyComponent={[Function]}
-    bounces={false}
     contentContainerStyle={false}
     data={
       Array [
@@ -299,10 +292,8 @@ exports[`renders favorites list correctly 1`] = `
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
     overScrollMode="never"
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={16}
-    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
     style={
       Object {
@@ -867,7 +858,6 @@ exports[`renders list correctly 1`] = `
   </View>
   <RCTScrollView
     ListEmptyComponent={[Function]}
-    bounces={false}
     contentContainerStyle={
       Object {
         "paddingTop": 64,
@@ -905,10 +895,8 @@ exports[`renders list correctly 1`] = `
     onScrollBeginDrag={[Function]}
     onScrollEndDrag={[Function]}
     overScrollMode="never"
-    removeClippedSubviews={false}
     renderItem={[Function]}
     scrollEventThrottle={16}
-    showsVerticalScrollIndicator={false}
     stickyHeaderIndices={Array []}
     style={
       Object {
