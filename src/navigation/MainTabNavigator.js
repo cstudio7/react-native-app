@@ -7,7 +7,6 @@ import { Typography } from '../constants';
 import TabBarIcon from '../components/TabBarIcon';
 import ListScreen from '../containers/ListScreen';
 import FavoritesScreen from '../containers/FavoritesScreen';
-import ListItemDetailsScreen from '../containers/ListItemDetails';
 
 const FavoritesStack = createStackNavigator({
   Favorites: {
@@ -34,10 +33,7 @@ const NamesListStack = createStackNavigator({
     navigationOptions: () => ({
       header: null
     })
-  },
-  ListItemDetails: {
-    screen: ListItemDetailsScreen
-  },
+  }
 });
 
 NamesListStack.navigationOptions = {
