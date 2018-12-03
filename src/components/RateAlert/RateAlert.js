@@ -35,20 +35,22 @@ const showRateAlert = ({ rateApp, resetUserVisits, showRateAlertAction }) => {
 
 const showRateAlertDebounced = debounce(showRateAlert, 5000);
 
-class RateAlert extends React.PureComponent {
-  render() {
-    return (
-      <View>
-        {!this.props.rated &&
-          this.props.userVisitsCount >= 3 &&
-          showRateAlertDebounced({
-            rateApp: this.props.rateApp,
-            resetUserVisits: this.props.resetUserVisits,
-            showRateAppAlertAction: this.props.showRateAppAlert
-          })}
-      </View>
-    );
-  }
-}
+const RateAlert = ({
+  rated,
+  userVisitsCount,
+  rateApp,
+  resetUserVisits,
+  showRateAppAlert
+}) => (
+  <View>
+    {!rated &&
+      userVisitsCount >= 3 &&
+      showRateAlertDebounced({
+        rateApp: rateApp,
+        resetUserVisits: resetUserVisits,
+        showRateAppAlertAction: showRateAppAlert
+      })}
+  </View>
+);
 
 export default RateAlert;
