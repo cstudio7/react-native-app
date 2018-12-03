@@ -7,6 +7,7 @@ import configureStore from './src/store/configureStore';
 import AppContainer from './src/navigation/AppContainer';
 import getTheme from './native-base-theme/components';
 import commonColor from './native-base-theme/variables/commonColor';
+import { Colors } from './src/constants';
 
 const { store, persistor } = configureStore();
 
@@ -16,7 +17,7 @@ export default class App extends Component {
       <StyleProvider style={getTheme(commonColor)}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <StatusBar backgroundColor="#320b86" />
+            <StatusBar backgroundColor={Colors.secondary} />
             <AppContainer />
           </PersistGate>
         </Provider>

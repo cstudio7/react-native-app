@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     fontWeight: '500',
-    color: Colors.secondary
+    color: Colors.gray
   }
 });
 
