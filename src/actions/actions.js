@@ -63,7 +63,7 @@ export const loadNames = () => ({
   type: FETCH_NAMES_REQUEST
 });
 
-export const showRateAppAlert = () => ({
+export const showRateAlert = () => ({
   type: LISTSCREEN_RATEALERT_SHOW
 });
 

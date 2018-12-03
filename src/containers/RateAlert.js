@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import {
-  showRateAppAlert,
+  showRateAlert,
   rateApp,
   updateUserVisits,
   resetUserVisits
 } from '../actions/actions';
-import RateApp from '../components/RateApp/RateApp';
+import RateAlert from '../components/RateAlert/RateAlert';
 
 const mapStateToProps = state => ({
   rated: state.rate.rated,
@@ -15,9 +15,9 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    showRateAppAlert,
+    showRateAlert,
     rateApp,
     updateUserVisits,
     resetUserVisits
   }
-)(RateApp);
+)(RateAlert);

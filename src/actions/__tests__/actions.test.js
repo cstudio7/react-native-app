@@ -5,7 +5,7 @@ import {
   favoritesScreenView,
   scrollEvent,
   openNameScreen,
-  showRateAppAlert,
+  showRateAlert,
   rateApp,
   updateUserVisits,
   resetUserVisits
@@ -53,7 +53,7 @@ it('creates an action to load names', () => {
 });
 
 it('creates a LISTSCREEN_RATEALERT_SHOW action', () => {
-  expect(showRateAppAlert()).toMatchSnapshot();
+  expect(showRateAlert()).toMatchSnapshot();
 });
 
 it('creates a LISTSCREEN_RATEALERT_RATE action', () => {
