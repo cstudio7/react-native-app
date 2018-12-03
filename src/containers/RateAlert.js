@@ -8,7 +8,7 @@ import {
 import RateAlert from '../components/RateAlert/RateAlert';
 
 const mapStateToProps = state => ({
-  rated: state.rate.rated,
+  isRated: state.rate.rated,
   userVisitsCount: state.rate.visitsCount
 });
 

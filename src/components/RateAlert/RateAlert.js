@@ -36,19 +36,19 @@ const showRateAlert = ({ rateApp, resetUserVisits, showRateAlertAction }) => {
 const showRateAlertDebounced = debounce(showRateAlert, 5000);
 
 const RateAlert = ({
-  rated,
+  isRated,
   userVisitsCount,
   rateApp,
   resetUserVisits,
-  showRateAppAlert
+  showRateAlert
 }) => (
   <View>
-    {!rated &&
+    {!isRated &&
       userVisitsCount >= 3 &&
       showRateAlertDebounced({
         rateApp: rateApp,
         resetUserVisits: resetUserVisits,
-        showRateAppAlertAction: showRateAppAlert
+        showRateAlertAction: showRateAlert
       })}
   </View>
 );
