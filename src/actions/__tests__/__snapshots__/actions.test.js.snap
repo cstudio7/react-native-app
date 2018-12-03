@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`creates a FAVSCREEN_NAME_FAVORITE action 1`] = `
-Object {
-  "payload": Object {
-    "gender": "male",
-    "name": Object {
-      "isFavorite": true,
-      "name": "artur",
-    },
-  },
-  "type": "FAVSCREEN_NAME_FAVORITE",
-}
-`;
-
 exports[`creates a FAVSCREEN_NAME_OPEN action 1`] = `
 Object {
   "type": "FAVSCREEN_NAME_OPEN",

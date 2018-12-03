@@ -2,12 +2,10 @@ const R = require('ramda');
 
 import {
   LISTSCREEN_NAME_FAVORITE,
-  FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   FETCH_NAMES_SUCCESS
 } from '../../constants/ActionTypes';
-import createReducer from '../../modules/createReducer/createReducer';
 
 const initialState = {
   female: [],
@@ -55,12 +53,19 @@ const favoriteName = (state, action) => {
   return updateItemInArray(state, payload.name, payload.gender);
 };
 
-const unfavoriteName = favoriteName;
-
-export default createReducer(initialState, {
-  [FETCH_NAMES_SUCCESS]: saveNames,
-  [LISTSCREEN_NAME_FAVORITE]: favoriteName,
-  [FAVSCREEN_NAME_FAVORITE]: favoriteName,
-  [LISTSCREEN_NAME_UNFAVORITE]: unfavoriteName,
-  [FAVSCREEN_NAME_UNFAVORITE]: unfavoriteName
-});
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_NAMES_SUCCESS:
+      return saveNames(state, action);
+    case LISTSCREEN_NAME_FAVORITE:
+    case LISTSCREEN_NAME_UNFAVORITE:
+    case FAVSCREEN_NAME_UNFAVORITE:
+      return favoriteName(state,action);
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      // A reducer must always return a valid state.
+      // Alternatively you can throw an error if an invalid action is dispatched.
+      return state;
+  }
+}

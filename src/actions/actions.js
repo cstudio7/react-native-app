@@ -1,7 +1,6 @@
 import {
   FETCH_NAMES_REQUEST,
   LISTSCREEN_NAME_FAVORITE,
-  FAVSCREEN_NAME_FAVORITE,
   LISTSCREEN_NAME_UNFAVORITE,
   FAVSCREEN_NAME_UNFAVORITE,
   LISTSCREEN_NAME_OPEN,
@@ -28,17 +27,15 @@ export const listScreenView = () => ({
 
 export const favorite = (screen, payload) => {
   let actionType = '';
+
   if (isScreenFavorites(screen)) {
-    actionType = {
-      true: FAVSCREEN_NAME_FAVORITE,
-      false: FAVSCREEN_NAME_UNFAVORITE
-    }[payload.name.isFavorite];
-  } else {
-    actionType = {
-      true: LISTSCREEN_NAME_FAVORITE,
-      false: LISTSCREEN_NAME_UNFAVORITE
-    }[payload.name.isFavorite];
+    actionType = FAVSCREEN_NAME_UNFAVORITE;
   }
+
+  actionType = {
+    true: LISTSCREEN_NAME_FAVORITE,
+    false: LISTSCREEN_NAME_UNFAVORITE
+  }[payload.name.isFavorite];
 
   return {
     type: actionType,

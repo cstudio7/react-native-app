@@ -11,13 +11,6 @@ import {
   resetUserVisits
 } from '../actions';
 
-const mockedName = Object.freeze({ name: 'artur', isFavorite: true });
-
-it('creates a FAVSCREEN_NAME_FAVORITE action', () => {
-  const payload = { gender: 'male', name: mockedName };
-  const screen = 'Favorites';
-  expect(favorite(screen, payload)).toMatchSnapshot();
-});
 
 it('creates a LISTSCREEN_NAME_UNFAVORITE action', () => {
   const payload = {
