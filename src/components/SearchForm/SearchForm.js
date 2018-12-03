@@ -3,38 +3,27 @@ import { Animated, View, StyleSheet } from 'react-native';
 import { Item, Input, Icon } from 'native-base';
 import { Spacing } from '../../constants';
 
-class SearchForm extends React.PureComponent {
-  render() {
-    return (
-      <Animated.View
-        style={[
-          styles.searchForm,
-          {
-            transform: [
-              {
-                translateY: this.props.headerY
-              }
-            ]
-          }
-        ]}>
-        <Item rounded>
-          <Icon active name="md-search" />
-          <Input
-            placeholder="Поиск"
-            value={this.props.target}
-            onChangeText={this.props.changeTextHandler}
-          />
-          {this.props.target ? (
-            <Icon
-              active
-              name="md-close"
-              onPress={this.props.clearSearchFormHandler}
-            />
-          ) : null}
-        </Item>
-      </Animated.View>
-    );
-  }
+const SearchForm = ({
+  headerY,
+  target,
+  onChangeTextHandler,
+  onPressHandler
+}) => (
+  <Animated.View style={getSearchFormStyle(headerY)}>
+    <Item rounded>
+      <Icon active name="md-search" />
+      <Input
+        placeholder="Поиск"
+        value={target}
+        onChangeText={onChangeTextHandler}
+      />
+      {target ? <Icon active name="md-close" onPress={onPressHandler} /> : null}
+    </Item>
+  </Animated.View>
+);
+
+function getSearchFormStyle(headerY) {
+  return [styles.searchForm, { transform: [{ translateY: headerY }] }];
 }
 
 const styles = StyleSheet.create({
