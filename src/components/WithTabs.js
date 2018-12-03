@@ -3,29 +3,17 @@ import { Keyboard } from 'react-native';
 import { Tab, Tabs } from 'native-base';
 import List from '../containers/List';
 
-export default class WithTabs extends React.PureComponent {
-  dismissKeyboard() {
-    Keyboard.dismiss();
-  }
+const dismissKeyboard = () => Keyboard.dismiss();
 
-  render() {
-    return (
-      <Tabs onChangeTab={this.dismissKeyboard}>
-        <Tab heading="Девочки">
-          <List
-            route={{ key: 'female' }}
-            screen={this.props.screen}
-            navigation={this.props.navigation}
-          />
-        </Tab>
-        <Tab heading="Мальчики">
-          <List
-            route={{ key: 'male' }}
-            screen={this.props.screen}
-            navigation={this.props.navigation}
-          />
-        </Tab>
-      </Tabs>
-    );
-  }
-}
+const WithTabs = ({ screen, navigation }) => (
+  <Tabs onChangeTab={dismissKeyboard}>
+    <Tab heading="Девочки">
+      <List route={{ key: 'female' }} screen={screen} navigation={navigation} />
+    </Tab>
+    <Tab heading="Мальчики">
+      <List route={{ key: 'male' }} screen={screen} navigation={navigation} />
+    </Tab>
+  </Tabs>
+);
+
+export default WithTabs;
