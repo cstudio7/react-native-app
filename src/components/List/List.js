@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Animated,
-  FlatList,
-  View,
-  StyleSheet,
-  Keyboard
-} from 'react-native';
+import { Animated, FlatList, View, StyleSheet, Keyboard } from 'react-native';
 import ListItem from '../../containers/ListItem';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import SearchForm from '../SearchForm/SearchForm';
@@ -95,8 +89,8 @@ class List extends React.PureComponent {
           <SearchForm
             headerY={this.headerY}
             target={this.state.target}
-            changeTextHandler={this.changeTextHandler}
-            clearSearchFormHandler={this.clearSearchFormHandler}
+            onChangeTextHandler={this.changeTextHandler}
+            onPressHandler={this.clearSearchFormHandler}
           />
         )}
 
