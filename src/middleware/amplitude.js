@@ -1,5 +1,5 @@
 import RNAmplitude from 'react-native-amplitude-analytics';
-import config from '../../../config';
+import config from '../../config';
 
 let amplitude;
 if (process.env.NODE_ENV === 'production') {

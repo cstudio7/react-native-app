@@ -1,5 +1,5 @@
 import { Sentry } from 'react-native-sentry';
-import config from '../../../config';
+import config from '../../config';
 
 if (process.env.NODE_ENV === 'production') {
   Sentry.config(config.sentryDSN).install();

@@ -1,8 +1,8 @@
 import {
   FETCH_NAMES_REQUEST,
   FETCH_NAMES_SUCCESS
-} from '../../constants/ActionTypes';
-import { femaleNames, maleNames } from '../../../data';
+} from '../constants/ActionTypes';
+import { femaleNames, maleNames } from '../../data';
 
 const formatNames = names => {
   const sortedKeys = Object.keys(names).sort();
