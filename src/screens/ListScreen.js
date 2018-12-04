@@ -2,7 +2,7 @@ import React from 'react';
 import { withNavigationFocus } from 'react-navigation';
 import { Container } from 'native-base';
 import WithTabs from '../components/WithTabs';
-import showRateAlert from '../containers/showRateAlert';
+import RateAlert from '../containers/RateAlert';
 
 class ListScreen extends React.PureComponent {
   componentDidMount() {
@@ -17,7 +17,7 @@ class ListScreen extends React.PureComponent {
 
     return (
       <Container>
-        <showRateAlert />
+        <RateAlert />
         <WithTabs screen="List" navigation={this.props.navigation} />
       </Container>
     );
