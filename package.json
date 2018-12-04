@@ -12,7 +12,7 @@
     "native-base": "2.8.1",
     "ramda": "0.26.1",
     "react": "16.6.3",
-    "react-native": "0.57.5",
+    "react-native": "0.57.7",
     "react-native-amplitude-analytics": "0.2.6",
     "react-native-gesture-handler": "1.0.10",
     "react-native-rate": "1.1.6",
