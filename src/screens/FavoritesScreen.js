@@ -8,31 +8,24 @@ import ListEmptyComponent from '../components/ListEmptyComponent/ListEmptyCompon
 
 const dismissKeyboard = () => Keyboard.dismiss();
 
-const FavoritesScreen = ({
-  data,
-  navigation,
-  isFocused,
-  favoritesScreenView
-}) => {
+const FavoritesScreen = ({ data, isFocused, favoritesScreenView }) => {
   isFocused && favoritesScreenView();
   return (
     <Container>
       <Tabs onChangeTab={dismissKeyboard}>
         <Tab heading="Девочки">
           <List
-            route={{ key: 'female' }}
+            tab="female"
             screen="Favorites"
             data={getFavoriteNames(data, 'female')}
-            navigation={navigation}
             renderListEmptyComponent={renderListEmptyComponent}
           />
         </Tab>
         <Tab heading="Мальчики">
           <List
-            route={{ key: 'male' }}
+            tab="male"
             screen="Favorites"
             data={getFavoriteNames(data, 'male')}
-            navigation={navigation}
             renderListEmptyComponent={renderListEmptyComponent}
           />
         </Tab>

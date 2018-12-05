@@ -34,7 +34,7 @@ it('triggers onPress when the user taps', () => {
   const instance = renderer.create(
     <ListItemComponent
       name={name}
-      gender={gender}
+      tab={gender}
       favorite={onPressEvent}
       screen={screen}
     />

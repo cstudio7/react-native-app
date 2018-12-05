@@ -3,16 +3,13 @@ import { FlatList, Keyboard } from 'react-native';
 import ListItem from '../containers/ListItem';
 
 class List extends React.PureComponent {
-  renderItem = ({ item }) => (
-    <ListItem
-      navigation={this.props.navigation}
-      name={item}
-      gender={this.props.route.key}
-      screen={this.props.screen}
-    />
-  );
+  keyExtractor(item, index) {
+    return item.name + index;
+  }
 
-  keyExtractor = (item, index) => item.name + index;
+  renderItem({ item }) {
+    return <ListItem name={item} {...this.props} />;
+  }
 
   scrollEventHandler() {
     Keyboard.dismiss();
@@ -22,11 +19,13 @@ class List extends React.PureComponent {
   render() {
     return (
       <FlatList
+        style={this.props.style}
+        contentContainerStyle={this.props.contentContainerStyle}
         scrollEventThrottle={16}
         overScrollMode="never"
         data={this.props.data}
         keyExtractor={this.keyExtractor}
-        renderItem={this.renderItem}
+        renderItem={this.renderItem.bind(this)}
         ListEmptyComponent={this.props.renderListEmptyComponent}
         onScrollBeginDrag={this.scrollEventHandler.bind(this)}
       />

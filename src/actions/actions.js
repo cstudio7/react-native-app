@@ -43,7 +43,7 @@ export const favorite = (screen, payload) => {
   };
 };
 
-export const scrollEvent = screen => {
+export const scrollEvent = ({ screen }) => {
   let type = LISTSCREEN_SCROLL;
   if (isScreenFavorites(screen)) {
     type = FAVSCREEN_SCROLL;

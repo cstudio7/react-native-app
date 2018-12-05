@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet } from 'react-native';
 import { Body, ListItem, Text, Right, Icon } from 'native-base';
 import { Colors } from '../../constants';
 
-const ListItemComponent = ({ name, favorite, gender }) => (
+const ListItemComponent = ({ name, favorite, tab }) => (
   <ListItem>
     <Body>
       <Text style={styles.listText}>{name.name}</Text>
@@ -15,7 +15,7 @@ const ListItemComponent = ({ name, favorite, gender }) => (
       <TouchableOpacity
         onPress={() => {
           const payload = {
-            gender,
+            gender: tab,
             name: {
               ...name,
               isFavorite: !name.isFavorite

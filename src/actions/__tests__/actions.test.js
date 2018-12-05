@@ -11,7 +11,6 @@ import {
   resetUserVisits
 } from '../actions';
 
-
 it('creates a LISTSCREEN_NAME_UNFAVORITE action', () => {
   const payload = {
     gender: 'male',
@@ -33,11 +32,11 @@ it('creates a FAVSCREEN_VIEW action', () => {
 });
 
 it('creates a LISTSCREEN_SCROLL action', () => {
-  expect(scrollEvent()).toMatchSnapshot();
+  expect(scrollEvent({ screen: 'List' })).toMatchSnapshot();
 });
 
 it('creates a FAVSCREEN_SCROLL action', () => {
-  expect(scrollEvent('Favorites')).toMatchSnapshot();
+  expect(scrollEvent({ screen: 'Favorites' })).toMatchSnapshot();
 });
 
 it('creates a LISTSCREEN_NAME_OPEN action', () => {

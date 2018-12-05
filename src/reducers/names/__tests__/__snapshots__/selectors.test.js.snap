@@ -1,23 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`returns favorite female data 1`] = `
-Array [
-  Object {
-    "isFavorite": true,
-    "name": "sveta",
-  },
-]
-`;
-
-exports[`returns favorite male data 1`] = `
-Array [
-  Object {
-    "isFavorite": true,
-    "name": "artur",
-  },
-]
-`;
-
 exports[`returns female names 1`] = `
 Array [
   Object {

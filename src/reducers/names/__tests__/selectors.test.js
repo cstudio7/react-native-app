@@ -11,30 +11,14 @@ const state = Object.freeze({
 
 it('returns female names', () => {
   const props = {
-    route: { key: 'female' }
+    tab: 'female'
   };
   expect(getNames(state, props)).toMatchSnapshot();
 });
 
 it('returns male names', () => {
   const props = {
-    route: { key: 'male' }
-  };
-  expect(getNames(state, props)).toMatchSnapshot();
-});
-
-it('returns favorite female data', () => {
-  const props = {
-    route: { key: 'female' },
-    screen: 'Favorites'
-  };
-  expect(getNames(state, props)).toMatchSnapshot();
-});
-
-it('returns favorite male data', () => {
-  const props = {
-    route: { key: 'male' },
-    screen: 'Favorites'
+    tab: 'male'
   };
   expect(getNames(state, props)).toMatchSnapshot();
 });

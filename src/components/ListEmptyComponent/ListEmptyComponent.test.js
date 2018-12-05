@@ -4,7 +4,7 @@ import ListEmptyComponent from './ListEmptyComponent';
 
 it('shows passed text', () => {
   const tree = renderer
-    .create(<ListEmptyComponent text="Загружается..." />)
+    .create(<ListEmptyComponent message="Загружается..." />)
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
