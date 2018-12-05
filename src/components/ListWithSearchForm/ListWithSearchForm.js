@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Animated, View, StyleSheet } from 'react-native';
 import SearchForm from '../SearchForm/SearchForm';
-import List from '../List';
+import List from '../List/List';
 import ListEmptyComponent from '../ListEmptyComponent/ListEmptyComponent';
 import { Spacing } from '../../constants';
 

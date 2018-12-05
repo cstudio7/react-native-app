@@ -3,7 +3,7 @@ import { Keyboard } from 'react-native';
 import { Tab, Tabs } from 'native-base';
 import { withNavigationFocus } from 'react-navigation';
 import { Container } from 'native-base';
-import List from '../components/List';
+import List from '../components/List/List';
 import ListEmptyComponent from '../components/ListEmptyComponent/ListEmptyComponent';
 
 const dismissKeyboard = () => Keyboard.dismiss();

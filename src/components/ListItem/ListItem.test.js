@@ -15,7 +15,9 @@ it('renders a favorite name correctly', () => {
     ...name,
     isFavorite: true
   };
-  const tree = renderer.create(<ListItemComponent name={favoriteName} />).toJSON();
+  const tree = renderer
+    .create(<ListItemComponent name={favoriteName} />)
+    .toJSON();
   expect(tree).toMatchSnapshot();
 });
 

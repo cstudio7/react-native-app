@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Keyboard } from 'react-native';
-import ListItem from '../containers/ListItem';
+import ListItem from '../../containers/ListItem';
 
 class List extends React.PureComponent {
   keyExtractor(item, index) {
