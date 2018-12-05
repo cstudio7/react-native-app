@@ -2,7 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { getNames } from '../reducers/names/selectors';
 import { scrollEvent } from '../actions/actions';
-import List from '../components/List/List';
+import AnimatedList from '../components/AnimatedList/AnimatedList';
 
 const makeMapStateToProps = (state, props) => ({
   data: getNames(state, props)
@@ -20,4 +20,4 @@ const mapDispatchToProps = (dispatch, props) => {
 export default connect(
   makeMapStateToProps,
   mapDispatchToProps
-)(List);
+)(AnimatedList);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
-import List from './List';
+import AnimatedList from './AnimatedList';
 
 const middlewares = [];
 const mockStore = configureStore(middlewares);
@@ -18,7 +18,7 @@ const getTree = (store, props) => {
   return renderer
     .create(
       <Provider store={store}>
-        <List {...props} />
+        <AnimatedList {...props} />
       </Provider>
     )
     .toJSON();
