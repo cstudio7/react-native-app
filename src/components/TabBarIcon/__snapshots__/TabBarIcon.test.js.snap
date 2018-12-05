@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders focused heart icon 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": undefined,
+        "fontSize": 12,
+      },
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#673AB7",
+          "marginBottom": -5,
+        },
+      ],
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders heart icon 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": undefined,
+        "fontSize": 12,
+      },
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#9e9e9e",
+          "marginBottom": -5,
+        },
+      ],
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`renders list icon 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": undefined,
+        "fontSize": 12,
+      },
+      Array [
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#000",
+          "fontSize": 30,
+        },
+        Object {
+          "color": "#9e9e9e",
+          "marginBottom": -5,
+        },
+      ],
+      Object {
+        "fontFamily": "Ionicons",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+    ]
+  }
+>
+  
+</Text>
+`;

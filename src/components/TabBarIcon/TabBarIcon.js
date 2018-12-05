@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'native-base';
-import { Colors } from '../constants';
+import { Colors } from '../../constants';
 
 const TabBarIcon = ({ name, focused }) => (
   <Icon

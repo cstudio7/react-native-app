@@ -4,7 +4,7 @@ import {
   createBottomTabNavigator
 } from 'react-navigation';
 import { Typography } from '../constants';
-import TabBarIcon from '../components/TabBarIcon';
+import TabBarIcon from '../components/TabBarIcon/TabBarIcon';
 import ListScreen from '../containers/ListScreen';
 import FavoritesScreen from '../containers/FavoritesScreen';
 
@@ -38,7 +38,7 @@ const NamesListStack = createStackNavigator({
 
 NamesListStack.navigationOptions = {
   tabBarLabel: 'Имена',
-  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={`md-list`} />
+  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-list" />
 };
 
 export default createBottomTabNavigator(
