@@ -1,4 +1,5 @@
-# bn-client
+# my-react-native-app
+Application is available (here)[https://play.google.com/store/apps/details?id=dev.baarsjes.babynamespro]
 
 - [Installation and setup](#installation-and-setup)
   - [Prerequisites](#prerequisites)
@@ -16,7 +17,7 @@
 - [Node.js](https://nodejs.org/en/download/)
 - [Watchman](https://facebook.github.io/watchman/docs/install.html)
 - [Install Yarn](https://yarnpkg.com/en/docs/install)
-- `$ yarn global add react-native-cli`
+- `yarn global add react-native-cli`
 
 More information on getting started can be found here: https://facebook.github.io/react-native/docs/getting-started.html under the `Building projects with React Native` tab.
 
@@ -24,11 +25,11 @@ More information on getting started can be found here: https://facebook.github.i
 
 Clone the repository
 
-`$ git clone git@github.com:artiebits/bn-client.git`
+`git clone git@github.com:artiebits/react-native-app.git`
 
 And install dependencies
 
-`$ yarn install`
+`yarn install`
 
 #### iOS
 
