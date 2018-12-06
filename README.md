@@ -1,5 +1,5 @@
 # my-react-native-app
-Application is available (here)[https://play.google.com/store/apps/details?id=dev.baarsjes.babynamespro]
+Application is available [here](https://play.google.com/store/apps/details?id=dev.baarsjes.babynamespro)
 
 - [Installation and setup](#installation-and-setup)
   - [Prerequisites](#prerequisites)
